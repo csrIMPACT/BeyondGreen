@@ -1,0 +1,4408 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description" content="Environmental CSR Assessment of PT Indah Kiat Pulp & Paper Tbk.">
+  <meta name="theme-color" content="#07130f">
+
+  <title>GREEN CLAIMS. REAL EVIDENCE.</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+
+    /* =========================================================
+       RESET
+    ========================================================= */
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "DM Sans", sans-serif;
+      background: #07130f;
+      color: #f3f7f2;
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      font-family: inherit;
+    }
+
+    ::selection {
+      background: #b8f26b;
+      color: #07130f;
+    }
+
+
+    /* =========================================================
+       VARIABLES
+    ========================================================= */
+
+    :root {
+      --bg: #07130f;
+      --bg-2: #0b1c16;
+      --bg-3: #10261d;
+
+      --green: #b8f26b;
+      --green-2: #7ddc62;
+      --green-dark: #163b27;
+
+      --cream: #f2f0df;
+      --muted: #9aa99f;
+      --white: #ffffff;
+
+      --line: rgba(255,255,255,.10);
+      --glass: rgba(255,255,255,.055);
+
+      --danger: #ff756b;
+      --warning: #ffc85b;
+      --success: #8ee46e;
+
+      --radius: 24px;
+      --radius-small: 14px;
+
+      --container: 1180px;
+    }
+
+
+    /* =========================================================
+       GLOBAL
+    ========================================================= */
+
+    .container {
+      width: min(var(--container), calc(100% - 40px));
+      margin: auto;
+    }
+
+    section {
+      position: relative;
+      padding: 120px 0;
+      scroll-margin-top: 90px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+
+      padding: 8px 13px;
+
+      border: 1px solid rgba(184,242,107,.25);
+      border-radius: 999px;
+
+      background: rgba(184,242,107,.06);
+
+      color: var(--green);
+
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 7px;
+      height: 7px;
+
+      background: var(--green);
+      border-radius: 50%;
+
+      box-shadow: 0 0 14px var(--green);
+    }
+
+    .section-title {
+      margin-top: 20px;
+
+      max-width: 850px;
+
+      font-family: "Space Grotesk", sans-serif;
+      font-size: clamp(40px, 6vw, 76px);
+      line-height: .98;
+      letter-spacing: -.055em;
+    }
+
+    .section-title span {
+      color: var(--green);
+    }
+
+    .section-description {
+      max-width: 680px;
+      margin-top: 24px;
+
+      color: var(--muted);
+
+      font-size: 17px;
+    }
+
+    .grid {
+      display: grid;
+      gap: 20px;
+    }
+
+    .glass {
+      border: 1px solid var(--line);
+      background: var(--glass);
+
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+
+      border-radius: var(--radius);
+    }
+
+
+    /* =========================================================
+       NOISE
+    ========================================================= */
+
+    body::before {
+      content: "";
+
+      position: fixed;
+      inset: 0;
+
+      pointer-events: none;
+      z-index: 9999;
+
+      opacity: .025;
+
+      background-image:
+        url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.7'/%3E%3C/svg%3E");
+    }
+
+
+    /* =========================================================
+       NAVBAR
+    ========================================================= */
+
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+
+      z-index: 1000;
+
+      height: 76px;
+
+      border-bottom: 1px solid transparent;
+
+      transition: .3s ease;
+    }
+
+    .navbar.scrolled {
+      background: rgba(7,19,15,.82);
+      backdrop-filter: blur(20px);
+      border-color: var(--line);
+    }
+
+    .nav-inner {
+      width: min(var(--container), calc(100% - 40px));
+      height: 100%;
+
+      margin: auto;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+      font-family: "Space Grotesk", sans-serif;
+      font-weight: 700;
+      letter-spacing: -.03em;
+    }
+
+    .logo-mark {
+      width: 30px;
+      height: 30px;
+
+      display: grid;
+      place-items: center;
+
+      border-radius: 9px;
+
+      background: var(--green);
+      color: var(--bg);
+
+      font-size: 15px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 26px;
+
+      color: #b4c0b8;
+
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .nav-links a {
+      transition: .2s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--green);
+    }
+
+    .nav-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+
+      padding: 11px 15px;
+
+      border: 1px solid rgba(184,242,107,.25);
+      border-radius: 999px;
+
+      color: var(--green);
+
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .mobile-menu {
+      display: none;
+
+      border: 0;
+      background: transparent;
+
+      color: white;
+
+      font-size: 25px;
+      cursor: pointer;
+    }
+
+
+    /* =========================================================
+       HERO
+    ========================================================= */
+
+    .hero {
+      min-height: 100vh;
+
+      display: flex;
+      align-items: center;
+
+      padding-top: 150px;
+      padding-bottom: 80px;
+
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+
+      position: absolute;
+
+      width: 700px;
+      height: 700px;
+
+      right: -250px;
+      top: 0;
+
+      background: radial-gradient(
+        circle,
+        rgba(111,220,98,.17),
+        transparent 65%
+      );
+
+      filter: blur(20px);
+
+      pointer-events: none;
+    }
+
+    .hero::after {
+      content: "";
+
+      position: absolute;
+
+      width: 500px;
+      height: 500px;
+
+      left: -250px;
+      bottom: -250px;
+
+      background: radial-gradient(
+        circle,
+        rgba(184,242,107,.10),
+        transparent 65%
+      );
+
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-kicker {
+      margin-bottom: 25px;
+    }
+
+    .hero h1 {
+      max-width: 1050px;
+
+      font-family: "Space Grotesk", sans-serif;
+
+      font-size: clamp(58px, 9vw, 130px);
+
+      line-height: .84;
+
+      letter-spacing: -.075em;
+    }
+
+    .hero h1 .green {
+      color: var(--green);
+    }
+
+    .hero-subtitle {
+      max-width: 700px;
+
+      margin-top: 30px;
+
+      color: #aebbb2;
+
+      font-size: clamp(16px, 2vw, 21px);
+    }
+
+    .hero-subtitle strong {
+      color: white;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+
+      margin-top: 38px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+
+      min-height: 50px;
+
+      padding: 0 20px;
+
+      border-radius: 999px;
+
+      border: 1px solid var(--line);
+
+      font-weight: 700;
+      font-size: 13px;
+
+      cursor: pointer;
+
+      transition: .25s ease;
+    }
+
+    .btn-primary {
+      background: var(--green);
+      color: var(--bg);
+
+      border-color: var(--green);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 35px rgba(184,242,107,.18);
+    }
+
+    .btn-secondary {
+      background: rgba(255,255,255,.04);
+      color: white;
+    }
+
+    .btn-secondary:hover {
+      border-color: rgba(184,242,107,.4);
+      color: var(--green);
+    }
+
+    .hero-bottom {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+
+      margin-top: 100px;
+
+      border-top: 1px solid var(--line);
+    }
+
+    .hero-stat {
+      padding: 24px 0;
+      padding-right: 30px;
+
+      border-right: 1px solid var(--line);
+    }
+
+    .hero-stat:not(:first-child) {
+      padding-left: 30px;
+    }
+
+    .hero-stat:last-child {
+      border-right: 0;
+    }
+
+    .hero-stat-number {
+      font-family: "Space Grotesk", sans-serif;
+
+      font-size: 35px;
+      font-weight: 700;
+
+      letter-spacing: -.05em;
+    }
+
+    .hero-stat-label {
+      margin-top: 4px;
+
+      color: var(--muted);
+
+      font-size: 12px;
+    }
+
+
+    /* =========================================================
+       MARQUEE
+    ========================================================= */
+
+    .marquee {
+      overflow: hidden;
+
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+
+      background: rgba(255,255,255,.025);
+    }
+
+    .marquee-track {
+      width: max-content;
+
+      display: flex;
+      align-items: center;
+      gap: 45px;
+
+      padding: 17px 0;
+
+      animation: marquee 24s linear infinite;
+    }
+
+    .marquee-item {
+      color: #77857d;
+
+      font-size: 11px;
+      font-weight: 700;
+
+      letter-spacing: .15em;
+      text-transform: uppercase;
+    }
+
+    .marquee-item::before {
+      content: "✦";
+      color: var(--green);
+
+      margin-right: 45px;
+    }
+
+    @keyframes marquee {
+      from {
+        transform: translateX(0);
+      }
+
+      to {
+        transform: translateX(-50%);
+      }
+    }
+
+
+    /* =========================================================
+       TEAM
+    ========================================================= */
+
+    .team-grid {
+      display: grid;
+
+      grid-template-columns: repeat(4, 1fr);
+
+      gap: 18px;
+
+      margin-top: 55px;
+    }
+
+    .team-card {
+      position: relative;
+
+      min-height: 370px;
+
+      overflow: hidden;
+
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+
+      background:
+        linear-gradient(
+          160deg,
+          rgba(184,242,107,.10),
+          rgba(255,255,255,.025)
+        );
+
+      transition: .3s ease;
+    }
+
+    .team-card:hover {
+      transform: translateY(-8px);
+
+      border-color: rgba(184,242,107,.35);
+    }
+
+    .team-photo {
+      height: 245px;
+
+      display: grid;
+      place-items: center;
+
+      background:
+        radial-gradient(
+          circle at center,
+          rgba(184,242,107,.20),
+          transparent 65%
+        );
+
+      color: rgba(255,255,255,.20);
+
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 55px;
+      font-weight: 700;
+    }
+
+    .team-info {
+      padding: 20px;
+    }
+
+    .team-role {
+      color: var(--green);
+
+      font-size: 10px;
+      font-weight: 700;
+
+      text-transform: uppercase;
+      letter-spacing: .12em;
+    }
+
+    .team-name {
+      margin-top: 6px;
+
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 23px;
+      font-weight: 700;
+    }
+
+    .team-desc {
+      margin-top: 6px;
+
+      color: var(--muted);
+
+      font-size: 12px;
+    }
+
+    .team-note {
+      margin-top: 25px;
+
+      color: #75847b;
+
+      font-size: 12px;
+    }
+
+
+    /* =========================================================
+       ABOUT
+    ========================================================= */
+
+    .about-grid {
+      display: grid;
+
+      grid-template-columns: 1.2fr .8fr;
+
+      gap: 30px;
+
+      margin-top: 60px;
+    }
+
+    .about-main {
+      padding: 42px;
+    }
+
+    .about-main p {
+      color: #b8c3bc;
+
+      font-size: 18px;
+      line-height: 1.8;
+    }
+
+    .about-main p + p {
+      margin-top: 20px;
+    }
+
+    .about-side {
+      display: grid;
+      gap: 15px;
+    }
+
+    .focus-card {
+      padding: 27px;
+    }
+
+    .focus-number {
+      color: var(--green);
+
+      font-family: "Space Grotesk", sans-serif;
+
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .focus-card h3 {
+      margin-top: 8px;
+
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 21px;
+    }
+
+    .focus-card p {
+      margin-top: 7px;
+
+      color: var(--muted);
+
+      font-size: 13px;
+    }
+
+
+    /* =========================================================
+       BIG QUESTION
+    ========================================================= */
+
+    .question-section {
+      min-height: 80vh;
+
+      display: flex;
+      align-items: center;
+
+      overflow: hidden;
+    }
+
+    .question-box {
+      position: relative;
+
+      width: 100%;
+
+      padding: clamp(35px, 7vw, 90px);
+
+      border: 1px solid rgba(184,242,107,.20);
+      border-radius: 35px;
+
+      background:
+        radial-gradient(
+          circle at 85% 15%,
+          rgba(184,242,107,.15),
+          transparent 35%
+        ),
+        rgba(255,255,255,.035);
+    }
+
+    .question-label {
+      color: var(--green);
+
+      font-size: 12px;
+      font-weight: 700;
+
+      letter-spacing: .15em;
+      text-transform: uppercase;
+    }
+
+    .question {
+      max-width: 950px;
+
+      margin-top: 28px;
+
+      font-family: "Space Grotesk", sans-serif;
+
+      font-size: clamp(48px, 8vw, 105px);
+
+      line-height: .91;
+
+      letter-spacing: -.07em;
+    }
+
+    .question .dim {
+      color: #68766f;
+    }
+
+    .question-description {
+      max-width: 650px;
+
+      margin-top: 35px;
+
+      color: #a7b4ac;
+
+      font-size: 17px;
+    }
+
+
+    /* =========================================================
+       COMPANY CONTEXT
+    ========================================================= */
+
+    .context-grid {
+      display: grid;
+
+      grid-template-columns: 1fr 1fr;
+
+      gap: 20px;
+
+      margin-top: 55px;
+    }
+
+    .context-card {
+      padding: 35px;
+      min-height: 300px;
+    }
+
+    .context-card h3 {
+      font-family: "Space Grotesk", sans-serif;
+
+      font-size: 27px;
+    }
+
+    .context-card p {
+      margin-top: 15px;
+
+      color: var(--muted);
+
+      font-size: 14px;
+    }
+
+    .process {
+      margin-top: 35px;
+
+      display: grid;
+
+      grid-template-columns: repeat(4,1fr);
+
+      gap: 8px;
+    }
+
+    .process-item {
+      padding: 15px 12px;
+
+      border: 1px solid var(--line);
+
+      border-radius: 13px;
+
+      text-align: center;
+
+      font-size: 11px;
+      color: #c6d0c9;
+    }
+
+    .process-item span {
+      display: block;
+
+      margin-bottom: 7px;
+
+      color: var(--green);
+
+      font-weight: 700;
+    }
+
+
+    /* =========================================================
+       ISSUE DASHBOARD
+    ========================================================= */
+
+    .issue-grid {
+      display: grid;
+
+      grid-template-columns: repeat(4,1fr);
+
+      gap: 15px;
+
+      margin-top: 55px;
+    }
+
+    .issue-card {
+      padding: 27px;
+
+      min-height: 280px;
+
+      transition: .3s ease;
+    }
+
+    .issue-card:hover {
+      transform: translateY(-6px);
+    }
+
+    .issue-icon {
+      width: 45px;
+      height: 45px;
+
+      display: grid;
+      place-items: center;
+
+      border-radius: 13px;
+
+      background: rgba(184,242,107,.09);
+
+      color: var(--green);
+
+      font-size: 20px;
+    }
+
+    .issue-card h3 {
+      margin-top: 25px;
+
+      font-family: "Space Grotesk", sans-serif;
+
+      font-size: 20px;
+    }
+
+    .issue-card p {
+      margin-top: 8px;
+
+      color: var(--muted);
+
+      font-size: 12px;
+    }
+
+    .issue-number {
+      margin-top: 25px;
+
+      font-family: "Space Grotesk", sans-serif;
+
+      font-size: 28px;
+      font-weight: 700;
+    }
+
+    .issue-change {
+      margin-top: 2px;
+
+      font-size: 11px;
+      font-weight: 700;
+    }
+
+    .bad {
+      color: var(--danger);
+    }
+
+    .good {
+      color: var(--success);
+    }
+
+    .neutral {
+      color: var(--warning);
+    }
+
+
+    /* =========================================================
+       PROGRAMS
+    ========================================================= */
+
+    .program-grid {
+      display: grid;
+
+      grid-template-columns: repeat(3,1fr);
+
+      gap: 18px;
+
+      margin-top: 55px;
+    }
+
+    .program-card {
+      position: relative;
+
+      padding: 30px;
+
+      min-height: 300px;
+
+      overflow: hidden;
+    }
+
+    .program-card::after {
+      content: "";
+
+      position: absolute;
+
+      width: 150px;
+      height: 150px;
+
+      right: -60px;
+      bottom: -60px;
+
+      border-radius: 50%;
+
+      background: rgba(184,242,107,.08);
+    }
+
+    .program-tag {
+      display: inline-block;
+
+      padding: 5px 9px;
+
+      border-radius: 999px;
+
+      background: rgba(184,242,107,.08);
+
+      color: var(--green);
+
+      font-size: 9px;
+      font-weight: 700;
+
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .program-card h3 {
+      margin-top: 22px;
+
+      font-family: "Space Grotesk", sans-serif;
+
+      font-size: 25px;
+    }
+
+    .program-card p {
+      margin-top: 10px;
+
+      color: var(--muted);
+
+      font-size: 13px;
+    }
+
+    .program-result {
+      position: absolute;
+
+      left: 30px;
+      bottom: 25px;
+
+      color: white;
+
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .program-result strong {
+      color: var(--green);
+    }
+
+
+    /* =========================================================
+       IMPACT MODEL
+    ========================================================= */
+
+    .impact-flow {
+      margin-top: 60px;
+
+      display: grid;
+
+      grid-template-columns: repeat(4,1fr);
+
+      gap: 14px;
+    }
+
+    .impact-step {
+      position: relative;
+
+      padding: 32px 25px;
+
+      min-height: 230px;
+    }
+
+    .impact-step:not(:last-child)::after {
+      content: "→";
+
+      position: absolute;
+
+      right: -15px;
+      top: 50%;
+
+      transform: translateY(-50%);
+
+      z-index: 3;
+
+      color: var(--green);
+
+      font-size: 22px;
+    }
+
+    .impact-step-number {
+      color: var(--green);
+
+      font-family: "Space Grotesk", sans-serif;
+
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .impact-step h3 {
+      margin-top: 25px;
+
+      font-family: "Space Grotesk", sans-serif;
+
+      font-size: 23px;
+    }
+
+    .impact-step p {
+      margin-top: 8px;
+
+      color: var(--muted);
+
+      font-size: 12px;
+    }
+
+    .impact-note {
+      margin-top: 25px;
+
+      padding: 20px 25px;
+
+      border-left: 3px solid var(--green);
+
+      background: rgba(184,242,107,.04);
+
+      color: #abb8b0;
+
+      font-size: 13px;
+    }
+
+
+    /* =========================================================
+       TARGET
+    ========================================================= */
+
+    .target-grid {
+      display: grid;
+
+      grid-template-columns: 1fr 1fr;
+
+      gap: 18px;
+
+      margin-top: 55px;
+    }
+
+    .target-card {
+      padding: 27px;
+    }
+
+    .target-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .target-name {
+      font-weight: 700;
+      font-size: 14px;
+    }
+
+    .target-status {
+      font-size: 10px;
+      font-weight: 700;
+
+      color: var(--green);
+
+      text-transform: uppercase;
+    }
+
+    .target-numbers {
+      display: flex;
+      justify-content: space-between;
+
+      margin-top: 22px;
+
+      font-family: "Space Grotesk", sans-serif;
+    }
+
+    .target-current {
+      font-size: 31px;
+    }
+
+    .target-goal {
+      color: #7c8a82;
+
+      font-size: 17px;
+    }
+
+    .progress {
+      width: 100%;
+      height: 8px;
+
+      margin-top: 15px;
+
+      overflow: hidden;
+
+      border-radius: 99px;
+
+      background: rgba(255,255,255,.07);
+    }
+
+    .progress-bar {
+      height: 100%;
+
+      border-radius: inherit;
+
+      background: linear-gradient(
+        90deg,
+        var(--green-dark),
+        var(--green)
+      );
+
+      width: var(--progress);
+
+      transition: width 1.5s ease;
+    }
+
+    .target-description {
+      margin-top: 10px;
+
+      color: var(--muted);
+
+      font-size: 11px;
+    }
+
+
+    /* =========================================================
+       GREENWASHING CHECKER
+    ========================================================= */
+
+    .checker {
+      margin-top: 60px;
+
+      padding: 45px;
+    }
+
+    .checker-grid {
+      display: grid;
+
+      grid-template-columns: 1fr .8fr;
+
+      gap: 50px;
+
+      align-items: center;
+    }
+
+    .checker h3 {
+      font-family: "Space Grotesk", sans-serif;
+
+      font-size: 38px;
+
+      letter-spacing: -.04em;
+    }
+
+    .checker p {
+      margin-top: 12px;
+
+      color: var(--muted);
+
+      font-size: 14px;
+    }
+
+    .checks {
+      margin-top: 28px;
+
+      display: grid;
+
+      gap: 10px;
+    }
+
+    .check-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+
+      padding: 13px 15px;
+
+      border: 1px solid var(--line);
+      border-radius: 12px;
+
+      background: rgba(255,255,255,.025);
+
+      color: #c3cec7;
+
+      font-size: 12px;
+    }
+
+    .check-dot {
+      width: 9px;
+      height: 9px;
+
+      flex-shrink: 0;
+
+      border-radius: 50%;
+    }
+
+    .check-good {
+      background: var(--success);
+      box-shadow: 0 0 12px rgba(142,228,110,.4);
+    }
+
+    .check-warn {
+      background: var(--warning);
+      box-shadow: 0 0 12px rgba(255,200,91,.4);
+    }
+
+    .verdict-circle {
+      width: 260px;
+      height: 260px;
+
+      margin: auto;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      border-radius: 50%;
+
+      border: 1px solid rgba(255,200,91,.3);
+
+      background:
+        radial-gradient(
+          circle,
+          rgba(255,200,91,.09),
+          transparent 68%
+        );
+
+      text-align: center;
+    }
+
+    .verdict-circle small {
+      color: var(--warning);
+
+      font-size: 10px;
+      font-weight: 700;
+
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+
+    .verdict-circle strong {
+      margin-top: 7px;
+
+      font-family: "Space Grotesk", sans-serif;
+
+      font-size: 28px;
+    }
+
+    .verdict-circle span {
+      margin-top: 5px;
+
+      max-width: 170px;
+
+      color: #929e97;
+
+      font-size: 10px;
+    }
+
+
+    /* =========================================================
+       STAKEHOLDERS
+    ========================================================= */
+
+    .stakeholder-grid {
+      display: grid;
+
+      grid-template-columns: repeat(3,1fr);
+
+      gap: 16px;
+
+      margin-top: 55px;
+    }
+
+    .stakeholder-card {
+      padding: 27px;
+    }
+
+    .stakeholder-card h3 {
+      font-family: "Space Grotesk", sans-serif;
+
+      font-size: 20px;
+    }
+
+    .stakeholder-card p {
+      margin-top: 8px;
+
+      color: var(--muted);
+
+      font-size: 12px;
+    }
+
+    .stakeholder-interest {
+      margin-top: 18px;
+
+      padding-top: 15px;
+
+      border-top: 1px solid var(--line);
+
+      color: #cbd4ce;
+
+      font-size: 11px;
+    }
+
+
+    /* =========================================================
+       EVIDENCE
+    ========================================================= */
+
+    .evidence-list {
+      margin-top: 55px;
+
+      display: grid;
+
+      gap: 12px;
+    }
+
+    .evidence-row {
+      display: grid;
+
+      grid-template-columns: 70px 1fr 160px;
+
+      align-items: center;
+
+      gap: 20px;
+
+      padding: 23px 25px;
+
+      border: 1px solid var(--line);
+
+      border-radius: 17px;
+
+      background: rgba(255,255,255,.025);
+    }
+
+    .evidence-number {
+      color: var(--green);
+
+      font-family: "Space Grotesk", sans-serif;
+
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .evidence-content h3 {
+      font-size: 15px;
+    }
+
+    .evidence-content p {
+      margin-top: 3px;
+
+      color: var(--muted);
+
+      font-size: 11px;
+    }
+
+    .evidence-status {
+      text-align: right;
+
+      color: var(--green);
+
+      font-size: 10px;
+      font-weight: 700;
+
+      text-transform: uppercase;
+    }
+
+
+    /* =========================================================
+       GOOD VS WORK
+    ========================================================= */
+
+    .split-grid {
+      display: grid;
+
+      grid-template-columns: 1fr 1fr;
+
+      gap: 18px;
+
+      margin-top: 55px;
+    }
+
+    .split-card {
+      padding: 35px;
+    }
+
+    .split-card.good-card {
+      border-color: rgba(142,228,110,.18);
+    }
+
+    .split-card.work-card {
+      border-color: rgba(255,117,107,.18);
+    }
+
+    .split-label {
+      font-size: 11px;
+      font-weight: 700;
+
+      letter-spacing: .13em;
+      text-transform: uppercase;
+    }
+
+    .good-card .split-label {
+      color: var(--success);
+    }
+
+    .work-card .split-label {
+      color: var(--danger);
+    }
+
+    .split-card h3 {
+      margin-top: 10px;
+
+      font-family: "Space Grotesk", sans-serif;
+
+      font-size: 30px;
+    }
+
+    .split-list {
+      margin-top: 25px;
+
+      display: grid;
+
+      gap: 13px;
+    }
+
+    .split-list li {
+      list-style: none;
+
+      position: relative;
+
+      padding-left: 20px;
+
+      color: #adb9b1;
+
+      font-size: 13px;
+    }
+
+    .split-list li::before {
+      content: "•";
+
+      position: absolute;
+      left: 0;
+
+      color: var(--green);
+
+      font-size: 18px;
+    }
+
+    .work-card .split-list li::before {
+      color: var(--danger);
+    }
+
+
+    /* =========================================================
+       VERDICT
+    ========================================================= */
+
+    .verdict-section {
+      padding-top: 150px;
+      padding-bottom: 150px;
+    }
+
+    .verdict-card {
+      padding: clamp(35px, 8vw, 100px);
+
+      text-align: center;
+
+      background:
+        radial-gradient(
+          circle at center,
+          rgba(184,242,107,.10),
+          transparent 55%
+        ),
+        rgba(255,255,255,.025);
+    }
+
+    .verdict-card h2 {
+      max-width: 950px;
+
+      margin: 25px auto 0;
+
+      font-family: "Space Grotesk", sans-serif;
+
+      font-size: clamp(45px, 7vw, 92px);
+
+      line-height: .92;
+
+      letter-spacing: -.065em;
+    }
+
+    .verdict-card h2 span {
+      color: var(--green);
+    }
+
+    .verdict-card p {
+      max-width: 650px;
+
+      margin: 30px auto 0;
+
+      color: var(--muted);
+
+      font-size: 16px;
+    }
+
+    .verdict-pills {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+
+      gap: 10px;
+
+      margin-top: 30px;
+    }
+
+    .pill {
+      padding: 9px 14px;
+
+      border: 1px solid var(--line);
+
+      border-radius: 999px;
+
+      color: #b9c5bd;
+
+      font-size: 11px;
+      font-weight: 700;
+    }
+
+
+    /* =========================================================
+       RECOMMENDATIONS
+    ========================================================= */
+
+    .recommendation-grid {
+      display: grid;
+
+      grid-template-columns: repeat(3,1fr);
+
+      gap: 17px;
+
+      margin-top: 55px;
+    }
+
+    .recommendation {
+      padding: 30px;
+    }
+
+    .recommendation-number {
+      color: var(--green);
+
+      font-family: "Space Grotesk", sans-serif;
+
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .recommendation h3 {
+      margin-top: 22px;
+
+      font-family: "Space Grotesk", sans-serif;
+
+      font-size: 22px;
+    }
+
+    .recommendation p {
+      margin-top: 9px;
+
+      color: var(--muted);
+
+      font-size: 12px;
+    }
+
+    .recommendation-meta {
+      margin-top: 25px;
+
+      padding-top: 15px;
+
+      border-top: 1px solid var(--line);
+
+      display: grid;
+
+      gap: 6px;
+
+      font-size: 10px;
+
+      color: #849188;
+    }
+
+    .recommendation-meta strong {
+      color: #c8d2cb;
+    }
+
+
+    /* =========================================================
+       FOOTER
+    ========================================================= */
+
+    footer {
+      padding: 70px 0 35px;
+
+      border-top: 1px solid var(--line);
+    }
+
+    .footer-top {
+      display: flex;
+
+      justify-content: space-between;
+      gap: 40px;
+    }
+
+    .footer-brand {
+      max-width: 500px;
+    }
+
+    .footer-brand h3 {
+      font-family: "Space Grotesk", sans-serif;
+
+      font-size: 30px;
+
+      letter-spacing: -.04em;
+    }
+
+    .footer-brand p {
+      margin-top: 10px;
+
+      color: var(--muted);
+
+      font-size: 12px;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+
+      gap: 15px;
+
+      max-width: 400px;
+
+      justify-content: flex-end;
+    }
+
+    .footer-links a {
+      color: #87958c;
+
+      font-size: 11px;
+    }
+
+    .footer-links a:hover {
+      color: var(--green);
+    }
+
+    .footer-bottom {
+      display: flex;
+
+      justify-content: space-between;
+
+      margin-top: 65px;
+      padding-top: 20px;
+
+      border-top: 1px solid var(--line);
+
+      color: #66746c;
+
+      font-size: 10px;
+    }
+
+
+    /* =========================================================
+       REVEAL ANIMATION
+    ========================================================= */
+
+    .reveal {
+      opacity: 0;
+
+      transform: translateY(30px);
+
+      transition:
+        opacity .8s ease,
+        transform .8s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+
+    /* =========================================================
+       RESPONSIVE TABLET
+    ========================================================= */
+
+    @media (max-width: 1000px) {
+
+      .nav-links {
+        display: none;
+      }
+
+      .mobile-menu {
+        display: block;
+      }
+
+      .nav-button {
+        display: none;
+      }
+
+      .team-grid {
+        grid-template-columns: repeat(2,1fr);
+      }
+
+      .issue-grid {
+        grid-template-columns: repeat(2,1fr);
+      }
+
+      .program-grid {
+        grid-template-columns: repeat(2,1fr);
+      }
+
+      .stakeholder-grid {
+        grid-template-columns: repeat(2,1fr);
+      }
+
+      .recommendation-grid {
+        grid-template-columns: repeat(2,1fr);
+      }
+
+      .impact-flow {
+        grid-template-columns: repeat(2,1fr);
+      }
+
+      .impact-step:not(:last-child)::after {
+        display: none;
+      }
+    }
+
+
+    /* =========================================================
+       RESPONSIVE MOBILE
+    ========================================================= */
+
+    @media (max-width: 700px) {
+
+      .container {
+        width: min(100% - 28px, var(--container));
+      }
+
+      section {
+        padding: 85px 0;
+      }
+
+      .navbar {
+        height: 65px;
+      }
+
+      .logo {
+        font-size: 13px;
+      }
+
+      .hero {
+        min-height: auto;
+
+        padding-top: 130px;
+        padding-bottom: 70px;
+      }
+
+      .hero h1 {
+        font-size: clamp(54px, 17vw, 88px);
+      }
+
+      .hero-subtitle {
+        font-size: 15px;
+      }
+
+      .hero-bottom {
+        grid-template-columns: 1fr;
+
+        margin-top: 65px;
+      }
+
+      .hero-stat {
+        border-right: 0;
+
+        border-bottom: 1px solid var(--line);
+
+        padding: 18px 0 !important;
+      }
+
+      .hero-stat:last-child {
+        border-bottom: 0;
+      }
+
+      .hero-stat-number {
+        font-size: 28px;
+      }
+
+      .section-title {
+        font-size: 45px;
+      }
+
+      .section-description {
+        font-size: 14px;
+      }
+
+      .team-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .team-card {
+        min-height: 340px;
+      }
+
+      .team-photo {
+        height: 215px;
+      }
+
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .about-main {
+        padding: 27px;
+      }
+
+      .about-main p {
+        font-size: 15px;
+      }
+
+      .question-section {
+        min-height: auto;
+      }
+
+      .question-box {
+        padding: 30px 23px;
+        border-radius: 25px;
+      }
+
+      .question {
+        font-size: 48px;
+      }
+
+      .question-description {
+        font-size: 14px;
+      }
+
+      .context-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .process {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .issue-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .program-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .impact-flow {
+        grid-template-columns: 1fr;
+      }
+
+      .impact-step {
+        min-height: auto;
+      }
+
+      .target-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .checker {
+        padding: 27px;
+      }
+
+      .checker-grid {
+        grid-template-columns: 1fr;
+
+        gap: 40px;
+      }
+
+      .checker h3 {
+        font-size: 31px;
+      }
+
+      .verdict-circle {
+        width: 220px;
+        height: 220px;
+      }
+
+      .stakeholder-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .evidence-row {
+        grid-template-columns: 45px 1fr;
+
+        gap: 13px;
+      }
+
+      .evidence-status {
+        grid-column: 2;
+
+        text-align: left;
+      }
+
+      .split-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .recommendation-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .verdict-card {
+        padding: 45px 23px;
+      }
+
+      .verdict-card h2 {
+        font-size: 49px;
+      }
+
+      .footer-top {
+        flex-direction: column;
+      }
+
+      .footer-links {
+        justify-content: flex-start;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        gap: 7px;
+      }
+
+    }
+
+
+    /* =========================================================
+       VERY SMALL DEVICES
+    ========================================================= */
+
+    @media (max-width: 380px) {
+
+      .hero h1 {
+        font-size: 49px;
+      }
+
+      .section-title {
+        font-size: 39px;
+      }
+
+      .question {
+        font-size: 42px;
+      }
+
+      .verdict-card h2 {
+        font-size: 42px;
+      }
+
+    }
+
+  </style>
+</head>
+
+
+<body>
+
+
+  <!-- ========================================================
+       NAVIGATION
+  ========================================================= -->
+
+  <header class="navbar" id="navbar">
+
+    <div class="nav-inner">
+
+      <a href="#home" class="logo">
+        <span class="logo-mark">G</span>
+        GREEN EVIDENCE
+      </a>
+
+      <nav class="nav-links">
+
+        <a href="#team">Team</a>
+        <a href="#project">Project</a>
+        <a href="#issues">Issues</a>
+        <a href="#programs">CSR</a>
+        <a href="#checker">Greenwashing</a>
+        <a href="#verdict">Verdict</a>
+
+      </nav>
+
+      <a href="#evidence" class="nav-button">
+        Evidence Room ↗
+      </a>
+
+      <button class="mobile-menu" id="mobileMenu">
+        ☰
+      </button>
+
+    </div>
+
+  </header>
+
+
+
+  <!-- ========================================================
+       HERO
+  ======================================================== -->
+
+  <main>
+
+    <section class="hero" id="home">
+
+      <div class="container">
+
+        <div class="hero-content reveal">
+
+          <div class="hero-kicker">
+            <span class="eyebrow">
+              Environmental CSR Assessment
+            </span>
+          </div>
+
+          <h1>
+            GREEN<br>
+            CLAIMS.<br>
+            <span class="green">REAL EVIDENCE.</span>
+          </h1>
+
+          <p class="hero-subtitle">
+            An environmental CSR assessment of
+            <strong>PT Indah Kiat Pulp & Paper Tbk.</strong>
+            We don't simply ask what the company claims.
+            <strong>We ask what the evidence shows.</strong>
+          </p>
+
+          <div class="hero-actions">
+
+            <a href="#question" class="btn btn-primary">
+              Explore the Assessment
+              →
+            </a>
+
+            <a href="#evidence" class="btn btn-secondary">
+              View Evidence
+            </a>
+
+          </div>
+
+
+          <div class="hero-bottom">
+
+            <div class="hero-stat">
+
+              <div class="hero-stat-number">
+                6.34M
+              </div>
+
+              <div class="hero-stat-label">
+                Scope 1 emissions · tCO₂e
+              </div>
+
+            </div>
+
+
+            <div class="hero-stat">
+
+              <div class="hero-stat-number">
+                54%
+              </div>
+
+              <div class="hero-stat-label">
+                Renewable energy
+              </div>
+
+            </div>
+
+
+            <div class="hero-stat">
+
+              <div class="hero-stat-number">
+                52%
+              </div>
+
+              <div class="hero-stat-label">
+                Recycled fiber
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ======================================================
+         MARQUEE
+    ====================================================== -->
+
+    <div class="marquee">
+
+      <div class="marquee-track">
+
+        <span class="marquee-item">CSR</span>
+        <span class="marquee-item">ESG</span>
+        <span class="marquee-item">Sustainability</span>
+        <span class="marquee-item">Environmental Impact</span>
+        <span class="marquee-item">Greenwashing</span>
+        <span class="marquee-item">Stakeholders</span>
+        <span class="marquee-item">Evidence</span>
+
+        <span class="marquee-item">CSR</span>
+        <span class="marquee-item">ESG</span>
+        <span class="marquee-item">Sustainability</span>
+        <span class="marquee-item">Environmental Impact</span>
+        <span class="marquee-item">Greenwashing</span>
+        <span class="marquee-item">Stakeholders</span>
+        <span class="marquee-item">Evidence</span>
+
+      </div>
+
+    </div>
+
+
+
+    <!-- ======================================================
+         TEAM
+    ====================================================== -->
+
+    <section id="team">
+
+      <div class="container">
+
+        <span class="eyebrow reveal">
+          01 · The Team
+        </span>
+
+        <h2 class="section-title reveal">
+          Meet the <span>team.</span>
+        </h2>
+
+        <p class="section-description reveal">
+          A collaborative assessment built through research,
+          analysis, environmental evaluation, and critical review.
+        </p>
+
+
+        <div class="team-grid">
+
+          <!-- MEMBER 1 -->
+
+          <article class="team-card reveal">
+
+            <div class="team-photo">
+              01
+            </div>
+
+            <div class="team-info">
+
+              <div class="team-role">
+                Project Lead
+              </div>
+
+              <h3 class="team-name">
+                [NAMA ANGGOTA]
+              </h3>
+
+              <p class="team-desc">
+                Koordinasi proyek & integrasi analisis.
+              </p>
+
+            </div>
+
+          </article>
+
+
+          <!-- MEMBER 2 -->
+
+          <article class="team-card reveal">
+
+            <div class="team-photo">
+              02
+            </div>
+
+            <div class="team-info">
+
+              <div class="team-role">
+                Impact Analyst
+              </div>
+
+              <h3 class="team-name">
+                [NAMA ANGGOTA]
+              </h3>
+
+              <p class="team-desc">
+                Analisis dampak lingkungan & sosial.
+              </p>
+
+            </div>
+
+          </article>
+
+
+          <!-- MEMBER 3 -->
+
+          <article class="team-card reveal">
+
+            <div class="team-photo">
+              03
+            </div>
+
+            <div class="team-info">
+
+              <div class="team-role">
+                ESG Analyst
+              </div>
+
+              <h3 class="team-name">
+                [NAMA ANGGOTA]
+              </h3>
+
+              <p class="team-desc">
+                Analisis ESG, sustainability & target.
+              </p>
+
+            </div>
+
+          </article>
+
+
+          <!-- MEMBER 4 -->
+
+          <article class="team-card reveal">
+
+            <div class="team-photo">
+              04
+            </div>
+
+            <div class="team-info">
+
+              <div class="team-role">
+                Research & Design
+              </div>
+
+              <h3 class="team-name">
+                [NAMA ANGGOTA]
+              </h3>
+
+              <p class="team-desc">
+                Riset sumber, visualisasi & dokumentasi.
+              </p>
+
+            </div>
+
+          </article>
+
+        </div>
+
+
+        <p class="team-note">
+          * Ganti [NAMA ANGGOTA] dengan nama anggota kelompok.
+          Bagian foto juga dapat diganti dengan foto masing-masing anggota.
+        </p>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ======================================================
+         ABOUT PROJECT
+    ====================================================== -->
+
+    <section id="project">
+
+      <div class="container">
+
+        <span class="eyebrow reveal">
+          02 · About the Project
+        </span>
+
+        <h2 class="section-title reveal">
+          Not a company profile.<br>
+          An <span>assessment.</span>
+        </h2>
+
+
+        <div class="about-grid">
+
+          <div class="about-main glass reveal">
+
+            <p>
+              Website ini merupakan proyek akademik untuk menilai
+              praktik Corporate Social Responsibility (CSR)
+              lingkungan PT Indah Kiat Pulp & Paper Tbk.
+            </p>
+
+            <p>
+              Fokus kami bukan hanya melihat program yang dilakukan,
+              tetapi membandingkan antara klaim, target, data,
+              hasil, dampak, serta masalah yang masih tersisa.
+            </p>
+
+            <p>
+              Karena sebuah program lingkungan tidak otomatis berarti
+              dampak lingkungannya sudah selesai.
+            </p>
+
+          </div>
+
+
+          <div class="about-side">
+
+            <div class="focus-card glass reveal">
+
+              <div class="focus-number">01</div>
+
+              <h3>CSR</h3>
+
+              <p>
+                Menilai relevansi dan efektivitas program CSR
+                terhadap masalah lingkungan.
+              </p>
+
+            </div>
+
+
+            <div class="focus-card glass reveal">
+
+              <div class="focus-number">02</div>
+
+              <h3>ESG</h3>
+
+              <p>
+                Membaca kinerja lingkungan melalui indikator
+                yang terukur.
+              </p>
+
+            </div>
+
+
+            <div class="focus-card glass reveal">
+
+              <div class="focus-number">03</div>
+
+              <h3>Greenwashing</h3>
+
+              <p>
+                Menguji konsistensi antara klaim keberlanjutan
+                dan evidence yang tersedia.
+              </p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ======================================================
+         BIG QUESTION
+    ====================================================== -->
+
+    <section class="question-section" id="question">
+
+      <div class="container">
+
+        <div class="question-box reveal">
+
+          <div class="question-label">
+            The Big Question
+          </div>
+
+          <h2 class="question">
+            CSR LINGKUNGAN:<br>
+            <span class="dim">
+              SOLUSI NYATA
+            </span><br>
+            ATAU SEKADAR<br>
+            <span>GREEN IMAGE?</span>
+          </h2>
+
+          <p class="question-description">
+            We don't simply ask what the company says.
+            We compare the narrative against the numbers,
+            targets, disclosures, and remaining environmental risks.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ======================================================
+         COMPANY CONTEXT
+    ====================================================== -->
+
+    <section id="company">
+
+      <div class="container">
+
+        <span class="eyebrow reveal">
+          03 · Company & Context
+        </span>
+
+        <h2 class="section-title reveal">
+          Understanding the <span>context.</span>
+        </h2>
+
+        <p class="section-description reveal">
+          Operasional industri pulp & paper memiliki potensi dampak
+          lingkungan yang bersifat struktural: emisi, penggunaan air,
+          air limbah, limbah, serta bahan baku kayu.
+        </p>
+
+
+        <div class="context-grid">
+
+          <article class="context-card glass reveal">
+
+            <h3>
+              Resource-intensive by nature.
+            </h3>
+
+            <p>
+              Potensi dampak lingkungan bukan hanya berasal dari
+              aktivitas CSR atau satu program tertentu, tetapi juga
+              dari karakteristik proses produksi pulp & paper.
+            </p>
+
+
+            <div class="process">
+
+              <div class="process-item">
+                <span>01</span>
+                Raw Material
+              </div>
+
+              <div class="process-item">
+                <span>02</span>
+                Production
+              </div>
+
+              <div class="process-item">
+                <span>03</span>
+                Resource Use
+              </div>
+
+              <div class="process-item">
+                <span>04</span>
+                Environmental Output
+              </div>
+
+            </div>
+
+          </article>
+
+
+          <article class="context-card glass reveal">
+
+            <h3>
+              The assessment lens.
+            </h3>
+
+            <p>
+              Kami melihat CSR sebagai bagian dari sistem pengelolaan
+              dampak, bukan sebagai pengganti pengendalian dampak
+              operasional utama.
+            </p>
+
+            <p>
+              Karena itu, indikator negatif juga tetap diperhatikan
+              ketika mengevaluasi keberhasilan program.
+            </p>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ======================================================
+         ENVIRONMENTAL ISSUES
+    ====================================================== -->
+
+    <section id="issues">
+
+      <div class="container">
+
+        <span class="eyebrow reveal">
+          04 · Environmental Issues
+        </span>
+
+        <h2 class="section-title reveal">
+          The numbers tell<br>
+          a <span>complex story.</span>
+        </h2>
+
+        <p class="section-description reveal">
+          Ada progres nyata, tetapi beberapa indikator lingkungan
+          justru bergerak ke arah yang berlawanan dengan target.
+        </p>
+
+
+        <div class="issue-grid">
+
+
+          <article class="issue-card glass reveal">
+
+            <div class="issue-icon">
+              CO₂
+            </div>
+
+            <h3>
+              Scope 1 Emissions
+            </h3>
+
+            <p>
+              Emisi langsung dari aktivitas operasional.
+            </p>
+
+            <div class="issue-number">
+              6.34M
+            </div>
+
+            <div class="issue-change bad">
+              Carbon intensity: 1.08 → 1.17 tCO₂e/ton
+            </div>
+
+          </article>
+
+
+          <article class="issue-card glass reveal">
+
+            <div class="issue-icon">
+              SO₂
+            </div>
+
+            <h3>
+              Air Pollution
+            </h3>
+
+            <p>
+              Parameter SO₂ mengalami peningkatan.
+            </p>
+
+            <div class="issue-number">
+              230.02
+            </div>
+
+            <div class="issue-change bad">
+              mg/Nm³ · 141.8 → 230.02
+            </div>
+
+          </article>
+
+
+          <article class="issue-card glass reveal">
+
+            <div class="issue-icon">
+              H₂O
+            </div>
+
+            <h3>
+              Wastewater
+            </h3>
+
+            <p>
+              Chemical Oxygen Demand pada air limbah.
+            </p>
+
+            <div class="issue-number">
+              150.97
+            </div>
+
+            <div class="issue-change bad">
+              COD mg/l · 137.8 → 150.97
+            </div>
+
+          </article>
+
+
+          <article class="issue-card glass reveal">
+
+            <div class="issue-icon">
+              ♻
+            </div>
+
+            <h3>
+              B3 Waste
+            </h3>
+
+            <p>
+              Limbah B3 tetap besar tetapi turun dari baseline.
+            </p>
+
+            <div class="issue-number">
+              364,294
+            </div>
+
+            <div class="issue-change good">
+              tons · turun dari baseline 768,431
+            </div>
+
+          </article>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ======================================================
+         CSR PROGRAMS
+    ====================================================== -->
+
+    <section id="programs">
+
+      <div class="container">
+
+        <span class="eyebrow reveal">
+          05 · CSR Programs
+        </span>
+
+        <h2 class="section-title reveal">
+          From programs<br>
+          to <span>real actions.</span>
+        </h2>
+
+        <p class="section-description reveal">
+          Program-program berikut dinilai bukan hanya berdasarkan
+          keberadaannya, tetapi juga output, outcome, dan dampaknya.
+        </p>
+
+
+        <div class="program-grid">
+
+
+          <article class="program-card glass reveal">
+
+            <span class="program-tag">
+              Community
+            </span>
+
+            <h3>
+              Bank Sampah Digital
+            </h3>
+
+            <p>
+              Program pengelolaan sampah berbasis masyarakat
+              di Serang untuk mendorong partisipasi dan
+              pengelolaan sampah yang lebih terstruktur.
+            </p>
+
+            <div class="program-result">
+              <strong>~120 ton/tahun</strong> · 4,700+ members
+            </div>
+
+          </article>
+
+
+          <article class="program-card glass reveal">
+
+            <span class="program-tag">
+              Biodiversity
+            </span>
+
+            <h3>
+              Mangrove Restoration
+            </h3>
+
+            <p>
+              Rehabilitasi ekosistem pesisir melalui penanaman
+              dan pemulihan kawasan mangrove.
+            </p>
+
+            <div class="program-result">
+              <strong>~173,000</strong> seedlings
+            </div>
+
+          </article>
+
+
+          <article class="program-card glass reveal">
+
+            <span class="program-tag">
+              Energy
+            </span>
+
+            <h3>
+              Renewable Energy
+            </h3>
+
+            <p>
+              Peningkatan energi terbarukan melalui solar PV,
+              biogas, serta pemanfaatan RDF sebagai bagian
+              dari transisi energi.
+            </p>
+
+            <div class="program-result">
+              <strong>54%</strong> renewable energy
+            </div>
+
+          </article>
+
+
+          <article class="program-card glass reveal">
+
+            <span class="program-tag">
+              Circularity
+            </span>
+
+            <h3>
+              Recycled Fiber
+            </h3>
+
+            <p>
+              Peningkatan penggunaan serat daur ulang sebagai
+              bagian dari pendekatan ekonomi sirkular.
+            </p>
+
+            <div class="program-result">
+              <strong>52%</strong> recycled fiber
+            </div>
+
+          </article>
+
+
+          <article class="program-card glass reveal">
+
+            <span class="program-tag">
+              Waste
+            </span>
+
+            <h3>
+              Waste Management
+            </h3>
+
+            <p>
+              Upaya mengurangi dan mengelola limbah B3
+              serta berbagai jenis limbah operasional.
+            </p>
+
+            <div class="program-result">
+              <strong>&gt;50%</strong> reduction vs 2018 baseline
+            </div>
+
+          </article>
+
+
+          <article class="program-card glass reveal">
+
+            <span class="program-tag">
+              Conservation
+            </span>
+
+            <h3>
+              Biodiversity Conservation
+            </h3>
+
+            <p>
+              Kemitraan konservasi biodiversitas dengan
+              lembaga dan organisasi terkait untuk mitigasi
+              risiko ekosistem dan satwa.
+            </p>
+
+            <div class="program-result">
+              <strong>Multi-year</strong> partnerships
+            </div>
+
+          </article>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ======================================================
+         IMPACT MODEL
+    ====================================================== -->
+
+    <section id="impact">
+
+      <div class="container">
+
+        <span class="eyebrow reveal">
+          06 · Impact Assessment
+        </span>
+
+        <h2 class="section-title reveal">
+          Don't confuse<br>
+          <span>output</span> with impact.
+        </h2>
+
+        <p class="section-description reveal">
+          Sebuah program dapat menghasilkan output yang besar,
+          tetapi dampak jangka panjang harus dibuktikan dengan
+          indikator outcome dan impact.
+        </p>
+
+
+        <div class="impact-flow">
+
+
+          <article class="impact-step glass reveal">
+
+            <div class="impact-step-number">
+              01 · INPUT
+            </div>
+
+            <h3>
+              Resources
+            </h3>
+
+            <p>
+              Dana, manusia, teknologi, fasilitas,
+              energi, kemitraan, dan sumber daya lain.
+            </p>
+
+          </article>
+
+
+          <article class="impact-step glass reveal">
+
+            <div class="impact-step-number">
+              02 · OUTPUT
+            </div>
+
+            <h3>
+              Activities
+            </h3>
+
+            <p>
+              Contoh: jumlah bibit ditanam,
+              volume sampah dikelola,
+              kapasitas solar PV.
+            </p>
+
+          </article>
+
+
+          <article class="impact-step glass reveal">
+
+            <div class="impact-step-number">
+              03 · OUTCOME
+            </div>
+
+            <h3>
+              Change
+            </h3>
+
+            <p>
+              Perubahan perilaku, kualitas lingkungan,
+              pengurangan risiko, atau efisiensi.
+            </p>
+
+          </article>
+
+
+          <article class="impact-step glass reveal">
+
+            <div class="impact-step-number">
+              04 · IMPACT
+            </div>
+
+            <h3>
+              Long-term
+            </h3>
+
+            <p>
+              Perubahan lingkungan dan sosial
+              yang bertahan dalam jangka panjang.
+            </p>
+
+          </article>
+
+
+        </div>
+
+
+        <div class="impact-note reveal">
+          <strong>Critical lens:</strong>
+          173.000 bibit mangrove adalah output.
+          Untuk menyebutnya sebagai impact, diperlukan bukti
+          seperti survival rate, perubahan kondisi ekosistem,
+          kualitas pesisir, dan manfaat jangka panjang.
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ======================================================
+         TARGET VS REALIZATION
+    ====================================================== -->
+
+    <section id="targets">
+
+      <div class="container">
+
+        <span class="eyebrow reveal">
+          07 · Target vs Realization
+        </span>
+
+        <h2 class="section-title reveal">
+          What was <span>promised</span><br>
+          vs what was achieved.
+        </h2>
+
+        <p class="section-description reveal">
+          SRV2030 menjadi benchmark utama untuk membaca
+          konsistensi target lingkungan perusahaan.
+        </p>
+
+
+        <div class="target-grid">
+
+
+          <article class="target-card glass reveal">
+
+            <div class="target-top">
+
+              <span class="target-name">
+                Renewable Energy
+              </span>
+
+              <span class="target-status">
+                Achieved
+              </span>
+
+            </div>
+
+            <div class="target-numbers">
+
+              <span class="target-current">
+                54%
+              </span>
+
+              <span class="target-goal">
+                ≥ 50%
+              </span>
+
+            </div>
+
+            <div class="progress">
+              <div class="progress-bar" style="--progress:100%"></div>
+            </div>
+
+            <p class="target-description">
+              Target minimum 50% energi terbarukan.
+            </p>
+
+          </article>
+
+
+          <article class="target-card glass reveal">
+
+            <div class="target-top">
+
+              <span class="target-name">
+                Recycled Fiber
+              </span>
+
+              <span class="target-status">
+                Strong Progress
+              </span>
+
+            </div>
+
+            <div class="target-numbers">
+
+              <span class="target-current">
+                52%
+              </span>
+
+              <span class="target-goal">
+                ≥ 30%
+              </span>
+
+            </div>
+
+            <div class="progress">
+              <div class="progress-bar" style="--progress:100%"></div>
+            </div>
+
+            <p class="target-description">
+              Penggunaan serat daur ulang menunjukkan progres kuat.
+            </p>
+
+          </article>
+
+
+          <article class="target-card glass reveal">
+
+            <div class="target-top">
+
+              <span class="target-name">
+                Carbon Intensity
+              </span>
+
+              <span class="target-status">
+                Needs Improvement
+              </span>
+
+            </div>
+
+            <div class="target-numbers">
+
+              <span class="target-current">
+                8%
+              </span>
+
+              <span class="target-goal">
+                −30%
+              </span>
+
+            </div>
+
+            <div class="progress">
+              <div class="progress-bar" style="--progress:27%"></div>
+            </div>
+
+            <p class="target-description">
+              Progress terhadap target pengurangan intensitas karbon.
+            </p>
+
+          </article>
+
+
+          <article class="target-card glass reveal">
+
+            <div class="target-top">
+
+              <span class="target-name">
+                Energy Intensity
+              </span>
+
+              <span class="target-status">
+                Needs Improvement
+              </span>
+
+            </div>
+
+            <div class="target-numbers">
+
+              <span class="target-current">
+                10%
+              </span>
+
+              <span class="target-goal">
+                −25%
+              </span>
+
+            </div>
+
+            <div class="progress">
+              <div class="progress-bar" style="--progress:40%"></div>
+            </div>
+
+            <p class="target-description">
+              Progress masih membutuhkan akselerasi.
+            </p>
+
+          </article>
+
+
+          <article class="target-card glass reveal">
+
+            <div class="target-top">
+
+              <span class="target-name">
+                Water Intensity
+              </span>
+
+              <span class="target-status">
+                Needs Improvement
+              </span>
+
+            </div>
+
+            <div class="target-numbers">
+
+              <span class="target-current">
+                7%
+              </span>
+
+              <span class="target-goal">
+                −30%
+              </span>
+
+            </div>
+
+            <div class="progress">
+              <div class="progress-bar" style="--progress:23%"></div>
+            </div>
+
+            <p class="target-description">
+              Pengurangan penggunaan air belum mendekati target akhir.
+            </p>
+
+          </article>
+
+
+          <article class="target-card glass reveal">
+
+            <div class="target-top">
+
+              <span class="target-name">
+                Environmental Direction
+              </span>
+
+              <span class="target-status">
+                Mixed
+              </span>
+
+            </div>
+
+            <div class="target-numbers">
+
+              <span class="target-current">
+                MIXED
+              </span>
+
+              <span class="target-goal">
+                2030
+              </span>
+
+            </div>
+
+            <div class="progress">
+              <div class="progress-bar" style="--progress:58%"></div>
+            </div>
+
+            <p class="target-description">
+              Sebagian indikator positif, sebagian masih berlawanan arah.
+            </p>
+
+          </article>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ======================================================
+         GREENWASHING CHECKER
+    ====================================================== -->
+
+    <section id="checker">
+
+      <div class="container">
+
+        <span class="eyebrow reveal">
+          08 · Greenwashing Checker
+        </span>
+
+        <h2 class="section-title reveal">
+          Test the <span>claim.</span>
+        </h2>
+
+        <p class="section-description reveal">
+          Kami tidak langsung memberikan label greenwashing.
+          Kami menguji konsistensi antara klaim keberlanjutan
+          dengan evidence yang tersedia.
+        </p>
+
+
+        <div class="checker glass reveal">
+
+          <div class="checker-grid">
+
+
+            <div>
+
+              <h3>
+                Five evidence tests.
+              </h3>
+
+              <p>
+                Semakin banyak klaim yang memiliki data,
+                target, pengungkapan negatif, dan verifikasi,
+                semakin kuat kredibilitasnya.
+              </p>
+
+
+              <div class="checks">
+
+
+                <div class="check-item">
+
+                  <span class="check-dot check-good"></span>
+
+                  Evidence available
+
+                </div>
+
+
+                <div class="check-item">
+
+                  <span class="check-dot check-good"></span>
+
+                  Quantifiable targets
+
+                </div>
+
+
+                <div class="check-item">
+
+                  <span class="check-dot check-good"></span>
+
+                  External validation
+
+                </div>
+
+
+                <div class="check-item">
+
+                  <span class="check-dot check-warn"></span>
+
+                  Negative performance disclosed
+
+                </div>
+
+
+                <div class="check-item">
+
+                  <span class="check-dot check-warn"></span>
+
+                  Claim vs impact consistency
+
+                </div>
+
+
+              </div>
+
+            </div>
+
+
+            <div>
+
+              <div class="verdict-circle">
+
+                <small>
+                  Assessment
+                </small>
+
+                <strong>
+                  CAUTION
+                </strong>
+
+                <span>
+                  Not proven greenwashing.
+                  Consistency requires further review.
+                </span>
+
+              </div>
+
+            </div>
+
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ======================================================
+         STAKEHOLDERS
+    ====================================================== -->
+
+    <section id="stakeholders">
+
+      <div class="container">
+
+        <span class="eyebrow reveal">
+          09 · Stakeholders
+        </span>
+
+        <h2 class="section-title reveal">
+          Who <span>feels</span> the impact?
+        </h2>
+
+
+        <div class="stakeholder-grid">
+
+
+          <article class="stakeholder-card glass reveal">
+
+            <h3>
+              Local Community
+            </h3>
+
+            <p>
+              Masyarakat sekitar fasilitas operasional
+              merupakan pihak yang dapat merasakan dampak
+              lingkungan secara langsung.
+            </p>
+
+            <div class="stakeholder-interest">
+              Interest · Air quality, odor, noise, water
+            </div>
+
+          </article>
+
+
+          <article class="stakeholder-card glass reveal">
+
+            <h3>
+              Government
+            </h3>
+
+            <p>
+              Pemerintah dan regulator berperan dalam
+              pengawasan kepatuhan serta standar lingkungan.
+            </p>
+
+            <div class="stakeholder-interest">
+              Interest · Compliance & environmental standards
+            </div>
+
+          </article>
+
+
+          <article class="stakeholder-card glass reveal">
+
+            <h3>
+              Employees
+            </h3>
+
+            <p>
+              Karyawan berhubungan langsung dengan sistem
+              operasional, keselamatan, dan budaya sustainability.
+            </p>
+
+            <div class="stakeholder-interest">
+              Interest · Workplace & sustainability culture
+            </div>
+
+          </article>
+
+
+          <article class="stakeholder-card glass reveal">
+
+            <h3>
+              Consumers
+            </h3>
+
+            <p>
+              Konsumen semakin membutuhkan produk yang
+              memiliki klaim lingkungan yang kredibel.
+            </p>
+
+            <div class="stakeholder-interest">
+              Interest · Responsible products & transparency
+            </div>
+
+          </article>
+
+
+          <article class="stakeholder-card glass reveal">
+
+            <h3>
+              Investors
+            </h3>
+
+            <p>
+              Investor membutuhkan informasi yang konsisten
+              untuk menilai risiko ESG dan keberlanjutan.
+            </p>
+
+            <div class="stakeholder-interest">
+              Interest · ESG risk & long-term value
+            </div>
+
+          </article>
+
+
+          <article class="stakeholder-card glass reveal">
+
+            <h3>
+              Environmental Groups
+            </h3>
+
+            <p>
+              Organisasi lingkungan dapat menjadi mitra,
+              pengawas, sekaligus sumber perspektif independen.
+            </p>
+
+            <div class="stakeholder-interest">
+              Interest · Ecosystem & biodiversity
+            </div>
+
+          </article>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ======================================================
+         EVIDENCE ROOM
+    ====================================================== -->
+
+    <section id="evidence">
+
+      <div class="container">
+
+        <span class="eyebrow reveal">
+          10 · Evidence Room
+        </span>
+
+        <h2 class="section-title reveal">
+          Claims are easy.<br>
+          <span>Evidence matters.</span>
+        </h2>
+
+        <p class="section-description reveal">
+          Setiap kesimpulan seharusnya dapat ditelusuri kembali
+          ke data, disclosure, target, atau validasi eksternal.
+        </p>
+
+
+        <div class="evidence-list">
+
+
+          <div class="evidence-row reveal">
+
+            <div class="evidence-number">
+              01
+            </div>
+
+            <div class="evidence-content">
+
+              <h3>
+                Scope 1 emissions
+              </h3>
+
+              <p>
+                6.34 juta tCO₂e · carbon intensity 1.08 → 1.17
+              </p>
+
+            </div>
+
+            <div class="evidence-status">
+              Quantified
+            </div>
+
+          </div>
+
+
+          <div class="evidence-row reveal">
+
+            <div class="evidence-number">
+              02
+            </div>
+
+            <div class="evidence-content">
+
+              <h3>
+                SO₂ concentration
+              </h3>
+
+              <p>
+                141.8 → 230.02 mg/Nm³
+              </p>
+
+            </div>
+
+            <div class="evidence-status">
+              Negative trend
+            </div>
+
+          </div>
+
+
+          <div class="evidence-row reveal">
+
+            <div class="evidence-number">
+              03
+            </div>
+
+            <div class="evidence-content">
+
+              <h3>
+                Wastewater COD
+              </h3>
+
+              <p>
+                137.8 → 150.97 mg/l
+              </p>
+
+            </div>
+
+            <div class="evidence-status">
+              Negative trend
+            </div>
+
+          </div>
+
+
+          <div class="evidence-row reveal">
+
+            <div class="evidence-number">
+              04
+            </div>
+
+            <div class="evidence-content">
+
+              <h3>
+                B3 waste
+              </h3>
+
+              <p>
+                364,294 tons · baseline 768,431 tons
+              </p>
+
+            </div>
+
+            <div class="evidence-status">
+              Positive progress
+            </div>
+
+          </div>
+
+
+          <div class="evidence-row reveal">
+
+            <div class="evidence-number">
+              05
+            </div>
+
+            <div class="evidence-content">
+
+              <h3>
+                Renewable energy
+              </h3>
+
+              <p>
+                54% renewable energy
+              </p>
+
+            </div>
+
+            <div class="evidence-status">
+              Target achieved
+            </div>
+
+          </div>
+
+
+          <div class="evidence-row reveal">
+
+            <div class="evidence-number">
+              06
+            </div>
+
+            <div class="evidence-content">
+
+              <h3>
+                Recycled fiber
+              </h3>
+
+              <p>
+                52% recycled fiber
+              </p>
+
+            </div>
+
+            <div class="evidence-status">
+              Strong progress
+            </div>
+
+          </div>
+
+
+          <div class="evidence-row reveal">
+
+            <div class="evidence-number">
+              07
+            </div>
+
+            <div class="evidence-content">
+
+              <h3>
+                Administrative sanction
+              </h3>
+
+              <p>
+                Indah Kiat Serang · 2025
+              </p>
+
+            </div>
+
+            <div class="evidence-status">
+              Disclosed
+            </div>
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ======================================================
+         GOOD VS NEEDS WORK
+    ====================================================== -->
+
+    <section id="review">
+
+      <div class="container">
+
+        <span class="eyebrow reveal">
+          11 · Critical Review
+        </span>
+
+        <h2 class="section-title reveal">
+          What looks good.<br>
+          What still needs <span>work.</span>
+        </h2>
+
+
+        <div class="split-grid">
+
+
+          <article class="split-card glass good-card reveal">
+
+            <div class="split-label">
+              ✓ Positive Signals
+            </div>
+
+            <h3>
+              Real actions exist.
+            </h3>
+
+            <ul class="split-list">
+
+              <li>
+                Renewable energy reached 54%.
+              </li>
+
+              <li>
+                Recycled fiber reached 52%.
+              </li>
+
+              <li>
+                B3 waste decreased substantially from the 2018 baseline.
+              </li>
+
+              <li>
+                Solar PV capacity increased from 21.5 MWp to 32 MWp.
+              </li>
+
+              <li>
+                Biodiversity partnerships are multi-year.
+              </li>
+
+              <li>
+                External validation such as PROPER strengthens credibility.
+              </li>
+
+            </ul>
+
+          </article>
+
+
+          <article class="split-card glass work-card reveal">
+
+            <div class="split-label">
+              ! Still Needs Work
+            </div>
+
+            <h3>
+              Impact is not yet optimal.
+            </h3>
+
+            <ul class="split-list">
+
+              <li>
+                Carbon intensity increased from 1.08 to 1.17.
+              </li>
+
+              <li>
+                SO₂ increased from 141.8 to 230.02 mg/Nm³.
+              </li>
+
+              <li>
+                COD increased from 137.8 to 150.97 mg/l.
+              </li>
+
+              <li>
+                Carbon, energy, and water reduction targets remain challenging.
+              </li>
+
+              <li>
+                One administrative sanction was disclosed for Indah Kiat Serang.
+              </li>
+
+              <li>
+                Public complaint data lacks longer-term trend context.
+              </li>
+
+            </ul>
+
+          </article>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ======================================================
+         VERDICT
+    ====================================================== -->
+
+    <section class="verdict-section" id="verdict">
+
+      <div class="container">
+
+        <div class="verdict-card glass reveal">
+
+          <span class="eyebrow">
+            12 · Our Verdict
+          </span>
+
+
+          <h2>
+            REAL ACTIONS EXIST.<br>
+            BUT THE <span>IMPACT</span><br>
+            IS NOT YET OPTIMAL.
+          </h2>
+
+
+          <p>
+            Berdasarkan assessment kami, CSR lingkungan perusahaan
+            menunjukkan tindakan nyata dan beberapa progres terukur.
+            Namun, peningkatan pada sejumlah indikator lingkungan
+            menunjukkan bahwa program tersebut belum dapat dianggap
+            menyelesaikan seluruh akar masalah operasional.
+          </p>
+
+
+          <div class="verdict-pills">
+
+            <span class="pill">
+              CSR: Cukup Efektif
+            </span>
+
+            <span class="pill">
+              Sustainability: Needs Improvement
+            </span>
+
+            <span class="pill">
+              Greenwashing: Not Proven
+            </span>
+
+            <span class="pill">
+              Consistency: Further Review
+            </span>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ======================================================
+         RECOMMENDATIONS
+    ====================================================== -->
+
+    <section id="recommendations">
+
+      <div class="container">
+
+        <span class="eyebrow reveal">
+          13 · Recommendations
+        </span>
+
+        <h2 class="section-title reveal">
+          From criticism<br>
+          to <span>action.</span>
+        </h2>
+
+        <p class="section-description reveal">
+          Rekomendasi dirancang agar dapat diukur,
+          memiliki penanggung jawab, timeline, serta indikator
+          keberhasilan yang jelas.
+        </p>
+
+
+        <div class="recommendation-grid">
+
+
+          <article class="recommendation glass reveal">
+
+            <div class="recommendation-number">
+              01
+            </div>
+
+            <h3>
+              Environmental Transparency Dashboard
+            </h3>
+
+            <p>
+              Bangun dashboard publik yang memperlihatkan
+              indikator lingkungan material secara berkala,
+              termasuk tren positif maupun negatif.
+            </p>
+
+            <div class="recommendation-meta">
+
+              <span>
+                <strong>Who:</strong> Sustainability & Management
+              </span>
+
+              <span>
+                <strong>When:</strong> Mulai 2027
+              </span>
+
+              <span>
+                <strong>Measure:</strong> ≥95% key indicators disclosed
+              </span>
+
+            </div>
+
+          </article>
+
+
+          <article class="recommendation glass reveal">
+
+            <div class="recommendation-number">
+              02
+            </div>
+
+            <h3>
+              Greenwashing Evidence Checker
+            </h3>
+
+            <p>
+              Setiap environmental claim yang digunakan dalam
+              komunikasi perusahaan harus memiliki evidence,
+              baseline, target, dan indikator hasil yang jelas.
+            </p>
+
+            <div class="recommendation-meta">
+
+              <span>
+                <strong>Who:</strong> Corporate Communication + ESG
+              </span>
+
+              <span>
+                <strong>When:</strong> Setiap publikasi
+              </span>
+
+              <span>
+                <strong>Measure:</strong> 100% material claims supported
+              </span>
+
+            </div>
+
+          </article>
+
+
+          <article class="recommendation glass reveal">
+
+            <div class="recommendation-number">
+              03
+            </div>
+
+            <h3>
+              Carbon · Water · Waste Acceleration
+            </h3>
+
+            <p>
+              Fokus 2027–2030 harus diarahkan pada indikator
+              yang masih tertinggal agar target SRV2030 tidak
+              hanya menjadi target administratif.
+            </p>
+
+            <div class="recommendation-meta">
+
+              <span>
+                <strong>Who:</strong> Operations + Sustainability
+              </span>
+
+              <span>
+                <strong>When:</strong> 2027–2030
+              </span>
+
+              <span>
+                <strong>Measure:</strong> Annual reduction trajectory
+              </span>
+
+            </div>
+
+          </article>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ======================================================
+         FINAL CTA
+    ====================================================== -->
+
+    <section>
+
+      <div class="container">
+
+        <div class="question-box reveal">
+
+          <div class="question-label">
+            Final Thought
+          </div>
+
+          <h2 class="question">
+            DON'T JUST<br>
+            READ THE <span>CLAIM.</span><br>
+            READ THE <span>EVIDENCE.</span>
+          </h2>
+
+          <p class="question-description">
+            Sustainability is not defined by how green a story sounds,
+            but by whether the evidence supports it.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+  </main>
+
+
+
+  <!-- ========================================================
+       FOOTER
+  ======================================================== -->
+
+  <footer>
+
+    <div class="container">
+
+      <div class="footer-top">
+
+
+        <div class="footer-brand">
+
+          <h3>
+            GREEN CLAIMS.<br>
+            REAL EVIDENCE.
+          </h3>
+
+          <p>
+            Environmental CSR Assessment ·
+            PT Indah Kiat Pulp & Paper Tbk.
+          </p>
+
+        </div>
+
+
+        <div class="footer-links">
+
+          <a href="#team">Team</a>
+
+          <a href="#project">Project</a>
+
+          <a href="#issues">Issues</a>
+
+          <a href="#programs">CSR Programs</a>
+
+          <a href="#impact">Impact</a>
+
+          <a href="#targets">Targets</a>
+
+          <a href="#checker">Greenwashing</a>
+
+          <a href="#evidence">Evidence</a>
+
+          <a href="#verdict">Verdict</a>
+
+          <a href="#recommendations">Recommendations</a>
+
+        </div>
+
+
+      </div>
+
+
+      <div class="footer-bottom">
+
+        <span>
+          © 2026 · Academic Project
+        </span>
+
+        <span>
+          CSR × ESG × Sustainability
+        </span>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+
+
+  <!-- ========================================================
+       JAVASCRIPT
+  ======================================================== -->
+
+  <script>
+
+
+    /* ========================================================
+       NAVBAR SCROLL
+    ======================================================== */
+
+    const navbar = document.getElementById("navbar");
+
+    window.addEventListener("scroll", () => {
+
+      if (window.scrollY > 30) {
+
+        navbar.classList.add("scrolled");
+
+      } else {
+
+        navbar.classList.remove("scrolled");
+
+      }
+
+    });
+
+
+
+    /* ========================================================
+       MOBILE MENU
+    ======================================================== */
+
+    const mobileMenu = document.getElementById("mobileMenu");
+
+    const navLinks = document.querySelector(".nav-links");
+
+    mobileMenu.addEventListener("click", () => {
+
+      navLinks.classList.toggle("mobile-open");
+
+    });
+
+
+
+    /* ========================================================
+       REVEAL ANIMATION
+    ======================================================== */
+
+    const revealElements =
+      document.querySelectorAll(".reveal");
+
+
+    const revealObserver =
+      new IntersectionObserver(
+
+        (entries) => {
+
+          entries.forEach((entry) => {
+
+            if (entry.isIntersecting) {
+
+              entry.target.classList.add("visible");
+
+              revealObserver.unobserve(entry.target);
+
+            }
+
+          });
+
+        },
+
+        {
+          threshold: 0.12
+        }
+
+      );
+
+
+    revealElements.forEach((element) => {
+
+      revealObserver.observe(element);
+
+    });
+
+
+
+    /* ========================================================
+       PROGRESS BAR OBSERVER
+    ======================================================== */
+
+    const progressBars =
+      document.querySelectorAll(".progress-bar");
+
+
+    const progressObserver =
+      new IntersectionObserver(
+
+        (entries) => {
+
+          entries.forEach((entry) => {
+
+            if (entry.isIntersecting) {
+
+              const progress =
+                entry.target.style.getPropertyValue("--progress");
+
+              entry.target.style.width = progress;
+
+              progressObserver.unobserve(entry.target);
+
+            }
+
+          });
+
+        },
+
+        {
+          threshold: .4
+        }
+
+      );
+
+
+    progressBars.forEach((bar) => {
+
+      const progress =
+        bar.style.getPropertyValue("--progress");
+
+      bar.style.width = "0%";
+
+      progressObserver.observe(bar);
+
+    });
+
+
+
+    /* ========================================================
+       ACTIVE SECTION
+    ======================================================== */
+
+    const sections =
+      document.querySelectorAll("section[id]");
+
+    const links =
+      document.querySelectorAll(".nav-links a");
+
+
+    const sectionObserver =
+      new IntersectionObserver(
+
+        (entries) => {
+
+          entries.forEach((entry) => {
+
+            if (entry.isIntersecting) {
+
+              links.forEach((link) => {
+
+                link.style.color = "";
+
+                if (
+                  link.getAttribute("href") ===
+                  "#" + entry.target.id
+                ) {
+
+                  link.style.color =
+                    "var(--green)";
+
+                }
+
+              });
+
+            }
+
+          });
+
+        },
+
+        {
+          rootMargin: "-30% 0px -60% 0px"
+        }
+
+      );
+
+
+    sections.forEach((section) => {
+
+      sectionObserver.observe(section);
+
+    });
+
+
+
+    /* ========================================================
+       SMOOTH MOBILE NAV
+    ======================================================== */
+
+    links.forEach((link) => {
+
+      link.addEventListener("click", () => {
+
+        navLinks.classList.remove("mobile-open");
+
+      });
+
+    });
+
+
+  </script>
+
+
+
+  <!-- ========================================================
+       MOBILE MENU STYLE
+  ======================================================== -->
+
+  <style>
+
+    @media (max-width: 1000px) {
+
+      .nav-links.mobile-open {
+
+        position: absolute;
+
+        top: 76px;
+
+        left: 14px;
+        right: 14px;
+
+        display: flex;
+
+        flex-direction: column;
+
+        gap: 0;
+
+        padding: 10px;
+
+        border: 1px solid var(--line);
+
+        border-radius: 18px;
+
+        background: rgba(7,19,15,.96);
+
+        backdrop-filter: blur(20px);
+
+        box-shadow: 0 20px 60px rgba(0,0,0,.3);
+
+      }
+
+      .nav-links.mobile-open a {
+
+        padding: 14px;
+
+        border-radius: 10px;
+
+      }
+
+      .nav-links.mobile-open a:hover {
+
+        background: rgba(184,242,107,.06);
+
+      }
+
+    }
+
+  </style>
+
+
+</body>
+</html>
