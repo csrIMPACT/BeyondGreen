@@ -7,7 +7,7 @@
   <meta name="description" content="Environmental CSR Assessment of PT Indah Kiat Pulp & Paper Tbk.">
   <meta name="theme-color" content="#07130f">
 
-  <title>GREEN CLAIMS. REAL EVIDENCE.</title>
+  <title>BEYONDGREEN — Look Beyond the Green.</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -543,109 +543,161 @@
 
 
     /* =========================================================
-       TEAM
+       TEAM — BEYONDGREEN PREMIUM
     ========================================================= */
 
     .team-grid {
       display: grid;
-
       grid-template-columns: repeat(4, 1fr);
-
       gap: 18px;
-
       margin-top: 55px;
     }
 
     .team-card {
       position: relative;
-
-      min-height: 370px;
-
+      min-height: 470px;
       overflow: hidden;
-
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-
-      background:
-        linear-gradient(
-          160deg,
-          rgba(184,242,107,.10),
-          rgba(255,255,255,.025)
-        );
-
-      transition: .3s ease;
+      border: 1px solid rgba(255,255,255,.10);
+      border-radius: 26px;
+      background: #0b1c16;
+      transition: transform .4s ease, border-color .4s ease, box-shadow .4s ease;
     }
 
     .team-card:hover {
-      transform: translateY(-8px);
-
+      transform: translateY(-10px);
       border-color: rgba(184,242,107,.35);
+      box-shadow: 0 25px 60px rgba(0,0,0,.35), 0 0 35px rgba(184,242,107,.06);
     }
 
     .team-photo {
-      height: 245px;
+      position: relative;
+      height: 320px;
+      overflow: hidden;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      background: radial-gradient(circle at 50% 35%, rgba(184,242,107,.18), transparent 55%), linear-gradient(180deg, #10291f 0%, #0b1c16 100%);
+      border-bottom: 1px solid rgba(184,242,107,.08);
+    }
 
-      display: grid;
-      place-items: center;
-
-      background:
-        radial-gradient(
-          circle at center,
-          rgba(184,242,107,.20),
-          transparent 65%
-        );
-
-      color: rgba(255,255,255,.20);
-
+    .team-photo::before {
+      content: attr(data-number);
+      position: absolute;
+      top: 8px;
+      right: 15px;
       font-family: "Space Grotesk", sans-serif;
-      font-size: 55px;
+      font-size: 95px;
       font-weight: 700;
+      line-height: 1;
+      color: rgba(184,242,107,.045);
+      pointer-events: none;
+    }
+
+    .team-photo::after {
+      content: "";
+      position: absolute;
+      width: 180px;
+      height: 180px;
+      left: 50%;
+      bottom: -100px;
+      transform: translateX(-50%);
+      background: rgba(184,242,107,.12);
+      border-radius: 50%;
+      filter: blur(45px);
+      pointer-events: none;
     }
 
     .team-photo img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center bottom;
+      display: block;
+      transition: transform .6s cubic-bezier(.2,.8,.2,1), filter .6s ease;
+    }
+
+    .team-card:hover .team-photo img {
+      transform: scale(1.045);
+      filter: brightness(1.04);
+    }
 
     .team-info {
-      padding: 20px;
+      position: relative;
+      z-index: 5;
+      padding: 22px 22px 24px;
+      background: linear-gradient(180deg, #0b1c16 0%, #091711 100%);
     }
 
     .team-role {
+      display: flex;
+      align-items: center;
+      gap: 8px;
       color: var(--green);
-
       font-size: 10px;
       font-weight: 700;
-
       text-transform: uppercase;
-      letter-spacing: .12em;
+      letter-spacing: .13em;
+      line-height: 1.3;
+      margin-bottom: 7px;
+    }
+
+    .team-role::before {
+      content: "";
+      width: 18px;
+      height: 1px;
+      background: var(--green);
+      box-shadow: 0 0 8px rgba(184,242,107,.5);
     }
 
     .team-name {
-      margin-top: 6px;
-
+      margin-top: 9px;
       font-family: "Space Grotesk", sans-serif;
-      font-size: 23px;
+      font-size: 24px;
       font-weight: 700;
+      line-height: 1.1;
+      letter-spacing: -.035em;
+      color: var(--white);
     }
 
     .team-desc {
-      margin-top: 6px;
-
+      margin-top: 9px;
       color: var(--muted);
-
       font-size: 12px;
+      line-height: 1.55;
     }
 
-    .team-note {
-      margin-top: 25px;
-
-      color: #75847b;
-
-      font-size: 12px;
+    .team-number {
+      position: absolute;
+      right: 20px;
+      bottom: 24px;
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      color: rgba(255,255,255,.25);
+      letter-spacing: .08em;
     }
 
+    @media (max-width: 1000px) {
+      .team-grid { grid-template-columns: repeat(2, 1fr); gap: 18px; }
+      .team-card { min-height: 450px; }
+      .team-photo { height: 300px; }
+    }
+
+    @media (max-width: 700px) {
+      .team-grid { grid-template-columns: 1fr; gap: 18px; }
+      .team-card { min-height: 0; }
+      .team-photo { height: 330px; }
+      .team-info { padding: 21px 20px 23px; }
+      .team-name { font-size: 23px; }
+      .team-desc { font-size: 12px; }
+    }
+
+    @media (max-width: 380px) {
+      .team-photo { height: 300px; }
+      .team-name { font-size: 21px; }
+    }
 
     /* =========================================================
        ABOUT
@@ -1881,11 +1933,11 @@
       }
 
       .team-card {
-        min-height: 340px;
+        min-height: 0;
       }
 
       .team-photo {
-        height: 215px;
+        height: 330px;
       }
 
       .about-grid {
@@ -2036,6 +2088,71 @@
 
     }
 
+
+
+    /* =========================================================
+       LANGUAGE SWITCHER
+    ========================================================= */
+
+    .language-switcher {
+      display: inline-flex;
+      align-items: center;
+      gap: 3px;
+      margin-left: 10px;
+      padding: 4px;
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 999px;
+      background: rgba(255,255,255,.045);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+    }
+
+    .lang-btn {
+      min-width: 38px;
+      height: 30px;
+      padding: 0 9px;
+      border: 0;
+      border-radius: 999px;
+      background: transparent;
+      color: rgba(255,255,255,.48);
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: .08em;
+      cursor: pointer;
+      transition: .25s ease;
+    }
+
+    .lang-btn:hover {
+      color: var(--white);
+      background: rgba(255,255,255,.06);
+    }
+
+    .lang-btn.active {
+      color: var(--bg);
+      background: var(--green);
+      box-shadow: 0 0 18px rgba(184,242,107,.16);
+    }
+
+    @media (max-width: 1000px) {
+      .language-switcher {
+        margin-left: auto;
+        margin-right: 8px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .language-switcher {
+        margin-right: 5px;
+      }
+
+      .lang-btn {
+        min-width: 34px;
+        height: 28px;
+        padding: 0 7px;
+        font-size: 9px;
+      }
+    }
+
   </style>
 </head>
 
@@ -2053,23 +2170,28 @@
 
       <a href="#home" class="logo">
         <span class="logo-mark">G</span>
-        GREEN EVIDENCE
+        BEYONDGREEN
       </a>
 
       <nav class="nav-links">
 
-        <a href="#team">Team</a>
-        <a href="#project">Project</a>
-        <a href="#issues">Issues</a>
-        <a href="#programs">CSR</a>
-        <a href="#checker">Greenwashing</a>
-        <a href="#verdict">Verdict</a>
+        <a href="#team" data-lang-key="nav-team">Team</a>
+        <a href="#project" data-lang-key="nav-project">Project</a>
+        <a href="#issues" data-lang-key="nav-issues">Issues</a>
+        <a href="#programs" data-lang-key="nav-csr">CSR</a>
+        <a href="#checker" data-lang-key="nav-greenwashing">Greenwashing</a>
+        <a href="#verdict" data-lang-key="nav-verdict">Verdict</a>
 
       </nav>
 
       <a href="#evidence" class="nav-button">
-        Evidence Room ↗
+        <span data-lang-key="evidence-room">Evidence Room</span> ↗
       </a>
+
+      <div class="language-switcher" aria-label="Language switcher">
+        <button class="lang-btn active" id="langID" type="button" aria-label="Bahasa Indonesia">ID</button>
+        <button class="lang-btn" id="langEN" type="button" aria-label="English">EN</button>
+      </div>
 
       <button class="mobile-menu" id="mobileMenu">
         ☰
@@ -4146,6 +4268,423 @@
   ======================================================== -->
 
   <script>
+
+    /* ========================================================
+       BEYONDGREEN — BILINGUAL LANGUAGE SYSTEM
+       Default: Bahasa Indonesia
+    ======================================================== */
+
+    const languagePairs = {
+
+      /* Navigation */
+      "Team": ["Tim", "Team"],
+      "Project": ["Proyek", "Project"],
+      "Issues": ["Isu", "Issues"],
+      "CSR": ["CSR", "CSR"],
+      "Greenwashing": ["Greenwashing", "Greenwashing"],
+      "Verdict": ["Kesimpulan", "Verdict"],
+      "Evidence Room": ["Ruang Bukti", "Evidence Room"],
+
+      /* Hero */
+      "Environmental CSR Assessment": ["Penilaian CSR Lingkungan", "Environmental CSR Assessment"],
+      "An environmental CSR assessment of": ["Penilaian CSR lingkungan terhadap", "An environmental CSR assessment of"],
+      "We don't simply ask what the company claims.": ["Kami tidak hanya melihat apa yang diklaim perusahaan.", "We don't simply ask what the company claims."],
+      "We ask what the evidence shows.": ["Kami melihat apa yang ditunjukkan oleh bukti.", "We ask what the evidence shows."],
+      "Explore the Assessment": ["Jelajahi Penilaian", "Explore the Assessment"],
+      "View Evidence": ["Lihat Bukti", "View Evidence"],
+      "Scope 1 emissions · tCO₂e": ["Emisi Scope 1 · tCO₂e", "Scope 1 emissions · tCO₂e"],
+      "Renewable energy": ["Energi terbarukan", "Renewable energy"],
+      "Recycled fiber": ["Serat daur ulang", "Recycled fiber"],
+
+      /* Team */
+      "01 · The Team": ["01 · Tim Kami", "01 · The Team"],
+      "Meet the": ["Kenali", "Meet the"],
+      "team.": ["tim kami.", "team."],
+      "A collaborative assessment built through research,": ["Penilaian kolaboratif yang dibangun melalui riset,", "A collaborative assessment built through research,"],
+      "analysis, environmental evaluation, and critical review.": ["analisis, evaluasi lingkungan, dan tinjauan kritis.", "analysis, environmental evaluation, and critical review."],
+      "Project Lead": ["Ketua Proyek", "Project Lead"],
+      "Impact Analyst": ["Analis Dampak", "Impact Analyst"],
+      "ESG Analyst": ["Analis ESG", "ESG Analyst"],
+      "Research & Design": ["Riset & Desain", "Research & Design"],
+      "Koordinasi proyek & integrasi analisis.": ["Koordinasi proyek & integrasi analisis.", "Project coordination & analysis integration."],
+      "Analisis dampak lingkungan & sosial.": ["Analisis dampak lingkungan & sosial.", "Environmental & social impact analysis."],
+      "Analisis ESG, sustainability & target.": ["Analisis ESG, keberlanjutan & target.", "ESG, sustainability & target analysis."],
+      "Riset sumber, visualisasi & dokumentasi.": ["Riset sumber, visualisasi & dokumentasi.", "Source research, visualization & documentation."],
+      "* Ganti [NAMA ANGGOTA] dengan nama anggota kelompok.": ["* Ganti [NAMA ANGGOTA] dengan nama anggota kelompok.", "* Replace [TEAM MEMBER NAME] with your group member's name."],
+      "Bagian foto juga dapat diganti dengan foto masing-masing anggota.": ["Bagian foto juga dapat diganti dengan foto masing-masing anggota.", "Member photos can also be replaced with each person's photo."],
+
+      /* About */
+      "02 · About the Project": ["02 · Tentang Proyek", "02 · About the Project"],
+      "Not a company profile.": ["Bukan profil perusahaan.", "Not a company profile."],
+      "An": ["Sebuah", "An"],
+      "assessment.": ["penilaian.", "assessment."],
+      "Website ini merupakan proyek akademik untuk menilai": ["Website ini merupakan proyek akademik untuk menilai", "This website is an academic project assessing"],
+      "praktik Corporate Social Responsibility (CSR)": ["praktik Corporate Social Responsibility (CSR)", "the environmental Corporate Social Responsibility (CSR) practices of"],
+      "lingkungan PT Indah Kiat Pulp & Paper Tbk.": ["lingkungan PT Indah Kiat Pulp & Paper Tbk.", "PT Indah Kiat Pulp & Paper Tbk."],
+      "Fokus kami bukan hanya melihat program yang dilakukan,": ["Fokus kami bukan hanya melihat program yang dilakukan,", "Our focus is not only on the programs implemented,"],
+      "tetapi membandingkan antara klaim, target, data,": ["tetapi membandingkan antara klaim, target, data,", "but on comparing claims, targets, data,"],
+      "hasil, dampak, serta masalah yang masih tersisa.": ["hasil, dampak, serta masalah yang masih tersisa.", "results, impacts, and the problems that remain."],
+      "Karena sebuah program lingkungan tidak otomatis berarti": ["Karena sebuah program lingkungan tidak otomatis berarti", "Because an environmental program does not automatically mean"],
+      "dampak lingkungannya sudah selesai.": ["dampak lingkungannya sudah selesai.", "its environmental impacts have been resolved."],
+      "Menilai relevansi dan efektivitas program CSR": ["Menilai relevansi dan efektivitas program CSR", "Assessing the relevance and effectiveness of CSR programs"],
+      "terhadap masalah lingkungan.": ["terhadap masalah lingkungan.", "in addressing environmental issues."],
+      "Membaca kinerja lingkungan melalui indikator": ["Membaca kinerja lingkungan melalui indikator", "Reading environmental performance through measurable"],
+      "yang terukur.": ["yang terukur.", "indicators."],
+      "Menguji konsistensi antara klaim keberlanjutan": ["Menguji konsistensi antara klaim keberlanjutan", "Testing consistency between sustainability claims"],
+      "dan evidence yang tersedia.": ["dan evidence yang tersedia.", "and the available evidence."],
+
+      /* Big question */
+      "The Big Question": ["Pertanyaan Utama", "The Big Question"],
+      "We don't simply ask what the company says.": ["Kami tidak hanya bertanya apa yang dikatakan perusahaan.", "We don't simply ask what the company says."],
+      "We compare the narrative against the numbers,": ["Kami membandingkan narasi dengan angka,", "We compare the narrative against the numbers,"],
+      "targets, disclosures, and remaining environmental risks.": ["target, pengungkapan, dan risiko lingkungan yang masih tersisa.", "targets, disclosures, and remaining environmental risks."],
+
+      /* Company */
+      "03 · Company & Context": ["03 · Perusahaan & Konteks", "03 · Company & Context"],
+      "Understanding the": ["Memahami", "Understanding the"],
+      "context.": ["konteks.", "context."],
+      "Operasional industri pulp & paper memiliki potensi dampak": ["Operasional industri pulp & paper memiliki potensi dampak", "Pulp & paper operations have potential impacts"],
+      "lingkungan yang bersifat struktural: emisi, penggunaan air,": ["lingkungan yang bersifat struktural: emisi, penggunaan air,", "that are structural in nature: emissions, water use,"],
+      "air limbah, limbah, serta bahan baku kayu.": ["air limbah, limbah, serta bahan baku kayu.", "wastewater, waste, and wood raw materials."],
+      "Resource-intensive by nature.": ["Secara alami membutuhkan banyak sumber daya.", "Resource-intensive by nature."],
+      "Potensi dampak lingkungan bukan hanya berasal dari": ["Potensi dampak lingkungan bukan hanya berasal dari", "Potential environmental impacts do not come only from"],
+      "aktivitas CSR atau satu program tertentu, tetapi juga": ["aktivitas CSR atau satu program tertentu, tetapi juga", "CSR activities or a single program, but also from"],
+      "dari karakteristik proses produksi pulp & paper.": ["dari karakteristik proses produksi pulp & paper.", "the characteristics of the pulp & paper production process."],
+      "Raw Material": ["Bahan Baku", "Raw Material"],
+      "Production": ["Produksi", "Production"],
+      "Resource Use": ["Penggunaan Sumber Daya", "Resource Use"],
+      "Environmental Output": ["Output Lingkungan", "Environmental Output"],
+      "The assessment lens.": ["Sudut Pandang Penilaian.", "The assessment lens."],
+      "Kami melihat CSR sebagai bagian dari sistem pengelolaan": ["Kami melihat CSR sebagai bagian dari sistem pengelolaan", "We view CSR as part of an impact management system,"],
+      "dampak, bukan sebagai pengganti pengendalian dampak": ["dampak, bukan sebagai pengganti pengendalian dampak", "not as a substitute for controlling"],
+      "operasional utama.": ["operasional utama.", "core operational impacts."],
+      "Karena itu, indikator negatif juga tetap diperhatikan": ["Karena itu, indikator negatif juga tetap diperhatikan", "Therefore, negative indicators are also considered"],
+      "ketika mengevaluasi keberhasilan program.": ["ketika mengevaluasi keberhasilan program.", "when evaluating program performance."],
+
+      /* Issues */
+      "04 · Environmental Issues": ["04 · Isu Lingkungan", "04 · Environmental Issues"],
+      "The numbers tell": ["Angka menunjukkan", "The numbers tell"],
+      "a": ["sebuah", "a"],
+      "complex story.": ["cerita yang kompleks.", "complex story."],
+      "Ada progres nyata, tetapi beberapa indikator lingkungan": ["Ada progres nyata, tetapi beberapa indikator lingkungan", "There is real progress, but several environmental indicators"],
+      "justru bergerak ke arah yang berlawanan dengan target.": ["justru bergerak ke arah yang berlawanan dengan target.", "are moving in the opposite direction from the targets."],
+      "Scope 1 Emissions": ["Emisi Scope 1", "Scope 1 Emissions"],
+      "Emisi langsung dari aktivitas operasional.": ["Emisi langsung dari aktivitas operasional.", "Direct emissions from operations."],
+      "Carbon intensity: 1.08 → 1.17 tCO₂e/ton": ["Intensitas karbon: 1.08 → 1.17 tCO₂e/ton", "Carbon intensity: 1.08 → 1.17 tCO₂e/ton"],
+      "Air Pollution": ["Polusi Udara", "Air Pollution"],
+      "Parameter SO₂ mengalami peningkatan.": ["Parameter SO₂ mengalami peningkatan.", "SO₂ concentration increased."],
+      "mg/Nm³ · 141.8 → 230.02": ["mg/Nm³ · 141.8 → 230.02", "mg/Nm³ · 141.8 → 230.02"],
+      "Wastewater": ["Air Limbah", "Wastewater"],
+      "Chemical Oxygen Demand pada air limbah.": ["Chemical Oxygen Demand pada air limbah.", "Chemical Oxygen Demand in wastewater."],
+      "COD mg/l · 137.8 → 150.97": ["COD mg/l · 137.8 → 150.97", "COD mg/l · 137.8 → 150.97"],
+      "B3 Waste": ["Limbah B3", "B3 Waste"],
+      "Limbah B3 tetap besar tetapi turun dari baseline.": ["Limbah B3 tetap besar tetapi turun dari baseline.", "B3 waste remains substantial but has fallen from baseline."],
+      "tons · turun dari baseline 768,431": ["ton · turun dari baseline 768,431", "tons · down from the 768,431 baseline"],
+
+      /* Programs */
+      "05 · CSR Programs": ["05 · Program CSR", "05 · CSR Programs"],
+      "From programs": ["Dari program", "From programs"],
+      "to": ["menjadi", "to"],
+      "real actions.": ["aksi nyata.", "real actions."],
+      "Program-program berikut dinilai bukan hanya berdasarkan": ["Program-program berikut dinilai bukan hanya berdasarkan", "The following programs are assessed not only by"],
+      "keberadaannya, tetapi juga output, outcome, dan dampaknya.": ["keberadaannya, tetapi juga output, outcome, dan dampaknya.", "their existence, but also by their outputs, outcomes, and impacts."],
+      "Community": ["Masyarakat", "Community"],
+      "Biodiversity": ["Keanekaragaman Hayati", "Biodiversity"],
+      "Energy": ["Energi", "Energy"],
+      "Circularity": ["Ekonomi Sirkular", "Circularity"],
+      "Waste": ["Limbah", "Waste"],
+      "Conservation": ["Konservasi", "Conservation"],
+      "Bank Sampah Digital": ["Bank Sampah Digital", "Digital Waste Bank"],
+      "Program pengelolaan sampah berbasis masyarakat": ["Program pengelolaan sampah berbasis masyarakat", "A community-based waste management program"],
+      "di Serang untuk mendorong partisipasi dan": ["di Serang untuk mendorong partisipasi dan", "in Serang to encourage participation and"],
+      "pengelolaan sampah yang lebih terstruktur.": ["pengelolaan sampah yang lebih terstruktur.", "more structured waste management."],
+      "Mangrove Restoration": ["Restorasi Mangrove", "Mangrove Restoration"],
+      "Rehabilitasi ekosistem pesisir melalui penanaman": ["Rehabilitasi ekosistem pesisir melalui penanaman", "Coastal ecosystem rehabilitation through planting"],
+      "dan pemulihan kawasan mangrove.": ["dan pemulihan kawasan mangrove.", "and restoring mangrove areas."],
+      "Renewable Energy": ["Energi Terbarukan", "Renewable Energy"],
+      "Peningkatan energi terbarukan melalui solar PV,": ["Peningkatan energi terbarukan melalui solar PV,", "Increasing renewable energy through solar PV,"],
+      "biogas, serta pemanfaatan RDF sebagai bagian": ["biogas, serta pemanfaatan RDF sebagai bagian", "biogas, and RDF as part"],
+      "dari transisi energi.": ["dari transisi energi.", "of the energy transition."],
+      "Recycled Fiber": ["Serat Daur Ulang", "Recycled Fiber"],
+      "Peningkatan penggunaan serat daur ulang sebagai": ["Peningkatan penggunaan serat daur ulang sebagai", "Increasing the use of recycled fiber as part"],
+      "bagian dari pendekatan ekonomi sirkular.": ["bagian dari pendekatan ekonomi sirkular.", "of a circular economy approach."],
+      "Waste Management": ["Pengelolaan Limbah", "Waste Management"],
+      "Upaya mengurangi dan mengelola limbah B3": ["Upaya mengurangi dan mengelola limbah B3", "Efforts to reduce and manage B3 waste"],
+      "serta berbagai jenis limbah operasional.": ["serta berbagai jenis limbah operasional.", "and other types of operational waste."],
+      "Biodiversity Conservation": ["Konservasi Keanekaragaman Hayati", "Biodiversity Conservation"],
+      "Kemitraan konservasi biodiversitas dengan": ["Kemitraan konservasi biodiversitas dengan", "Biodiversity conservation partnerships with"],
+      "lembaga dan organisasi terkait untuk mitigasi": ["lembaga dan organisasi terkait untuk mitigasi", "relevant institutions and organizations to mitigate"],
+      "risiko ekosistem dan satwa.": ["risiko ekosistem dan satwa.", "ecosystem and wildlife risks."],
+      "~120 ton/tahun": ["~120 ton/tahun", "~120 tons/year"],
+      "~173,000": ["~173.000", "~173,000"],
+      "seedlings": ["bibit", "seedlings"],
+      "54% renewable energy": ["54% energi terbarukan", "54% renewable energy"],
+      "52% recycled fiber": ["52% serat daur ulang", "52% recycled fiber"],
+      ">50% reduction vs 2018 baseline": [">50% penurunan vs baseline 2018", ">50% reduction vs 2018 baseline"],
+      "Multi-year": ["Multi-tahun", "Multi-year"],
+      "partnerships": ["kemitraan", "partnerships"],
+
+      /* Impact */
+      "06 · Impact Assessment": ["06 · Penilaian Dampak", "06 · Impact Assessment"],
+      "Don't confuse": ["Jangan samakan", "Don't confuse"],
+      "output": ["output", "output"],
+      "with impact.": ["dengan impact.", "with impact."],
+      "Sebuah program dapat menghasilkan output yang besar,": ["Sebuah program dapat menghasilkan output yang besar,", "A program can produce large outputs,"],
+      "tetapi dampak jangka panjang harus dibuktikan dengan": ["tetapi dampak jangka panjang harus dibuktikan dengan", "but long-term impact must be demonstrated through"],
+      "indikator outcome dan impact.": ["indikator outcome dan impact.", "outcome and impact indicators."],
+      "Resources": ["Sumber Daya", "Resources"],
+      "Dana, manusia, teknologi, fasilitas,": ["Dana, manusia, teknologi, fasilitas,", "Funding, people, technology, facilities,"],
+      "energi, kemitraan, dan sumber daya lain.": ["energi, kemitraan, dan sumber daya lain.", "energy, partnerships, and other resources."],
+      "Activities": ["Aktivitas", "Activities"],
+      "Contoh: jumlah bibit ditanam,": ["Contoh: jumlah bibit ditanam,", "Examples: seedlings planted,"],
+      "volume sampah dikelola,": ["volume sampah dikelola,", "waste volume managed,"],
+      "kapasitas solar PV.": ["kapasitas solar PV.", "solar PV capacity."],
+      "Change": ["Perubahan", "Change"],
+      "Perubahan perilaku, kualitas lingkungan,": ["Perubahan perilaku, kualitas lingkungan,", "Changes in behavior, environmental quality,"],
+      "pengurangan risiko, atau efisiensi.": ["pengurangan risiko, atau efisiensi.", "risk reduction, or efficiency."],
+      "Long-term": ["Jangka Panjang", "Long-term"],
+      "Perubahan lingkungan dan sosial": ["Perubahan lingkungan dan sosial", "Environmental and social changes"],
+      "yang bertahan dalam jangka panjang.": ["yang bertahan dalam jangka panjang.", "that persist over the long term."],
+      "Critical lens:": ["Sudut pandang kritis:", "Critical lens:"],
+      "173.000 bibit mangrove adalah output.": ["173.000 bibit mangrove adalah output.", "173,000 mangrove seedlings are an output."],
+      "Untuk menyebutnya sebagai impact, diperlukan bukti": ["Untuk menyebutnya sebagai impact, diperlukan bukti", "To call it an impact, evidence is needed"],
+      "seperti survival rate, perubahan kondisi ekosistem,": ["seperti survival rate, perubahan kondisi ekosistem,", "such as survival rate, changes in ecosystem condition,"],
+      "kualitas pesisir, dan manfaat jangka panjang.": ["kualitas pesisir, dan manfaat jangka panjang.", "coastal quality, and long-term benefits."],
+
+      /* Targets */
+      "07 · Target vs Realization": ["07 · Target vs Realisasi", "07 · Target vs Realization"],
+      "What was": ["Apa yang", "What was"],
+      "promised": ["dijanjikan", "promised"],
+      "vs what was achieved.": ["vs apa yang dicapai.", "vs what was achieved."],
+      "SRV2030 menjadi benchmark utama untuk membaca": ["SRV2030 menjadi benchmark utama untuk membaca", "SRV2030 is the main benchmark for assessing"],
+      "konsistensi target lingkungan perusahaan.": ["konsistensi target lingkungan perusahaan.", "the consistency of the company's environmental targets."],
+      "Achieved": ["Tercapai", "Achieved"],
+      "Strong Progress": ["Progres Kuat", "Strong Progress"],
+      "Needs Improvement": ["Perlu Perbaikan", "Needs Improvement"],
+      "Mixed": ["Campuran", "Mixed"],
+      "Target minimum 50% energi terbarukan.": ["Target minimum 50% energi terbarukan.", "Minimum target of 50% renewable energy."],
+      "Penggunaan serat daur ulang menunjukkan progres kuat.": ["Penggunaan serat daur ulang menunjukkan progres kuat.", "Recycled fiber use shows strong progress."],
+      "Progress terhadap target pengurangan intensitas karbon.": ["Progress terhadap target pengurangan intensitas karbon.", "Progress toward the carbon intensity reduction target."],
+      "Progress masih membutuhkan akselerasi.": ["Progress masih membutuhkan akselerasi.", "Progress still needs acceleration."],
+      "Pengurangan penggunaan air belum mendekati target akhir.": ["Pengurangan penggunaan air belum mendekati target akhir.", "Water-use reduction is not yet close to the final target."],
+      "Sebagian indikator positif, sebagian masih berlawanan arah.": ["Sebagian indikator positif, sebagian masih berlawanan arah.", "Some indicators are positive, while others are moving in the opposite direction."],
+      "Environmental Direction": ["Arah Lingkungan", "Environmental Direction"],
+
+      /* Checker */
+      "08 · Greenwashing Checker": ["08 · Pemeriksa Greenwashing", "08 · Greenwashing Checker"],
+      "Test the": ["Uji", "Test the"],
+      "claim.": ["klaim.", "claim."],
+      "Kami tidak langsung memberikan label greenwashing.": ["Kami tidak langsung memberikan label greenwashing.", "We do not automatically label something as greenwashing."],
+      "Kami menguji konsistensi antara klaim keberlanjutan": ["Kami menguji konsistensi antara klaim keberlanjutan", "We test consistency between sustainability claims"],
+      "dengan evidence yang tersedia.": ["dengan evidence yang tersedia.", "and the available evidence."],
+      "Five evidence tests.": ["Lima uji bukti.", "Five evidence tests."],
+      "Semakin banyak klaim yang memiliki data,": ["Semakin banyak klaim yang memiliki data,", "The more claims supported by data,"],
+      "target, pengungkapan negatif, dan verifikasi,": ["target, pengungkapan negatif, dan verifikasi,", "targets, negative disclosures, and verification,"],
+      "semakin kuat kredibilitasnya.": ["semakin kuat kredibilitasnya.", "the stronger the credibility."],
+      "Evidence available": ["Bukti tersedia", "Evidence available"],
+      "Quantifiable targets": ["Target terukur", "Quantifiable targets"],
+      "External validation": ["Validasi eksternal", "External validation"],
+      "Negative performance disclosed": ["Kinerja negatif diungkapkan", "Negative performance disclosed"],
+      "Claim vs impact consistency": ["Konsistensi klaim vs dampak", "Claim vs impact consistency"],
+      "Assessment": ["Penilaian", "Assessment"],
+      "CAUTION": ["PERHATIAN", "CAUTION"],
+      "Not proven greenwashing.": ["Greenwashing belum terbukti.", "Not proven greenwashing."],
+      "Consistency requires further review.": ["Konsistensi masih memerlukan peninjauan lebih lanjut.", "Consistency requires further review."],
+
+      /* Stakeholders */
+      "09 · Stakeholders": ["09 · Stakeholder", "09 · Stakeholders"],
+      "Who": ["Siapa yang", "Who"],
+      "feels": ["merasakan", "feels"],
+      "the impact?": ["dampaknya?", "the impact?"],
+      "Local Community": ["Masyarakat Lokal", "Local Community"],
+      "Masyarakat sekitar fasilitas operasional": ["Masyarakat sekitar fasilitas operasional", "Communities around operational facilities"],
+      "merupakan pihak yang dapat merasakan dampak": ["merupakan pihak yang dapat merasakan dampak", "are among those who may directly experience"],
+      "lingkungan secara langsung.": ["lingkungan secara langsung.", "environmental impacts."],
+      "Government": ["Pemerintah", "Government"],
+      "Pemerintah dan regulator berperan dalam": ["Pemerintah dan regulator berperan dalam", "Government and regulators play a role in"],
+      "pengawasan kepatuhan serta standar lingkungan.": ["pengawasan kepatuhan serta standar lingkungan.", "compliance oversight and environmental standards."],
+      "Employees": ["Karyawan", "Employees"],
+      "Karyawan berhubungan langsung dengan sistem": ["Karyawan berhubungan langsung dengan sistem", "Employees interact directly with operational systems,"],
+      "operasional, keselamatan, dan budaya sustainability.": ["operasional, keselamatan, dan budaya sustainability.", "safety, and sustainability culture."],
+      "Consumers": ["Konsumen", "Consumers"],
+      "Konsumen semakin membutuhkan produk yang": ["Konsumen semakin membutuhkan produk yang", "Consumers increasingly seek products with"],
+      "memiliki klaim lingkungan yang kredibel.": ["memiliki klaim lingkungan yang kredibel.", "credible environmental claims."],
+      "Investors": ["Investor", "Investors"],
+      "Investor membutuhkan informasi yang konsisten": ["Investor membutuhkan informasi yang konsisten", "Investors need consistent information"],
+      "untuk menilai risiko ESG dan keberlanjutan.": ["untuk menilai risiko ESG dan keberlanjutan.", "to assess ESG risk and sustainability."],
+      "Environmental Groups": ["Organisasi Lingkungan", "Environmental Groups"],
+      "Organisasi lingkungan dapat menjadi mitra,": ["Organisasi lingkungan dapat menjadi mitra,", "Environmental organizations can be partners,"],
+      "pengawas, sekaligus sumber perspektif independen.": ["pengawas, sekaligus sumber perspektif independen.", "watchdogs, and sources of independent perspectives."],
+      "Interest · Air quality, odor, noise, water": ["Kepentingan · Kualitas udara, bau, kebisingan, air", "Interest · Air quality, odor, noise, water"],
+      "Interest · Compliance & environmental standards": ["Kepentingan · Kepatuhan & standar lingkungan", "Interest · Compliance & environmental standards"],
+      "Interest · Workplace & sustainability culture": ["Kepentingan · Tempat kerja & budaya keberlanjutan", "Interest · Workplace & sustainability culture"],
+      "Interest · Responsible products & transparency": ["Kepentingan · Produk bertanggung jawab & transparansi", "Interest · Responsible products & transparency"],
+      "Interest · ESG risk & long-term value": ["Kepentingan · Risiko ESG & nilai jangka panjang", "Interest · ESG risk & long-term value"],
+      "Interest · Ecosystem & biodiversity": ["Kepentingan · Ekosistem & keanekaragaman hayati", "Interest · Ecosystem & biodiversity"],
+
+      /* Evidence */
+      "10 · Evidence Room": ["10 · Ruang Bukti", "10 · Evidence Room"],
+      "Claims are easy.": ["Klaim itu mudah.", "Claims are easy."],
+      "Evidence matters.": ["Bukti yang penting.", "Evidence matters."],
+      "Setiap kesimpulan seharusnya dapat ditelusuri kembali": ["Setiap kesimpulan seharusnya dapat ditelusuri kembali", "Every conclusion should be traceable back"],
+      "ke data, disclosure, target, atau validasi eksternal.": ["ke data, disclosure, target, atau validasi eksternal.", "to data, disclosures, targets, or external validation."],
+      "Quantified": ["Terukur", "Quantified"],
+      "Negative trend": ["Tren Negatif", "Negative trend"],
+      "Positive progress": ["Progres Positif", "Positive progress"],
+      "Target achieved": ["Target Tercapai", "Target achieved"],
+      "Disclosed": ["Diungkapkan", "Disclosed"],
+
+      /* Review */
+      "11 · Critical Review": ["11 · Tinjauan Kritis", "11 · Critical Review"],
+      "What looks good.": ["Apa yang terlihat baik.", "What looks good."],
+      "What still needs": ["Apa yang masih perlu", "What still needs"],
+      "work.": ["diperbaiki.", "work."],
+      "✓ Positive Signals": ["✓ Sinyal Positif", "✓ Positive Signals"],
+      "Real actions exist.": ["Ada aksi nyata.", "Real actions exist."],
+      "Renewable energy reached 54%.": ["Energi terbarukan mencapai 54%.", "Renewable energy reached 54%."],
+      "Recycled fiber reached 52%.": ["Serat daur ulang mencapai 52%.", "Recycled fiber reached 52%."],
+      "B3 waste decreased substantially from the 2018 baseline.": ["Limbah B3 turun secara signifikan dari baseline 2018.", "B3 waste decreased substantially from the 2018 baseline."],
+      "Solar PV capacity increased from 21.5 MWp to 32 MWp.": ["Kapasitas solar PV meningkat dari 21,5 MWp menjadi 32 MWp.", "Solar PV capacity increased from 21.5 MWp to 32 MWp."],
+      "Biodiversity partnerships are multi-year.": ["Kemitraan biodiversitas berlangsung multi-tahun.", "Biodiversity partnerships are multi-year."],
+      "External validation such as PROPER strengthens credibility.": ["Validasi eksternal seperti PROPER memperkuat kredibilitas.", "External validation such as PROPER strengthens credibility."],
+      "! Still Needs Work": ["! Masih Perlu Perbaikan", "! Still Needs Work"],
+      "Impact is not yet optimal.": ["Dampaknya belum optimal.", "Impact is not yet optimal."],
+      "Carbon intensity increased from 1.08 to 1.17.": ["Intensitas karbon meningkat dari 1.08 menjadi 1.17.", "Carbon intensity increased from 1.08 to 1.17."],
+      "SO₂ increased from 141.8 to 230.02 mg/Nm³.": ["SO₂ meningkat dari 141.8 menjadi 230.02 mg/Nm³.", "SO₂ increased from 141.8 to 230.02 mg/Nm³."],
+      "COD increased from 137.8 to 150.97 mg/l.": ["COD meningkat dari 137.8 menjadi 150.97 mg/l.", "COD increased from 137.8 to 150.97 mg/l."],
+      "Carbon, energy, and water reduction targets remain challenging.": ["Target pengurangan karbon, energi, dan air masih menantang.", "Carbon, energy, and water reduction targets remain challenging."],
+      "One administrative sanction was disclosed for Indah Kiat Serang.": ["Satu sanksi administratif untuk Indah Kiat Serang diungkapkan.", "One administrative sanction was disclosed for Indah Kiat Serang."],
+      "Public complaint data lacks longer-term trend context.": ["Data keluhan publik belum memiliki konteks tren jangka panjang.", "Public complaint data lacks longer-term trend context."],
+
+      /* Verdict */
+      "12 · Our Verdict": ["12 · Kesimpulan Kami", "12 · Our Verdict"],
+      "REAL ACTIONS EXIST.": ["ADA AKSI NYATA.", "REAL ACTIONS EXIST."],
+      "BUT THE": ["TETAPI", "BUT THE"],
+      "IMPACT": ["DAMPAK", "IMPACT"],
+      "IS NOT YET OPTIMAL.": ["BELUM OPTIMAL.", "IS NOT YET OPTIMAL."],
+      "Berdasarkan assessment kami, CSR lingkungan perusahaan": ["Berdasarkan assessment kami, CSR lingkungan perusahaan", "Based on our assessment, the company's environmental CSR"],
+      "menunjukkan tindakan nyata dan beberapa progres terukur.": ["menunjukkan tindakan nyata dan beberapa progres terukur.", "shows real actions and several measurable improvements."],
+      "Namun, peningkatan pada sejumlah indikator lingkungan": ["Namun, peningkatan pada sejumlah indikator lingkungan", "However, increases in several environmental indicators"],
+      "menunjukkan bahwa program tersebut belum dapat dianggap": ["menunjukkan bahwa program tersebut belum dapat dianggap", "indicate that the programs cannot yet be considered to"],
+      "menyelesaikan seluruh akar masalah operasional.": ["menyelesaikan seluruh akar masalah operasional.", "resolve all root operational issues."],
+      "CSR: Cukup Efektif": ["CSR: Moderately Effective", "CSR: Cukup Efektif"],
+      "Sustainability: Needs Improvement": ["Keberlanjutan: Perlu Perbaikan", "Sustainability: Needs Improvement"],
+      "Greenwashing: Not Proven": ["Greenwashing: Belum Terbukti", "Greenwashing: Not Proven"],
+      "Consistency: Further Review": ["Konsistensi: Perlu Peninjauan Lanjutan", "Consistency: Further Review"],
+
+      /* Recommendations */
+      "13 · Recommendations": ["13 · Rekomendasi", "13 · Recommendations"],
+      "From criticism": ["Dari kritik", "From criticism"],
+      "to action.": ["menjadi aksi.", "to action."],
+      "Rekomendasi dirancang agar dapat diukur,": ["Rekomendasi dirancang agar dapat diukur,", "Recommendations are designed to be measurable,"],
+      "memiliki penanggung jawab, timeline, serta indikator": ["memiliki penanggung jawab, timeline, serta indikator", "with clear owners, timelines, and"],
+      "keberhasilan yang jelas.": ["keberhasilan yang jelas.", "success indicators."],
+      "Environmental Transparency Dashboard": ["Dashboard Transparansi Lingkungan", "Environmental Transparency Dashboard"],
+      "Bangun dashboard publik yang memperlihatkan": ["Bangun dashboard publik yang memperlihatkan", "Build a public dashboard showing"],
+      "indikator lingkungan material secara berkala,": ["indikator lingkungan material secara berkala,", "material environmental indicators regularly,"],
+      "termasuk tren positif maupun negatif.": ["termasuk tren positif maupun negatif.", "including both positive and negative trends."],
+      "Greenwashing Evidence Checker": ["Pemeriksa Bukti Greenwashing", "Greenwashing Evidence Checker"],
+      "Setiap environmental claim yang digunakan dalam": ["Setiap environmental claim yang digunakan dalam", "Every environmental claim used in"],
+      "komunikasi perusahaan harus memiliki evidence,": ["komunikasi perusahaan harus memiliki evidence,", "company communications should have evidence,"],
+      "baseline, target, dan indikator hasil yang jelas.": ["baseline, target, dan indikator hasil yang jelas.", "a baseline, target, and clear outcome indicators."],
+      "Carbon · Water · Waste Acceleration": ["Percepatan Karbon · Air · Limbah", "Carbon · Water · Waste Acceleration"],
+      "Fokus 2027–2030 harus diarahkan pada indikator": ["Fokus 2027–2030 harus diarahkan pada indikator", "The 2027–2030 focus should target indicators"],
+      "yang masih tertinggal agar target SRV2030 tidak": ["yang masih tertinggal agar target SRV2030 tidak", "that are lagging so the SRV2030 targets do not"],
+      "hanya menjadi target administratif.": ["hanya menjadi target administratif.", "become merely administrative targets."],
+      "Sustainability & Management": ["Keberlanjutan & Manajemen", "Sustainability & Management"],
+      "Mulai 2027": ["Starting 2027", "Starting 2027"],
+      "≥95% key indicators disclosed": ["≥95% indikator utama diungkapkan", "≥95% key indicators disclosed"],
+      "Corporate Communication + ESG": ["Komunikasi Korporat + ESG", "Corporate Communication + ESG"],
+      "Setiap publikasi": ["Every publication", "Every publication"],
+      "100% material claims supported": ["100% klaim material didukung bukti", "100% material claims supported"],
+      "Operations + Sustainability": ["Operasional + Keberlanjutan", "Operations + Sustainability"],
+      "Annual reduction trajectory": ["Lintasan pengurangan tahunan", "Annual reduction trajectory"],
+
+      /* Final */
+      "Final Thought": ["Pikiran Akhir", "Final Thought"],
+      "DON'T JUST": ["JANGAN HANYA", "DON'T JUST"],
+      "READ THE": ["BACA", "READ THE"],
+      "CLAIM.": ["KLAIM.", "CLAIM."],
+      "EVIDENCE.": ["BUKTI.", "EVIDENCE."],
+      "Sustainability is not defined by how green a story sounds,": ["Keberlanjutan tidak ditentukan oleh seberapa hijau sebuah cerita terdengar,", "Sustainability is not defined by how green a story sounds,"],
+      "but by whether the evidence supports it.": ["melainkan oleh apakah bukti benar-benar mendukungnya.", "but by whether the evidence supports it."],
+
+      /* Footer */
+      "Environmental CSR Assessment ·": ["Penilaian CSR Lingkungan ·", "Environmental CSR Assessment ·"],
+      "© 2026 · Academic Project": ["© 2026 · Proyek Akademik", "© 2026 · Academic Project"],
+      "CSR × ESG × Sustainability": ["CSR × ESG × Keberlanjutan", "CSR × ESG × Sustainability"],
+      "CSR Programs": ["Program CSR", "CSR Programs"],
+      "Impact": ["Dampak", "Impact"],
+      "Targets": ["Target", "Targets"],
+      "Evidence": ["Bukti", "Evidence"],
+      "Recommendations": ["Rekomendasi", "Recommendations"],
+      "The Big Question": ["Pertanyaan Utama", "The Big Question"],
+    };
+
+    const langButtons = {
+      id: document.getElementById("langID"),
+      en: document.getElementById("langEN")
+    };
+
+    const textNodes = [];
+    const walker = document.createTreeWalker(
+      document.body,
+      NodeFilter.SHOW_TEXT,
+      {
+        acceptNode(node) {
+          const parent = node.parentElement;
+          if (!parent) return NodeFilter.FILTER_REJECT;
+          if (["SCRIPT", "STYLE", "NOSCRIPT"].includes(parent.tagName)) {
+            return NodeFilter.FILTER_REJECT;
+          }
+          const key = node.nodeValue.trim();
+          if (!key) return NodeFilter.FILTER_REJECT;
+          return languagePairs[key]
+            ? NodeFilter.FILTER_ACCEPT
+            : NodeFilter.FILTER_REJECT;
+        }
+      }
+    );
+
+    while (walker.nextNode()) {
+      const node = walker.currentNode;
+      textNodes.push({
+        node,
+        original: node.nodeValue
+      });
+    }
+
+    function setLanguage(lang) {
+      const index = lang === "en" ? 1 : 0;
+
+      textNodes.forEach(({ node, original }) => {
+        const key = original.trim();
+        const pair = languagePairs[key];
+        if (!pair) return;
+
+        const value = pair[index];
+        const leading = original.match(/^\s*/)?.[0] || "";
+        const trailing = original.match(/\s*$/)?.[0] || "";
+        node.nodeValue = leading + value + trailing;
+      });
+
+      document.documentElement.lang = lang === "en" ? "en" : "id";
+      document.title = lang === "en"
+        ? "BEYONDGREEN — Look Beyond the Green."
+        : "BEYONDGREEN — Lihat Melampaui Hijau.";
+
+      langButtons.id.classList.toggle("active", lang === "id");
+      langButtons.en.classList.toggle("active", lang === "en");
+
+      localStorage.setItem("beyondgreen-language", lang);
+    }
+
+    langButtons.id.addEventListener("click", () => setLanguage("id"));
+    langButtons.en.addEventListener("click", () => setLanguage("en"));
+
+    const savedLanguage = localStorage.getItem("beyondgreen-language") || "id";
+    setLanguage(savedLanguage);
+
 
 
     /* ========================================================
