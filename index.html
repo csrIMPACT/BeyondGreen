@@ -32,7 +32,7 @@
 
     body {
       font-family: "DM Sans", sans-serif;
-      background: #07130f;
+      background: #000000;
       color: #f3f7f2;
       overflow-x: hidden;
       line-height: 1.6;
@@ -58,9 +58,9 @@
     ========================================================= */
 
     :root {
-      --bg: #07130f;
-      --bg-2: #0b1c16;
-      --bg-3: #10261d;
+      --bg: #000000;
+      --bg-2: #080d0a;
+      --bg-3: #0d1711;
 
       --green: #b8f26b;
       --green-2: #7ddc62;
@@ -210,7 +210,7 @@
     }
 
     .navbar.scrolled {
-      background: rgba(7,19,15,.82);
+      background: rgba(0,0,0,.88);
       backdrop-filter: blur(20px);
       border-color: var(--line);
     }
@@ -241,10 +241,15 @@
       display: inline-flex;
       align-items: baseline;
       gap: 0;
+      color: #ffffff;
+    }
+
+    .logo-beyond {
+      color: var(--green);
     }
 
     .logo-id {
-      color: var(--green);
+      color: #ffffff;
       font-size: .62em;
       letter-spacing: -.01em;
       margin-left: 1px;
@@ -1917,6 +1922,262 @@
     }
 
 
+
+    /* =========================================================
+       REPORT CENTER
+    ========================================================= */
+
+    .report-section {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .report-section::before {
+      content: "";
+      position: absolute;
+      width: 520px;
+      height: 520px;
+      right: -220px;
+      top: 80px;
+      background: radial-gradient(circle, rgba(184,242,107,.10), transparent 68%);
+      pointer-events: none;
+    }
+
+    .report-shell {
+      margin-top: 55px;
+      padding: clamp(24px, 4vw, 45px);
+      border: 1px solid rgba(184,242,107,.18);
+      border-radius: 30px;
+      background:
+        radial-gradient(circle at 85% 10%, rgba(184,242,107,.07), transparent 30%),
+        rgba(255,255,255,.025);
+    }
+
+    .report-grid {
+      display: grid;
+      grid-template-columns: .78fr 1.22fr;
+      gap: 45px;
+      align-items: start;
+    }
+
+    .report-intro h3 {
+      margin-top: 20px;
+      font-family: "Space Grotesk", sans-serif;
+      font-size: clamp(32px, 4vw, 52px);
+      line-height: .98;
+      letter-spacing: -.055em;
+    }
+
+    .report-intro h3 span {
+      color: var(--green);
+    }
+
+    .report-intro > p {
+      margin-top: 18px;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.75;
+    }
+
+    .report-points {
+      display: grid;
+      gap: 10px;
+      margin-top: 28px;
+    }
+
+    .report-point {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      padding: 13px 14px;
+      border: 1px solid var(--line);
+      border-radius: 13px;
+      background: rgba(255,255,255,.025);
+    }
+
+    .report-point-icon {
+      width: 26px;
+      height: 26px;
+      flex: 0 0 26px;
+      display: grid;
+      place-items: center;
+      border-radius: 8px;
+      background: rgba(184,242,107,.09);
+      color: var(--green);
+      font-size: 11px;
+      font-weight: 800;
+    }
+
+    .report-point strong {
+      display: block;
+      font-size: 12px;
+    }
+
+    .report-point small {
+      display: block;
+      margin-top: 2px;
+      color: var(--muted);
+      font-size: 10px;
+      line-height: 1.5;
+    }
+
+    .report-form {
+      padding: 25px;
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      background: rgba(5,12,9,.62);
+    }
+
+    .report-form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    .field {
+      display: grid;
+      gap: 7px;
+    }
+
+    .field.full {
+      grid-column: 1 / -1;
+    }
+
+    .field label {
+      color: #cbd5ce;
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: .10em;
+      text-transform: uppercase;
+    }
+
+    .field label span {
+      color: #66746c;
+      font-weight: 600;
+      letter-spacing: 0;
+      text-transform: none;
+    }
+
+    .field input,
+    .field select,
+    .field textarea {
+      width: 100%;
+      border: 1px solid rgba(255,255,255,.11);
+      border-radius: 12px;
+      outline: none;
+      background: #050a07;
+      color: #f3f7f2;
+      font: inherit;
+      font-size: 12px;
+      padding: 12px 13px;
+      transition: .2s ease;
+    }
+
+    .field input,
+    .field select {
+      min-height: 45px;
+    }
+
+    .field textarea {
+      min-height: 145px;
+      resize: vertical;
+      line-height: 1.6;
+    }
+
+    .field input::placeholder,
+    .field textarea::placeholder {
+      color: #59665f;
+    }
+
+    .field input:focus,
+    .field select:focus,
+    .field textarea:focus {
+      border-color: rgba(184,242,107,.48);
+      box-shadow: 0 0 0 3px rgba(184,242,107,.055);
+    }
+
+    .report-consent {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      margin-top: 14px;
+      color: #8e9b93;
+      font-size: 10px;
+      line-height: 1.55;
+    }
+
+    .report-consent input {
+      margin-top: 2px;
+      accent-color: var(--green);
+    }
+
+    .report-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .report-actions .btn {
+      flex: 1 1 180px;
+    }
+
+    .report-note {
+      margin-top: 14px;
+      padding: 11px 13px;
+      border-left: 2px solid rgba(184,242,107,.55);
+      color: #738078;
+      font-size: 10px;
+      line-height: 1.55;
+      background: rgba(184,242,107,.025);
+    }
+
+    .report-status {
+      display: none;
+      margin-top: 14px;
+      padding: 13px 15px;
+      border: 1px solid rgba(142,228,110,.22);
+      border-radius: 12px;
+      background: rgba(142,228,110,.055);
+      color: #bfe9ad;
+      font-size: 11px;
+      line-height: 1.55;
+    }
+
+    .report-status.show {
+      display: block;
+    }
+
+    @media (max-width: 900px) {
+      .report-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .report-shell {
+        padding: 18px;
+        border-radius: 22px;
+      }
+
+      .report-form {
+        padding: 18px;
+      }
+
+      .report-form-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .field.full {
+        grid-column: auto;
+      }
+
+      .report-intro h3 {
+        font-size: 39px;
+      }
+    }
+
     /* =========================================================
        FOOTER
     ========================================================= */
@@ -2372,7 +2633,7 @@
 
       <a href="#home" class="logo" aria-label="BEYONDGREEN.ID">
         <span class="logo-mark">G</span>
-        <span class="logo-word">BEYONDGREEN<span class="logo-id">.ID</span></span>
+        <span class="logo-word"><span class="logo-beyond">BEYOND</span>GREEN<span class="logo-id">.ID</span></span>
       </a>
 
       <nav class="nav-links">
@@ -2384,11 +2645,12 @@
         <a href="#programs" data-lang-key="nav-csr">CSR</a>
         <a href="#checker" data-lang-key="nav-greenwashing">Greenwashing</a>
         <a href="#evidence" data-lang-key="nav-evidence">Evidence</a>
+        <a href="#report" data-lang-key="nav-report">Report</a>
 
       </nav>
 
-      <a href="#evidence" class="nav-button">
-        <span data-lang-key="evidence-room">Evidence Room</span> ↗
+      <a href="#report" class="nav-button">
+        <span data-lang-key="report-now">Report an Issue</span> ↗
       </a>
 
       <div class="language-switcher" aria-label="Language switcher">
@@ -4528,6 +4790,196 @@
        FOOTER
   ======================================================== -->
 
+
+  <!-- ========================================================
+       REPORT CENTER
+  ========================================================= -->
+
+  <section id="report" class="report-section">
+
+    <div class="container">
+
+      <span class="eyebrow reveal">
+        10 · Report Center
+      </span>
+
+      <h2 class="section-title reveal">
+        See something that<br>
+        needs <span>to be heard?</span>
+      </h2>
+
+      <p class="section-description reveal">
+        Gunakan ruang ini untuk menyampaikan temuan, dugaan masalah, atau informasi
+        yang relevan dengan CSR, ESG, lingkungan, dan dampak sosial perusahaan.
+        Laporan dapat dibuat atas nama sendiri atau secara anonim.
+      </p>
+
+      <div class="report-shell reveal">
+
+        <div class="report-grid">
+
+          <div class="report-intro">
+
+            <h3>
+              Report it.<br>
+              We <span>look deeper.</span>
+            </h3>
+
+            <p>
+              Sampaikan informasi sejelas mungkin. Tim riset dapat menggunakan laporan
+              ini sebagai masukan untuk verifikasi, pengembangan riset, atau penelusuran
+              isu pada penelitian berikutnya.
+            </p>
+
+            <div class="report-points">
+
+              <div class="report-point">
+                <div class="report-point-icon">01</div>
+                <div>
+                  <strong>CSR & Social Issues</strong>
+                  <small>Program, dampak masyarakat, stakeholder, atau keluhan sosial.</small>
+                </div>
+              </div>
+
+              <div class="report-point">
+                <div class="report-point-icon">02</div>
+                <div>
+                  <strong>Environmental Concerns</strong>
+                  <small>Pencemaran, limbah, emisi, deforestasi, atau dampak lingkungan.</small>
+                </div>
+              </div>
+
+              <div class="report-point">
+                <div class="report-point-icon">03</div>
+                <div>
+                  <strong>Greenwashing / Misleading Claims</strong>
+                  <small>Klaim keberlanjutan yang menurut Anda tidak sesuai dengan bukti.</small>
+                </div>
+              </div>
+
+              <div class="report-point">
+                <div class="report-point-icon">04</div>
+                <div>
+                  <strong>Evidence & Research Leads</strong>
+                  <small>Dokumen, tautan, data, atau informasi yang layak ditelusuri.</small>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <form class="report-form" id="reportForm">
+
+            <div class="report-form-grid">
+
+              <div class="field">
+                <label for="reporterName">
+                  Nama <span>(opsional)</span>
+                </label>
+                <input id="reporterName" name="reporterName" type="text"
+                  placeholder="Nama Anda / Anonymous">
+              </div>
+
+              <div class="field">
+                <label for="reporterContact">
+                  Kontak <span>(opsional)</span>
+                </label>
+                <input id="reporterContact" name="reporterContact" type="text"
+                  placeholder="Email / WhatsApp">
+              </div>
+
+              <div class="field">
+                <label for="reportCompany">
+                  Perusahaan / Entitas
+                </label>
+                <input id="reportCompany" name="reportCompany" type="text"
+                  placeholder="Contoh: PT Indah Kiat Pulp & Paper Tbk." required>
+              </div>
+
+              <div class="field">
+                <label for="reportCategory">
+                  Kategori Laporan
+                </label>
+                <select id="reportCategory" name="reportCategory" required>
+                  <option value="">Pilih kategori</option>
+                  <option>CSR & Social Impact</option>
+                  <option>Environmental Concern</option>
+                  <option>ESG / Governance</option>
+                  <option>Greenwashing / Misleading Claim</option>
+                  <option>Evidence / Research Lead</option>
+                  <option>Other</option>
+                </select>
+              </div>
+
+              <div class="field full">
+                <label for="reportTitle">
+                  Judul / Ringkasan
+                </label>
+                <input id="reportTitle" name="reportTitle" type="text"
+                  placeholder="Singkat: apa yang ingin Anda laporkan?" required>
+              </div>
+
+              <div class="field full">
+                <label for="reportDetails">
+                  Detail Laporan
+                </label>
+                <textarea id="reportDetails" name="reportDetails"
+                  placeholder="Jelaskan apa yang terjadi, kapan, di mana, siapa yang terdampak, dan mengapa informasi ini penting untuk ditelusuri."
+                  required></textarea>
+              </div>
+
+              <div class="field full">
+                <label for="reportEvidence">
+                  Bukti / Sumber <span>(opsional)</span>
+                </label>
+                <input id="reportEvidence" name="reportEvidence" type="url"
+                  placeholder="https://... / tautan dokumen / sumber publik">
+              </div>
+
+            </div>
+
+            <label class="report-consent">
+              <input type="checkbox" id="reportConfirm" required>
+              <span>
+                Saya memahami bahwa laporan ini merupakan masukan untuk tujuan riset,
+                verifikasi, dan dokumentasi. Informasi harus disampaikan dengan itikad baik
+                dan tidak dimaksudkan sebagai putusan hukum.
+              </span>
+            </label>
+
+            <div class="report-actions">
+
+              <button type="submit" class="btn btn-primary">
+                Prepare Report ↗
+              </button>
+
+              <button type="button" class="btn btn-secondary" id="downloadReport">
+                Download Copy ↓
+              </button>
+
+            </div>
+
+            <div class="report-note">
+              <strong>Privasi:</strong> jangan kirim kata sandi, data rekening, NIK,
+              alamat rumah, atau informasi pribadi sensitif. Form ini menyiapkan laporan
+              di perangkat Anda dan dapat disimpan sebagai salinan sebelum dikirim ke tim.
+            </div>
+
+            <div class="report-status" id="reportStatus"></div>
+
+          </form>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
   <footer>
 
     <div class="container">
@@ -4543,8 +4995,8 @@
           </h3>
 
           <p>
-            Environmental CSR Assessment ·
-            PT Indah Kiat Pulp & Paper Tbk.
+            CSR & Sustainability Research Lab ·
+            Evidence-led corporate impact research.
           </p>
 
         </div>
@@ -4581,7 +5033,7 @@
       <div class="footer-bottom">
 
         <span>
-          © 2026 · Academic Project
+          © 2026 · BEYONDGREEN.ID Research Initiative
         </span>
 
         <span>
@@ -4610,6 +5062,23 @@
     const languagePairs = {
 
       /* Navigation */
+      "Report": ["Laporkan", "Report"],
+      "Report an Issue": ["Laporkan Isu", "Report an Issue"],
+      "10 · Report Center": ["10 · Pusat Pelaporan", "10 · Report Center"],
+      "See something that": ["Menemukan sesuatu yang", "See something that"],
+      "needs": ["perlu", "needs"],
+      "to be heard?": ["didengar?", "to be heard?"],
+      "Report it.": ["Laporkan.", "Report it."],
+      "We": ["Kami", "We"],
+      "look deeper.": ["telusuri lebih dalam.", "look deeper."],
+      "Prepare Report ↗": ["Siapkan Laporan ↗", "Prepare Report ↗"],
+      "Download Copy ↓": ["Unduh Salinan ↓", "Download Copy ↓"],
+      "CSR & Social Issues": ["CSR & Isu Sosial", "CSR & Social Issues"],
+      "Environmental Concerns": ["Isu Lingkungan", "Environmental Concerns"],
+      "Greenwashing / Misleading Claims": ["Greenwashing / Klaim Menyesatkan", "Greenwashing / Misleading Claims"],
+      "Evidence & Research Leads": ["Bukti & Petunjuk Riset", "Evidence & Research Leads"],
+
+      /* Existing Navigation */
       "About": ["Tentang", "About"],
       "Research": ["Riset", "Research"],
       "Evidence": ["Bukti", "Evidence"],
@@ -5255,6 +5724,150 @@
 
     });
 
+
+
+    /* ========================================================
+       REPORT CENTER
+       Static-site friendly:
+       - validates the form
+       - copies a structured report
+       - downloads a TXT copy
+       - optional mailto destination can be configured later
+    ======================================================== */
+
+    const REPORT_EMAIL = "";
+
+    const reportForm = document.getElementById("reportForm");
+    const reportStatus = document.getElementById("reportStatus");
+    const downloadReportBtn = document.getElementById("downloadReport");
+
+    function getReportData() {
+      return {
+        name: document.getElementById("reporterName").value.trim() || "Anonymous",
+        contact: document.getElementById("reporterContact").value.trim() || "Not provided",
+        company: document.getElementById("reportCompany").value.trim(),
+        category: document.getElementById("reportCategory").value,
+        title: document.getElementById("reportTitle").value.trim(),
+        details: document.getElementById("reportDetails").value.trim(),
+        evidence: document.getElementById("reportEvidence").value.trim() || "Not provided",
+        date: new Date().toLocaleString("id-ID", {
+          dateStyle: "long",
+          timeStyle: "short"
+        })
+      };
+    }
+
+    function buildReportText(data) {
+      return [
+        "BEYONDGREEN.ID — REPORT CENTER",
+        "==========================================",
+        "",
+        "REPORT DATE",
+        data.date,
+        "",
+        "REPORTER",
+        data.name,
+        "",
+        "CONTACT",
+        data.contact,
+        "",
+        "COMPANY / ENTITY",
+        data.company,
+        "",
+        "CATEGORY",
+        data.category,
+        "",
+        "TITLE / SUMMARY",
+        data.title,
+        "",
+        "DETAILS",
+        data.details,
+        "",
+        "EVIDENCE / SOURCE",
+        data.evidence,
+        "",
+        "------------------------------------------",
+        "Submitted through BEYONDGREEN.ID Report Center",
+        "For research, verification, and documentation purposes."
+      ].join("\n");
+    }
+
+    function showReportStatus(message) {
+      reportStatus.textContent = message;
+      reportStatus.classList.add("show");
+    }
+
+    reportForm.addEventListener("submit", async (event) => {
+      event.preventDefault();
+
+      if (!reportForm.checkValidity()) {
+        reportForm.reportValidity();
+        return;
+      }
+
+      const data = getReportData();
+      const reportText = buildReportText(data);
+
+      try {
+        await navigator.clipboard.writeText(reportText);
+
+        if (REPORT_EMAIL) {
+          const subject = encodeURIComponent(
+            "[BEYONDGREEN.ID REPORT] " + data.title
+          );
+          const body = encodeURIComponent(reportText);
+
+          window.location.href =
+            `mailto:${REPORT_EMAIL}?subject=${subject}&body=${body}`;
+
+          showReportStatus(
+            "Laporan sudah disiapkan dan disalin. Aplikasi email akan dibuka untuk proses pengiriman."
+          );
+        } else {
+          showReportStatus(
+            "Laporan sudah disiapkan dan disalin ke clipboard. Gunakan “Download Copy” untuk menyimpan arsip TXT."
+          );
+        }
+      } catch (error) {
+        showReportStatus(
+          "Laporan sudah siap. Jika clipboard tidak tersedia, gunakan “Download Copy” untuk menyimpan laporan."
+        );
+      }
+    });
+
+    downloadReportBtn.addEventListener("click", () => {
+      if (!reportForm.checkValidity()) {
+        reportForm.reportValidity();
+        return;
+      }
+
+      const data = getReportData();
+      const blob = new Blob([buildReportText(data)], {
+        type: "text/plain;charset=utf-8"
+      });
+
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement("a");
+
+      const safeTitle = data.title
+        .toLowerCase()
+        .replace(/[^a-z0-9]+/g, "-")
+        .replace(/^-|-$/g, "")
+        .slice(0, 50) || "report";
+
+      link.href = url;
+      link.download = `beyondgreen-report-${safeTitle}.txt`;
+
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
+
+      URL.revokeObjectURL(url);
+
+      showReportStatus(
+        "Salinan laporan berhasil dibuat dan diunduh sebagai file TXT."
+      );
+    });
 
   </script>
 
