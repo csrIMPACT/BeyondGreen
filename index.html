@@ -4,10 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <meta name="description" content="CSR & Sustainability Research Lab of PT Indah Kiat Pulp & Paper Tbk.">
+  <meta name="description" content="BEYONDGREEN.ID — CSR & Sustainability Research Lab. Evidence-led research on corporate social responsibility, ESG, sustainability, and environmental impact.">
   <meta name="theme-color" content="#07130f">
 
-  <title>BEYONDGREEN.ID — Look Beyond the Green.</title>
+  <title>BEYONDGREEN.ID — CSR & Sustainability Research Lab</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -236,10 +236,17 @@
       letter-spacing: -.03em;
     }
 
+
+    .logo-word {
+      display: inline-flex;
+      align-items: baseline;
+      gap: 0;
+    }
+
     .logo-id {
       color: var(--green);
       font-size: .62em;
-      letter-spacing: -.02em;
+      letter-spacing: -.01em;
       margin-left: 1px;
     }
 
@@ -550,7 +557,7 @@
 
 
     /* =========================================================
-       TEAM — BEYONDGREEN.ID PREMIUM
+       TEAM — BEYONDGREEN PREMIUM
     ========================================================= */
 
     .team-grid {
@@ -686,51 +693,6 @@
       letter-spacing: .08em;
     }
 
-    .advisor-wrap {
-      display: flex;
-      justify-content: center;
-      margin-top: 50px;
-      margin-bottom: 70px;
-    }
-
-    .advisor-card {
-      width: min(430px, 100%);
-      border-color: rgba(184,242,107,.30);
-      box-shadow: 0 25px 70px rgba(0,0,0,.28), 0 0 45px rgba(184,242,107,.06);
-    }
-
-    .advisor-card .team-photo {
-      height: 360px;
-    }
-
-    .advisor-card .team-role {
-      color: var(--green);
-    }
-
-    .advisor-card .team-name {
-      font-size: 25px;
-    }
-
-    .team-divider {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      margin: 0 0 5px;
-      color: #77857d;
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: .14em;
-      text-transform: uppercase;
-    }
-
-    .team-divider::before,
-    .team-divider::after {
-      content: "";
-      height: 1px;
-      flex: 1;
-      background: var(--line);
-    }
-
     @media (max-width: 1000px) {
       .team-grid { grid-template-columns: repeat(2, 1fr); gap: 18px; }
       .team-card { min-height: 450px; }
@@ -741,7 +703,6 @@
       .team-grid { grid-template-columns: 1fr; gap: 18px; }
       .team-card { min-height: 0; }
       .team-photo { height: 330px; }
-      .advisor-card .team-photo { height: 330px; }
       .team-info { padding: 21px 20px 23px; }
       .team-name { font-size: 23px; }
       .team-desc { font-size: 12px; }
@@ -749,8 +710,191 @@
 
     @media (max-width: 380px) {
       .team-photo { height: 300px; }
-      .advisor-card .team-photo { height: 300px; }
       .team-name { font-size: 21px; }
+    }
+
+
+    /* =========================================================
+       PROJECT ADVISOR
+    ========================================================= */
+
+    .advisor-wrap {
+      display: flex;
+      justify-content: center;
+      margin-top: 55px;
+      margin-bottom: 75px;
+    }
+
+    .advisor-card {
+      width: min(440px, 100%);
+      min-height: 0;
+      border-color: rgba(184,242,107,.28);
+      background:
+        radial-gradient(circle at 50% 0%, rgba(184,242,107,.08), transparent 50%),
+        #0b1c16;
+      box-shadow:
+        0 25px 70px rgba(0,0,0,.28),
+        0 0 45px rgba(184,242,107,.055);
+    }
+
+    .advisor-card .team-photo {
+      height: 360px;
+    }
+
+    .advisor-card .team-name {
+      font-size: 25px;
+    }
+
+    .advisor-card:hover {
+      border-color: rgba(184,242,107,.48);
+    }
+
+    .advisor-kicker {
+      margin-top: 35px;
+      text-align: center;
+      color: #77857d;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+
+    .research-team-label {
+      margin-top: 8px;
+      text-align: center;
+      font-family: "Space Grotesk", sans-serif;
+      font-size: clamp(28px, 4vw, 42px);
+      letter-spacing: -.045em;
+    }
+
+    /* =========================================================
+       RESEARCH ARCHIVE
+    ========================================================= */
+
+    .research-identity {
+      margin-top: 55px;
+      padding: 34px;
+    }
+
+    .research-identity-grid {
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 20px;
+      align-items: stretch;
+    }
+
+    .research-identity h3,
+    .research-card h3 {
+      font-family: "Space Grotesk", sans-serif;
+    }
+
+    .research-identity h3 {
+      font-size: 31px;
+      letter-spacing: -.04em;
+    }
+
+    .research-identity p {
+      margin-top: 12px;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.75;
+    }
+
+    .research-principles {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+      margin-top: 25px;
+    }
+
+    .research-principle {
+      padding: 13px 14px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: rgba(255,255,255,.025);
+      color: #c7d1ca;
+      font-size: 11px;
+      font-weight: 700;
+    }
+
+    .research-card {
+      position: relative;
+      overflow: hidden;
+      padding: 30px;
+      border: 1px solid rgba(184,242,107,.20);
+      border-radius: var(--radius);
+      background:
+        radial-gradient(circle at 90% 10%, rgba(184,242,107,.10), transparent 38%),
+        rgba(255,255,255,.035);
+      transition: .3s ease;
+    }
+
+    .research-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(184,242,107,.38);
+    }
+
+    .research-card-tag {
+      display: inline-flex;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(184,242,107,.08);
+      color: var(--green);
+      font-size: 9px;
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .research-card h3 {
+      margin-top: 18px;
+      font-size: 26px;
+      line-height: 1.05;
+    }
+
+    .research-card p {
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.65;
+    }
+
+    .research-meta {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-top: 22px;
+    }
+
+    .research-meta div {
+      padding: 12px;
+      border-top: 1px solid var(--line);
+      color: #9ba89f;
+      font-size: 10px;
+    }
+
+    .research-meta strong {
+      display: block;
+      margin-top: 4px;
+      color: #d9e1dc;
+      font-size: 11px;
+    }
+
+    .research-card .btn {
+      margin-top: 22px;
+      width: 100%;
+    }
+
+    @media (max-width: 1000px) {
+      .research-identity-grid { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 700px) {
+      .advisor-card { width: 100%; }
+      .advisor-card .team-photo { height: 330px; }
+      .research-identity { padding: 27px; }
+      .research-principles { grid-template-columns: 1fr; }
+      .research-meta { grid-template-columns: 1fr; }
     }
 
     /* =========================================================
@@ -1937,6 +2081,10 @@
         font-size: 13px;
       }
 
+      .logo-id {
+        font-size: .60em;
+      }
+
       .hero {
         min-height: auto;
 
@@ -2222,19 +2370,20 @@
 
     <div class="nav-inner">
 
-      <a href="#home" class="logo">
+      <a href="#home" class="logo" aria-label="BEYONDGREEN.ID">
         <span class="logo-mark">G</span>
-        BEYONDGREEN<span class="logo-id">.ID</span>
+        <span class="logo-word">BEYONDGREEN<span class="logo-id">.ID</span></span>
       </a>
 
       <nav class="nav-links">
 
+        <a href="#about" data-lang-key="nav-about">About</a>
+        <a href="#research" data-lang-key="nav-research">Research</a>
         <a href="#team" data-lang-key="nav-team">Team</a>
-        <a href="#project" data-lang-key="nav-project">Project</a>
         <a href="#issues" data-lang-key="nav-issues">Issues</a>
         <a href="#programs" data-lang-key="nav-csr">CSR</a>
         <a href="#checker" data-lang-key="nav-greenwashing">Greenwashing</a>
-        <a href="#verdict" data-lang-key="nav-verdict">Verdict</a>
+        <a href="#evidence" data-lang-key="nav-evidence">Evidence</a>
 
       </nav>
 
@@ -2276,21 +2425,22 @@
           </div>
 
           <h1>
-            GREEN<br>
-            CLAIMS.<br>
-            <span class="green">REAL EVIDENCE.</span>
+            LOOK<br>
+            BEYOND<br>
+            <span class="green">THE GREEN.</span>
           </h1>
 
           <p class="hero-subtitle">
-            <strong>BeyondGreen.ID</strong> is a research initiative focused on CSR, ESG,
-            sustainability, and corporate impact. Our research examines
-            <strong>PT Indah Kiat Pulp & Paper Tbk.</strong> through evidence-based assessment.
+            <strong>BEYONDGREEN.ID</strong> is a research initiative focused on
+            Corporate Social Responsibility, ESG, sustainability, and environmental impact.
+            Our first published study examines
+            <strong>PT Indah Kiat Pulp & Paper Tbk.</strong>
           </p>
 
           <div class="hero-actions">
 
-            <a href="#question" class="btn btn-primary">
-              Explore the Research
+            <a href="#research" class="btn btn-primary">
+              Explore Our Research
               →
             </a>
 
@@ -2310,7 +2460,7 @@
               </div>
 
               <div class="hero-stat-label">
-                Scope 1 emissions · tCO₂e
+                Current study · Scope 1 emissions · tCO₂e
               </div>
 
             </div>
@@ -2323,7 +2473,7 @@
               </div>
 
               <div class="hero-stat-label">
-                Renewable energy
+                Current study · Renewable energy
               </div>
 
             </div>
@@ -2336,7 +2486,7 @@
               </div>
 
               <div class="hero-stat-label">
-                Recycled fiber
+                Current study · Recycled fiber
               </div>
 
             </div>
@@ -2390,18 +2540,19 @@
       <div class="container">
 
         <span class="eyebrow reveal">
-          01 · The Research Team
+          01 · Research Team
         </span>
 
         <h2 class="section-title reveal">
-          Meet the <span>research team.</span>
+          Research is stronger<br>
+          with the right <span>perspective.</span>
         </h2>
 
         <p class="section-description reveal">
-          A collaborative assessment built through research,
-          analysis, environmental evaluation, and critical review.
+          BEYONDGREEN.ID brings together academic guidance and collaborative research
+          to examine CSR claims, environmental performance, sustainability targets,
+          stakeholder impact, and the evidence behind them.
         </p>
-
 
         <!-- PROJECT ADVISOR -->
 
@@ -2433,9 +2584,13 @@
 
         </div>
 
-        <div class="team-divider">
-          Research Team
+        <div class="advisor-kicker reveal">
+          The Research Team
         </div>
+
+        <h3 class="research-team-label reveal">
+          Built through <span style="color:var(--green)">collaboration.</span>
+        </h3>
 
         <div class="team-grid">
 
@@ -2443,8 +2598,8 @@
 
           <article class="team-card reveal">
 
-            <div class="team-photo">
-              <img src="Dian Rusdiana.png" alt="Dian Rusdiana">
+            <div class="team-photo" data-number="01">
+              <img src="masdianrusdianapng.png" alt="Dian Rusdiana">
             </div>
 
             <div class="team-info">
@@ -2470,7 +2625,7 @@
 
           <article class="team-card reveal">
 
-            <div class="team-photo">
+            <div class="team-photo" data-number="02">
               <img src="Salsa Desi.png" alt="Salsa Desi">
             </div>
 
@@ -2497,7 +2652,7 @@
 
           <article class="team-card reveal">
 
-            <div class="team-photo">
+            <div class="team-photo" data-number="03">
               <img src="Sri Cahyani.png" alt="Sri Cahyani">
             </div>
 
@@ -2524,7 +2679,7 @@
 
           <article class="team-card reveal">
 
-            <div class="team-photo">
+            <div class="team-photo" data-number="04">
               <img src="Putri Slaras.png" alt="Putri Slaras">
             </div>
 
@@ -2548,15 +2703,107 @@
 
         </div>
 
-
-        <p class="team-note">
-          
-        </p>
-
       </div>
 
     </section>
 
+
+    <!-- ======================================================
+         RESEARCH ARCHIVE
+    ====================================================== -->
+
+    <section id="research">
+
+      <div class="container">
+
+        <span class="eyebrow reveal">
+          02 · Research Archive
+        </span>
+
+        <h2 class="section-title reveal">
+          Studies beyond<br>
+          the <span>green label.</span>
+        </h2>
+
+        <p class="section-description reveal">
+          BEYONDGREEN.ID documents research projects that examine how corporate
+          responsibility is communicated, implemented, measured, and evidenced.
+          Each study is approached as an evidence-led assessment rather than a company profile.
+        </p>
+
+        <div class="research-identity glass reveal">
+
+          <div class="research-identity-grid">
+
+            <div>
+
+              <h3>
+                A research initiative,<br>
+                not a <span style="color:var(--green)">company profile.</span>
+              </h3>
+
+              <p>
+                Our work focuses on the distance between sustainability narratives
+                and measurable outcomes. We review public disclosures, targets,
+                environmental indicators, stakeholder dimensions, and supporting evidence
+                to build a more critical picture of corporate CSR performance.
+              </p>
+
+              <div class="research-principles">
+
+                <div class="research-principle">Evidence-led</div>
+                <div class="research-principle">CSR & ESG</div>
+                <div class="research-principle">Critical review</div>
+                <div class="research-principle">Stakeholder impact</div>
+
+              </div>
+
+            </div>
+
+            <article class="research-card">
+
+              <span class="research-card-tag">
+                Research 01 · Published Study
+              </span>
+
+              <h3>
+                PT Indah Kiat<br>
+                Pulp & Paper Tbk.
+              </h3>
+
+              <p>
+                Environmental CSR assessment examining claims, targets, environmental
+                performance, stakeholder considerations, remaining risks, and the evidence
+                available to support sustainability narratives.
+              </p>
+
+              <div class="research-meta">
+
+                <div>
+                  Focus
+                  <strong>Environmental CSR</strong>
+                </div>
+
+                <div>
+                  Approach
+                  <strong>Evidence-based assessment</strong>
+                </div>
+
+              </div>
+
+              <a class="btn btn-primary" href="laporan-pt-indah-kiat.pdf" target="_blank" rel="noopener">
+                Open Research Report ↗
+              </a>
+
+            </article>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
 
 
     <!-- ======================================================
@@ -2568,7 +2815,7 @@
       <div class="container">
 
         <span class="eyebrow reveal">
-          02 · About the Project
+          03 · About the Project
         </span>
 
         <h2 class="section-title reveal">
@@ -2700,7 +2947,7 @@
       <div class="container">
 
         <span class="eyebrow reveal">
-          03 · Company & Context
+          04 · Company & Context
         </span>
 
         <h2 class="section-title reveal">
@@ -3857,7 +4104,7 @@
             <div class="evidence-content">
 
               <h3>
-                Renewable energy
+                Current study · Renewable energy
               </h3>
 
               <p>
@@ -3882,7 +4129,7 @@
             <div class="evidence-content">
 
               <h3>
-                Recycled fiber
+                Current study · Recycled fiber
               </h3>
 
               <p>
@@ -3965,11 +4212,11 @@
             <ul class="split-list">
 
               <li>
-                Renewable energy reached 54%.
+                Current study · Renewable energy reached 54%.
               </li>
 
               <li>
-                Recycled fiber reached 52%.
+                Current study · Recycled fiber reached 52%.
               </li>
 
               <li>
@@ -4296,9 +4543,8 @@
           </h3>
 
           <p>
-            CSR & Sustainability Research Lab ·
-            Research 01 — PT Indah Kiat Pulp & Paper Tbk.
-            <br>Independent academic research, evidence review & sustainability assessment.
+            Environmental CSR Assessment ·
+            PT Indah Kiat Pulp & Paper Tbk.
           </p>
 
         </div>
@@ -4357,13 +4603,26 @@
   <script>
 
     /* ========================================================
-       BEYONDGREEN — BILINGUAL LANGUAGE SYSTEM
+       BEYONDGREEN.ID — BILINGUAL LANGUAGE SYSTEM
        Default: Bahasa Indonesia
     ======================================================== */
 
     const languagePairs = {
 
       /* Navigation */
+      "About": ["Tentang", "About"],
+      "Research": ["Riset", "Research"],
+      "Evidence": ["Bukti", "Evidence"],
+      "CSR & Sustainability Research Lab": ["Laboratorium Riset CSR & Keberlanjutan", "CSR & Sustainability Research Lab"],
+      "Explore Our Research": ["Jelajahi Riset Kami", "Explore Our Research"],
+      "LOOK": ["LIHAT", "LOOK"],
+      "BEYOND": ["LEBIH DARI", "BEYOND"],
+      "THE GREEN.": ["SEKADAR HIJAU.", "THE GREEN."],
+      "Current study · Scope 1 emissions · tCO₂e": ["Studi saat ini · Emisi Scope 1 · tCO₂e", "Current study · Scope 1 emissions · tCO₂e"],
+      "Current study · Renewable energy": ["Studi saat ini · Energi terbarukan", "Current study · Renewable energy"],
+      "Current study · Recycled fiber": ["Studi saat ini · Serat daur ulang", "Current study · Recycled fiber"],
+
+      /* Existing navigation */
       "Team": ["Tim", "Team"],
       "Project": ["Proyek", "Project"],
       "Issues": ["Isu", "Issues"],
@@ -4379,12 +4638,33 @@
       "We ask what the evidence shows.": ["Kami melihat apa yang ditunjukkan oleh bukti.", "We ask what the evidence shows."],
       "Explore the Assessment": ["Jelajahi Penilaian", "Explore the Assessment"],
       "View Evidence": ["Lihat Bukti", "View Evidence"],
-      "Scope 1 emissions · tCO₂e": ["Emisi Scope 1 · tCO₂e", "Scope 1 emissions · tCO₂e"],
-      "Renewable energy": ["Energi terbarukan", "Renewable energy"],
-      "Recycled fiber": ["Serat daur ulang", "Recycled fiber"],
+      "Current study · Scope 1 emissions · tCO₂e": ["Emisi Scope 1 · tCO₂e", "Current study · Scope 1 emissions · tCO₂e"],
+      "Current study · Renewable energy": ["Energi terbarukan", "Current study · Renewable energy"],
+      "Current study · Recycled fiber": ["Serat daur ulang", "Current study · Recycled fiber"],
 
       /* Team */
-      "01 · The Research Team": ["01 · Tim Riset", "01 · The Research Team"],
+      "01 · Research Team": ["01 · Tim Riset", "01 · Research Team"],
+      "Research is stronger": ["Riset menjadi lebih kuat", "Research is stronger"],
+      "with the right": ["dengan perspektif yang", "with the right"],
+      "perspective.": ["tepat.", "perspective."],
+      "BEYONDGREEN.ID brings together academic guidance and collaborative research": ["BEYONDGREEN.ID menggabungkan arahan akademik dan riset kolaboratif", "BEYONDGREEN.ID brings together academic guidance and collaborative research"],
+      "Project Advisor": ["Penasihat Proyek", "Project Advisor"],
+      "Arahan konseptual, akademik, dan supervisi dalam pengembangan penelitian.": ["Arahan konseptual, akademik, dan supervisi dalam pengembangan penelitian.", "Conceptual, academic, and supervisory guidance throughout the research."],
+      "The Research Team": ["Tim Riset", "The Research Team"],
+      "Built through": ["Dibangun melalui", "Built through"],
+      "collaboration.": ["kolaborasi.", "collaboration."],
+
+      /* Research Archive */
+      "02 · Research Archive": ["02 · Arsip Riset", "02 · Research Archive"],
+      "Studies beyond": ["Studi melampaui", "Studies beyond"],
+      "the": ["label", "the"],
+      "green label.": ["hijau.", "green label."],
+      "Research 01 · Published Study": ["Riset 01 · Studi Terpublikasi", "Research 01 · Published Study"],
+      "Environmental CSR": ["CSR Lingkungan", "Environmental CSR"],
+      "Evidence-based assessment": ["Penilaian berbasis bukti", "Evidence-based assessment"],
+      "Open Research Report ↗": ["Buka Laporan Riset ↗", "Open Research Report ↗"],
+
+      "01 · The Team": ["01 · Tim Kami", "01 · The Team"],
       "Meet the": ["Kenali", "Meet the"],
       "team.": ["tim kami.", "team."],
       "A collaborative assessment built through research,": ["Penilaian kolaboratif yang dibangun melalui riset,", "A collaborative assessment built through research,"],
@@ -4401,7 +4681,7 @@
       "Bagian foto juga dapat diganti dengan foto masing-masing anggota.": ["Bagian foto juga dapat diganti dengan foto masing-masing anggota.", "Member photos can also be replaced with each person's photo."],
 
       /* About */
-      "02 · About the Project": ["02 · Tentang Proyek", "02 · About the Project"],
+      "03 · About the Project": ["02 · Tentang Proyek", "03 · About the Project"],
       "Not a company profile.": ["Bukan profil perusahaan.", "Not a company profile."],
       "An": ["Sebuah", "An"],
       "assessment.": ["penilaian.", "assessment."],
@@ -4427,7 +4707,7 @@
       "targets, disclosures, and remaining environmental risks.": ["target, pengungkapan, dan risiko lingkungan yang masih tersisa.", "targets, disclosures, and remaining environmental risks."],
 
       /* Company */
-      "03 · Company & Context": ["03 · Perusahaan & Konteks", "03 · Company & Context"],
+      "04 · Company & Context": ["03 · Perusahaan & Konteks", "04 · Company & Context"],
       "Understanding the": ["Memahami", "Understanding the"],
       "context.": ["konteks.", "context."],
       "Operasional industri pulp & paper memiliki potensi dampak": ["Operasional industri pulp & paper memiliki potensi dampak", "Pulp & paper operations have potential impacts"],
@@ -4550,7 +4830,7 @@
       "Needs Improvement": ["Perlu Perbaikan", "Needs Improvement"],
       "Mixed": ["Campuran", "Mixed"],
       "Target minimum 50% energi terbarukan.": ["Target minimum 50% energi terbarukan.", "Minimum target of 50% renewable energy."],
-      "Penggunaan serat daur ulang menunjukkan progres kuat.": ["Penggunaan serat daur ulang menunjukkan progres kuat.", "Recycled fiber use shows strong progress."],
+      "Penggunaan serat daur ulang menunjukkan progres kuat.": ["Penggunaan serat daur ulang menunjukkan progres kuat.", "Current study · Recycled fiber use shows strong progress."],
       "Progress terhadap target pengurangan intensitas karbon.": ["Progress terhadap target pengurangan intensitas karbon.", "Progress toward the carbon intensity reduction target."],
       "Progress masih membutuhkan akselerasi.": ["Progress masih membutuhkan akselerasi.", "Progress still needs acceleration."],
       "Pengurangan penggunaan air belum mendekati target akhir.": ["Pengurangan penggunaan air belum mendekati target akhir.", "Water-use reduction is not yet close to the final target."],
@@ -4628,8 +4908,8 @@
       "work.": ["diperbaiki.", "work."],
       "✓ Positive Signals": ["✓ Sinyal Positif", "✓ Positive Signals"],
       "Real actions exist.": ["Ada aksi nyata.", "Real actions exist."],
-      "Renewable energy reached 54%.": ["Energi terbarukan mencapai 54%.", "Renewable energy reached 54%."],
-      "Recycled fiber reached 52%.": ["Serat daur ulang mencapai 52%.", "Recycled fiber reached 52%."],
+      "Current study · Renewable energy reached 54%.": ["Energi terbarukan mencapai 54%.", "Current study · Renewable energy reached 54%."],
+      "Current study · Recycled fiber reached 52%.": ["Serat daur ulang mencapai 52%.", "Current study · Recycled fiber reached 52%."],
       "B3 waste decreased substantially from the 2018 baseline.": ["Limbah B3 turun secara signifikan dari baseline 2018.", "B3 waste decreased substantially from the 2018 baseline."],
       "Solar PV capacity increased from 21.5 MWp to 32 MWp.": ["Kapasitas solar PV meningkat dari 21,5 MWp menjadi 32 MWp.", "Solar PV capacity increased from 21.5 MWp to 32 MWp."],
       "Biodiversity partnerships are multi-year.": ["Kemitraan biodiversitas berlangsung multi-tahun.", "Biodiversity partnerships are multi-year."],
@@ -4757,8 +5037,8 @@
 
       document.documentElement.lang = lang === "en" ? "en" : "id";
       document.title = lang === "en"
-        ? "BEYONDGREEN.ID — Look Beyond the Green."
-        : "BEYONDGREEN — Lihat Melampaui Hijau.";
+        ? "BEYONDGREEN.ID — CSR & Sustainability Research Lab"
+        : "BEYONDGREEN.ID — Laboratorium Riset CSR & Keberlanjutan";
 
       langButtons.id.classList.toggle("active", lang === "id");
       langButtons.en.classList.toggle("active", lang === "en");
