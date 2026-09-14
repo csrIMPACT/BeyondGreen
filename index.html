@@ -4,10 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <meta name="description" content="Environmental CSR Assessment of PT Indah Kiat Pulp & Paper Tbk.">
+  <meta name="description" content="CSR & Sustainability Research Lab — BeyondGreen.ID">
   <meta name="theme-color" content="#07130f">
 
-  <title>BEYONDGREEN — Look Beyond the Green.</title>
+  <title>BEYONDGREEN.ID — Look Beyond the Green.</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -1813,6 +1813,171 @@
     }
 
 
+
+    /* =========================================================
+       BEYONDGREEN.ID RESEARCH IDENTITY
+    ========================================================= */
+
+    .logo-domain {
+      color: var(--green);
+      font-size: .62em;
+      letter-spacing: -.02em;
+      margin-left: 1px;
+      align-self: flex-start;
+      margin-top: 2px;
+    }
+
+    .research-intro-section {
+      padding-top: 95px;
+    }
+
+    .research-hero {
+      position: relative;
+      display: grid;
+      grid-template-columns: 1.35fr .65fr;
+      gap: 30px;
+      padding: clamp(30px, 5vw, 65px);
+      overflow: hidden;
+      border-color: rgba(184,242,107,.16);
+      background:
+        radial-gradient(circle at 85% 20%, rgba(184,242,107,.11), transparent 32%),
+        linear-gradient(135deg, rgba(255,255,255,.045), rgba(255,255,255,.015));
+    }
+
+    .research-hero::after {
+      content: "BG.ID";
+      position: absolute;
+      right: -25px;
+      bottom: -55px;
+      font-family: "Space Grotesk", sans-serif;
+      font-size: clamp(110px, 18vw, 240px);
+      font-weight: 700;
+      line-height: .8;
+      letter-spacing: -.09em;
+      color: rgba(184,242,107,.035);
+      pointer-events: none;
+    }
+
+    .research-copy, .research-index { position: relative; z-index: 2; }
+    .research-copy .section-title { margin-top: 20px; }
+
+    .research-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 30px;
+    }
+    .research-badges span {
+      padding: 8px 11px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: #b9c5bd;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+    }
+
+    .research-index {
+      align-self: stretch;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 28px;
+      border-left: 1px solid var(--line);
+    }
+    .index-label {
+      color: var(--green);
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: .16em;
+    }
+    .index-title {
+      margin-top: 18px;
+      font-family: "Space Grotesk", sans-serif;
+      font-size: clamp(25px, 3vw, 39px);
+      font-weight: 700;
+      line-height: 1.02;
+      letter-spacing: -.045em;
+    }
+    .index-meta { margin-top: 13px; color: var(--muted); font-size: 11px; }
+    .index-line { width: 100%; height: 1px; margin: 25px 0; background: var(--line); }
+    .index-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .index-grid div { padding: 12px; border: 1px solid var(--line); border-radius: 12px; }
+    .index-grid strong { display: block; color: var(--green); font-size: 10px; }
+    .index-grid span { display: block; margin-top: 5px; color: #aeb9b1; font-size: 10px; }
+
+    .advisor-card {
+      display: grid;
+      grid-template-columns: 290px 1fr;
+      gap: 0;
+      min-height: 330px;
+      margin-top: 45px;
+      overflow: hidden;
+      border-color: rgba(184,242,107,.20);
+      background: linear-gradient(110deg, rgba(184,242,107,.055), rgba(255,255,255,.025));
+    }
+    .advisor-photo-wrap {
+      position: relative;
+      min-height: 330px;
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+      background: radial-gradient(circle, rgba(184,242,107,.15), transparent 60%), #0a1913;
+      border-right: 1px solid var(--line);
+    }
+    .advisor-photo {
+      position: relative; z-index: 3; width: 230px; height: 285px;
+      display: flex; align-items: flex-end; justify-content: center;
+    }
+    .advisor-photo img { width: 100%; height: 100%; object-fit: contain; object-position: center bottom; display: block; }
+    .advisor-orbit { position: absolute; border: 1px solid rgba(184,242,107,.14); border-radius: 50%; }
+    .orbit-one { width: 270px; height: 270px; }
+    .orbit-two { width: 360px; height: 150px; transform: rotate(-25deg); }
+    .advisor-info { padding: 45px 50px; display: flex; flex-direction: column; justify-content: center; }
+    .advisor-name { margin-top: 12px; font-family: "Space Grotesk", sans-serif; font-size: clamp(27px, 4vw, 45px); line-height: 1; letter-spacing: -.05em; }
+    .advisor-desc { max-width: 650px; margin-top: 16px; color: var(--muted); font-size: 14px; line-height: 1.7; }
+    .advisor-tag { margin-top: 28px; color: #78867d; font-size: 9px; font-weight: 800; letter-spacing: .13em; }
+    .team-divider { display: flex; align-items: center; gap: 15px; margin: 48px 0 5px; }
+    .team-divider span { color: #7e8c84; font-size: 10px; font-weight: 800; letter-spacing: .15em; }
+    .team-divider i { height: 1px; flex: 1; background: var(--line); }
+
+    .reports-section { padding-top: 100px; }
+    .report-feature {
+      display: grid; grid-template-columns: 120px 1fr auto; gap: 35px; align-items: center;
+      margin-top: 55px; padding: 35px; border-color: rgba(184,242,107,.18);
+    }
+    .report-number { color: rgba(184,242,107,.6); font-family: "Space Grotesk", sans-serif; font-size: 16px; font-weight: 800; line-height: 1.15; letter-spacing: .08em; }
+    .report-main h3 { margin-top: 16px; font-family: "Space Grotesk", sans-serif; font-size: clamp(25px, 3vw, 39px); letter-spacing: -.04em; }
+    .report-main p { max-width: 700px; margin-top: 9px; color: var(--muted); font-size: 13px; }
+    .report-meta { display: flex; flex-wrap: wrap; gap: 8px 20px; margin-top: 22px; color: #829087; font-size: 10px; font-weight: 700; }
+    .report-actions { display: flex; flex-direction: column; gap: 10px; min-width: 160px; }
+    .archive-note { display: grid; grid-template-columns: 180px 1fr; gap: 30px; margin-top: 18px; padding: 22px 25px; border-left: 2px solid var(--green); background: rgba(184,242,107,.035); }
+    .archive-note > span { color: var(--green); font-size: 10px; font-weight: 800; letter-spacing: .14em; }
+    .archive-note p { color: #8f9c94; font-size: 12px; }
+
+    @media (max-width: 1000px) {
+      .research-hero { grid-template-columns: 1fr; }
+      .research-index { border-left: 0; border-top: 1px solid var(--line); padding: 30px 0 0; }
+      .advisor-card { grid-template-columns: 230px 1fr; }
+      .advisor-photo-wrap { min-height: 300px; }
+      .report-feature { grid-template-columns: 90px 1fr; }
+      .report-actions { grid-column: 2; flex-direction: row; flex-wrap: wrap; }
+    }
+
+    @media (max-width: 700px) {
+      .research-intro-section { padding-top: 65px; }
+      .research-hero { padding: 25px 20px; }
+      .advisor-card { grid-template-columns: 1fr; }
+      .advisor-photo-wrap { min-height: 300px; border-right: 0; border-bottom: 1px solid var(--line); }
+      .advisor-info { padding: 28px 24px 30px; }
+      .advisor-name { font-size: 30px; }
+      .team-divider { margin-top: 38px; }
+      .report-feature { grid-template-columns: 1fr; gap: 20px; padding: 25px; }
+      .report-actions { grid-column: auto; flex-direction: column; }
+      .archive-note { grid-template-columns: 1fr; gap: 8px; }
+    }
+
     /* =========================================================
        RESPONSIVE TABLET
     ========================================================= */
@@ -1881,6 +2046,10 @@
 
       .logo {
         font-size: 13px;
+      }
+
+      .logo-domain {
+        font-size: .58em;
       }
 
       .hero {
@@ -2170,22 +2339,22 @@
 
       <a href="#home" class="logo">
         <span class="logo-mark">G</span>
-        BEYONDGREEN
+        BEYONDGREEN<span class="logo-domain">.ID</span>
       </a>
 
       <nav class="nav-links">
 
+        <a href="#research" data-lang-key="nav-research">Research</a>
         <a href="#team" data-lang-key="nav-team">Team</a>
-        <a href="#project" data-lang-key="nav-project">Project</a>
-        <a href="#issues" data-lang-key="nav-issues">Issues</a>
+        <a href="#project" data-lang-key="nav-project">Assessment</a>
         <a href="#programs" data-lang-key="nav-csr">CSR</a>
-        <a href="#checker" data-lang-key="nav-greenwashing">Greenwashing</a>
-        <a href="#verdict" data-lang-key="nav-verdict">Verdict</a>
+        <a href="#evidence" data-lang-key="nav-evidence">Evidence</a>
+        <a href="#reports" data-lang-key="nav-reports">Reports</a>
 
       </nav>
 
-      <a href="#evidence" class="nav-button">
-        <span data-lang-key="evidence-room">Evidence Room</span> ↗
+      <a href="#reports" class="nav-button">
+        <span data-lang-key="research-library">Research Library</span> ↗
       </a>
 
       <div class="language-switcher" aria-label="Language switcher">
@@ -2217,32 +2386,33 @@
 
           <div class="hero-kicker">
             <span class="eyebrow">
-              Environmental CSR Assessment
+              CSR & SUSTAINABILITY RESEARCH LAB
             </span>
           </div>
 
           <h1>
-            GREEN<br>
-            CLAIMS.<br>
-            <span class="green">REAL EVIDENCE.</span>
+            LOOK<br>
+            BEYOND THE<br>
+            <span class="green">GREEN.</span>
           </h1>
 
           <p class="hero-subtitle">
-            An environmental CSR assessment of
-            <strong>PT Indah Kiat Pulp & Paper Tbk.</strong>
-            We don't simply ask what the company claims.
-            <strong>We ask what the evidence shows.</strong>
+            <strong>BeyondGreen.ID</strong> is a research initiative focused on CSR,
+            sustainability, ESG, and environmental accountability.
+            Our research examines real cases — including
+            <strong>PT Indah Kiat Pulp & Paper Tbk.</strong> — through claims, data,
+            targets, evidence, outcomes, and remaining risks.
           </p>
 
           <div class="hero-actions">
 
             <a href="#question" class="btn btn-primary">
-              Explore the Assessment
+              Explore Our Research
               →
             </a>
 
             <a href="#evidence" class="btn btn-secondary">
-              View Evidence
+              View Research
             </a>
 
           </div>
@@ -2312,7 +2482,7 @@
         <span class="marquee-item">Environmental Impact</span>
         <span class="marquee-item">Greenwashing</span>
         <span class="marquee-item">Stakeholders</span>
-        <span class="marquee-item">Evidence</span>
+        <span class="marquee-item">Research</span>
 
         <span class="marquee-item">CSR</span>
         <span class="marquee-item">ESG</span>
@@ -2320,12 +2490,52 @@
         <span class="marquee-item">Environmental Impact</span>
         <span class="marquee-item">Greenwashing</span>
         <span class="marquee-item">Stakeholders</span>
-        <span class="marquee-item">Evidence</span>
+        <span class="marquee-item">Research</span>
 
       </div>
 
     </div>
 
+
+
+    <!-- ======================================================
+         RESEARCH LAB / IDENTITY
+    ====================================================== -->
+
+    <section id="research" class="research-intro-section">
+      <div class="container">
+        <div class="research-hero glass reveal">
+          <div class="research-copy">
+            <span class="eyebrow">01 · BeyondGreen.ID</span>
+            <h2 class="section-title">
+              Research the claim.<br>
+              <span>Measure the impact.</span>
+            </h2>
+            <p class="section-description">
+              BeyondGreen.ID diposisikan sebagai ruang riset dan assessment
+              yang mengkaji praktik CSR dan keberlanjutan perusahaan secara
+              berbasis bukti. Setiap studi menjadi bagian dari research archive
+              yang dapat dikembangkan ke berbagai perusahaan dan isu.
+            </p>
+            <div class="research-badges">
+              <span>CSR Research</span><span>ESG Assessment</span><span>Environmental Accountability</span>
+            </div>
+          </div>
+          <div class="research-index">
+            <div class="index-label">CURRENT STUDY</div>
+            <div class="index-title">PT Indah Kiat<br>Pulp & Paper Tbk.</div>
+            <div class="index-meta">Environmental CSR Assessment · 2026</div>
+            <div class="index-line"></div>
+            <div class="index-grid">
+              <div><strong>01</strong><span>Claims</span></div>
+              <div><strong>02</strong><span>Evidence</span></div>
+              <div><strong>03</strong><span>Impact</span></div>
+              <div><strong>04</strong><span>Verdict</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
 
     <!-- ======================================================
@@ -2337,18 +2547,42 @@
       <div class="container">
 
         <span class="eyebrow reveal">
-          01 · The Team
+          02 · The Team
         </span>
 
         <h2 class="section-title reveal">
-          Meet the <span>team.</span>
+          The people behind the <span>research.</span>
         </h2>
 
         <p class="section-description reveal">
-          A collaborative assessment built through research,
-          analysis, environmental evaluation, and critical review.
+          A research team working across project coordination, impact analysis,
+          ESG review, evidence gathering, design, and critical assessment.
         </p>
 
+
+        <article class="advisor-card glass reveal">
+          <div class="advisor-photo-wrap">
+            <div class="advisor-orbit orbit-one"></div>
+            <div class="advisor-orbit orbit-two"></div>
+            <div class="advisor-photo">
+              <img src="Ingga Maulana.png" alt="Ingga Maulana, S.Ak., M.Ak.">
+            </div>
+          </div>
+          <div class="advisor-info">
+            <div class="team-role">Project Advisor</div>
+            <h3 class="advisor-name">Ingga Maulana, S.Ak., M.Ak.</h3>
+            <p class="advisor-desc">
+              Arahan konseptual, akademik, dan supervisi dalam pengembangan
+              BeyondGreen.ID sebagai proyek riset CSR dan sustainability.
+            </p>
+            <div class="advisor-tag">ACADEMIC GUIDANCE · CONCEPT · SUPERVISION</div>
+          </div>
+        </article>
+
+        <div class="team-divider">
+          <span>RESEARCH TEAM</span>
+          <i></i>
+        </div>
 
         <div class="team-grid">
 
@@ -2481,7 +2715,7 @@
       <div class="container">
 
         <span class="eyebrow reveal">
-          02 · About the Project
+          03 · About the Assessment
         </span>
 
         <h2 class="section-title reveal">
@@ -2495,9 +2729,11 @@
           <div class="about-main glass reveal">
 
             <p>
-              Website ini merupakan proyek akademik untuk menilai
-              praktik Corporate Social Responsibility (CSR)
-              lingkungan PT Indah Kiat Pulp & Paper Tbk.
+              BeyondGreen.ID dikembangkan sebagai ruang riset dan assessment
+              CSR yang mendokumentasikan studi perusahaan secara sistematis.
+              Studi perdana dalam research archive ini berfokus pada
+              praktik Corporate Social Responsibility (CSR) lingkungan
+              PT Indah Kiat Pulp & Paper Tbk.
             </p>
 
             <p>
@@ -2613,7 +2849,7 @@
       <div class="container">
 
         <span class="eyebrow reveal">
-          03 · Company & Context
+          04 · Research Context
         </span>
 
         <h2 class="section-title reveal">
@@ -2705,7 +2941,7 @@
       <div class="container">
 
         <span class="eyebrow reveal">
-          04 · Environmental Issues
+          05 · Environmental Issues
         </span>
 
         <h2 class="section-title reveal">
@@ -2839,7 +3075,7 @@
       <div class="container">
 
         <span class="eyebrow reveal">
-          05 · CSR Programs
+          06 · CSR Programs
         </span>
 
         <h2 class="section-title reveal">
@@ -3507,7 +3743,7 @@
       <div class="container">
 
         <span class="eyebrow reveal">
-          09 · Stakeholders
+          10 · Stakeholders
         </span>
 
         <h2 class="section-title reveal">
@@ -3644,7 +3880,7 @@
       <div class="container">
 
         <span class="eyebrow reveal">
-          10 · Evidence Room
+          11 · Evidence Room
         </span>
 
         <h2 class="section-title reveal">
@@ -4023,7 +4259,7 @@
       <div class="container">
 
         <span class="eyebrow reveal">
-          13 · Recommendations
+          14 · Recommendations
         </span>
 
         <h2 class="section-title reveal">
@@ -4186,6 +4422,48 @@
     </section>
 
 
+    <!-- ======================================================
+         RESEARCH REPORTS
+    ====================================================== -->
+
+    <section id="reports" class="reports-section">
+      <div class="container">
+        <span class="eyebrow reveal">15 · Research Library</span>
+        <h2 class="section-title reveal">
+          Research you can <span>open, read & verify.</span>
+        </h2>
+        <p class="section-description reveal">
+          Website menjadi pintu masuk visual. Laporan, makalah, data pendukung,
+          dan evidence menjadi arsip yang menyimpan proses riset secara lebih lengkap.
+        </p>
+        <div class="report-feature glass reveal">
+          <div class="report-number">RESEARCH<br>01</div>
+          <div class="report-main">
+            <span class="program-tag">Environmental CSR Assessment</span>
+            <h3>PT Indah Kiat Pulp & Paper Tbk.</h3>
+            <p>
+              Studi mengenai praktik CSR lingkungan, indikator kinerja, program,
+              stakeholder, evidence, potensi greenwashing, serta rekomendasi perbaikan.
+            </p>
+            <div class="report-meta">
+              <span>2026</span><span>CSR × ESG × Sustainability</span><span>Academic Research</span>
+            </div>
+          </div>
+          <div class="report-actions">
+            <a class="btn btn-primary" href="laporan-pt-indah-kiat.pdf" target="_blank" rel="noopener">Open Report ↗</a>
+            <a class="btn btn-secondary" href="#evidence">Explore Evidence</a>
+          </div>
+        </div>
+        <div class="archive-note reveal">
+          <span>RESEARCH ARCHIVE</span>
+          <p>
+            Studi berikutnya dapat ditambahkan sebagai kartu penelitian baru,
+            sehingga BeyondGreen.ID berkembang menjadi arsip riset CSR lintas perusahaan.
+          </p>
+        </div>
+      </div>
+    </section>
+
   </main>
 
 
@@ -4209,7 +4487,7 @@
           </h3>
 
           <p>
-            Environmental CSR Assessment ·
+            CSR & Sustainability Research Lab ·
             PT Indah Kiat Pulp & Paper Tbk.
           </p>
 
@@ -4274,6 +4552,13 @@
     ======================================================== */
 
     const languagePairs = {
+      "CSR & SUSTAINABILITY RESEARCH LAB": ["LAB RISET CSR & KEBERLANJUTAN", "CSR & SUSTAINABILITY RESEARCH LAB"],
+      "Project Advisor": ["Penasihat Proyek", "Project Advisor"],
+      "The people behind the": ["Orang-orang di balik", "The people behind the"],
+      "research.": ["riset.", "research."],
+      "Research Library": ["Perpustakaan Riset", "Research Library"],
+      "Assessment": ["Assessment", "Assessment"],
+
 
       /* Navigation */
       "Team": ["Tim", "Team"],
@@ -4669,8 +4954,8 @@
 
       document.documentElement.lang = lang === "en" ? "en" : "id";
       document.title = lang === "en"
-        ? "BEYONDGREEN — Look Beyond the Green."
-        : "BEYONDGREEN — Lihat Melampaui Hijau.";
+        ? "BEYONDGREEN.ID — Look Beyond the Green."
+        : "BEYONDGREEN.ID — Lihat Melampaui Hijau.";
 
       langButtons.id.classList.toggle("active", lang === "id");
       langButtons.en.classList.toggle("active", lang === "en");
@@ -4904,7 +5189,7 @@
 
         position: absolute;
 
-        top: 76px;
+        top: 65px;
 
         left: 14px;
         right: 14px;
