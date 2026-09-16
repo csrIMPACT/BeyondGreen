@@ -4,10 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <meta name="description" content="BEYONDGREEN.ID — CSR & Sustainability Research Lab. Evidence-led research on corporate social responsibility, ESG, sustainability, and environmental impact.">
+  <meta name="description" content="BEYONDGREEN.ID — Laboratorium Riset CSR & Keberlanjutan. Riset berbasis bukti tentang tanggung jawab sosial perusahaan, ESG, keberlanjutan, dan dampak lingkungan.">
   <meta name="theme-color" content="#07130f">
 
-  <title>BEYONDGREEN.ID — CSR & Sustainability Research Lab</title>
+  <title>BEYONDGREEN.ID — Laboratorium Riset CSR & Keberlanjutan</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -888,6 +888,120 @@
     .research-card .btn {
       margin-top: 22px;
       width: 100%;
+    }
+
+    /* =========================================================
+       RESEARCH LISTING
+    ========================================================= */
+
+    .research-listing {
+      margin-top: 28px;
+    }
+
+    .research-listing-header {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 20px;
+      margin-bottom: 18px;
+    }
+
+    .research-listing-title {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 25px;
+      letter-spacing: -.035em;
+    }
+
+    .research-listing-subtitle {
+      max-width: 560px;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.6;
+    }
+
+    .research-list-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .research-list-card {
+      position: relative;
+      overflow: hidden;
+      min-height: 245px;
+      padding: 25px;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      background: rgba(255,255,255,.025);
+      transition: .3s ease;
+    }
+
+    .research-list-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(184,242,107,.28);
+      background: rgba(255,255,255,.04);
+    }
+
+    .research-list-number {
+      color: rgba(184,242,107,.55);
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .12em;
+    }
+
+    .research-list-status {
+      display: inline-flex;
+      margin-top: 12px;
+      padding: 5px 9px;
+      border: 1px solid rgba(255,200,91,.20);
+      border-radius: 999px;
+      background: rgba(255,200,91,.06);
+      color: var(--warning);
+      font-size: 9px;
+      font-weight: 800;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .research-list-card h4 {
+      margin-top: 18px;
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 21px;
+      line-height: 1.1;
+      letter-spacing: -.03em;
+    }
+
+    .research-list-card p {
+      margin-top: 9px;
+      color: var(--muted);
+      font-size: 11px;
+      line-height: 1.6;
+    }
+
+    .research-list-sector {
+      position: absolute;
+      left: 25px;
+      bottom: 22px;
+      color: #7f8d85;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    @media (max-width: 900px) {
+      .research-list-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 600px) {
+      .research-listing-header {
+        display: block;
+      }
+      .research-listing-subtitle {
+        margin-top: 8px;
+      }
+      .research-list-grid { grid-template-columns: 1fr; }
     }
 
     @media (max-width: 1000px) {
@@ -2638,19 +2752,19 @@
 
       <nav class="nav-links">
 
-        <a href="#about" data-lang-key="nav-about">About</a>
-        <a href="#research" data-lang-key="nav-research">Research</a>
-        <a href="#team" data-lang-key="nav-team">Team</a>
-        <a href="#issues" data-lang-key="nav-issues">Issues</a>
+        <a href="#about" data-lang-key="nav-about">Tentang</a>
+        <a href="#research" data-lang-key="nav-research">Riset</a>
+        <a href="#team" data-lang-key="nav-team">Tim</a>
+        <a href="#issues" data-lang-key="nav-issues">Isu</a>
         <a href="#programs" data-lang-key="nav-csr">CSR</a>
         <a href="#checker" data-lang-key="nav-greenwashing">Greenwashing</a>
-        <a href="#evidence" data-lang-key="nav-evidence">Evidence</a>
-        <a href="#report" data-lang-key="nav-report">Report</a>
+        <a href="#evidence" data-lang-key="nav-evidence">Bukti</a>
+        <a href="#report" data-lang-key="nav-report">Laporkan</a>
 
       </nav>
 
       <a href="#report" class="nav-button">
-        <span data-lang-key="report-now">Report an Issue</span> ↗
+        <span data-lang-key="report-now">Laporkan Isu</span> ↗
       </a>
 
       <div class="language-switcher" aria-label="Language switcher">
@@ -2682,14 +2796,14 @@
 
           <div class="hero-kicker">
             <span class="eyebrow">
-              CSR & Sustainability Research Lab
+              Laboratorium Riset CSR & Keberlanjutan
             </span>
           </div>
 
           <h1>
-            LOOK<br>
-            BEYOND<br>
-            <span class="green">THE GREEN.</span>
+            LIHAT<br>
+            LEBIH DARI<br>
+            <span class="green">SEKADAR HIJAU.</span>
           </h1>
 
           <p class="hero-subtitle">
@@ -2702,12 +2816,12 @@
           <div class="hero-actions">
 
             <a href="#research" class="btn btn-primary">
-              Explore Our Research
+              Jelajahi Riset Kami
               →
             </a>
 
             <a href="#evidence" class="btn btn-secondary">
-              View Evidence
+              Lihat Bukti
             </a>
 
           </div>
@@ -2722,7 +2836,7 @@
               </div>
 
               <div class="hero-stat-label">
-                Current study · Scope 1 emissions · tCO₂e
+                Emisi Scope 1 · tCO₂e
               </div>
 
             </div>
@@ -2735,7 +2849,7 @@
               </div>
 
               <div class="hero-stat-label">
-                Current study · Renewable energy
+                Energi terbarukan
               </div>
 
             </div>
@@ -2748,7 +2862,7 @@
               </div>
 
               <div class="hero-stat-label">
-                Current study · Recycled fiber
+                Serat daur ulang
               </div>
 
             </div>
@@ -2777,7 +2891,7 @@
         <span class="marquee-item">Environmental Impact</span>
         <span class="marquee-item">Greenwashing</span>
         <span class="marquee-item">Stakeholders</span>
-        <span class="marquee-item">Evidence</span>
+        <span class="marquee-item">Bukti</span>
 
         <span class="marquee-item">CSR</span>
         <span class="marquee-item">ESG</span>
@@ -2785,7 +2899,7 @@
         <span class="marquee-item">Environmental Impact</span>
         <span class="marquee-item">Greenwashing</span>
         <span class="marquee-item">Stakeholders</span>
-        <span class="marquee-item">Evidence</span>
+        <span class="marquee-item">Bukti</span>
 
       </div>
 
@@ -2802,18 +2916,18 @@
       <div class="container">
 
         <span class="eyebrow reveal">
-          01 · Research Team
+          01 · Tim Riset
         </span>
 
         <h2 class="section-title reveal">
-          Research is stronger<br>
-          with the right <span>perspective.</span>
+          Riset menjadi lebih kuat<br>
+          dengan perspektif yang <span>tepat.</span>
         </h2>
 
         <p class="section-description reveal">
-          BEYONDGREEN.ID brings together academic guidance and collaborative research
-          to examine CSR claims, environmental performance, sustainability targets,
-          stakeholder impact, and the evidence behind them.
+          BEYONDGREEN.ID menggabungkan arahan akademik dan riset kolaboratif
+          untuk mengkaji klaim CSR, kinerja lingkungan, target keberlanjutan,
+          dampak terhadap pemangku kepentingan, dan bukti yang mendasarinya.
         </p>
 
         <!-- PROJECT ADVISOR -->
@@ -2829,7 +2943,7 @@
             <div class="team-info">
 
               <div class="team-role">
-                Project Advisor
+                Penasihat Proyek
               </div>
 
               <h3 class="team-name">
@@ -2847,11 +2961,11 @@
         </div>
 
         <div class="advisor-kicker reveal">
-          The Research Team
+          Tim Riset
         </div>
 
         <h3 class="research-team-label reveal">
-          Built through <span style="color:var(--green)">collaboration.</span>
+          Dibangun melalui <span style="color:var(--green)">kolaborasi.</span>
         </h3>
 
         <div class="team-grid">
@@ -2867,7 +2981,7 @@
             <div class="team-info">
 
               <div class="team-role">
-                Project Lead
+                Ketua Proyek
               </div>
 
               <h3 class="team-name">
@@ -2894,7 +3008,7 @@
             <div class="team-info">
 
               <div class="team-role">
-                Impact Analyst
+                Analis Dampak
               </div>
 
               <h3 class="team-name">
@@ -2921,7 +3035,7 @@
             <div class="team-info">
 
               <div class="team-role">
-                ESG Analyst
+                Analis ESG
               </div>
 
               <h3 class="team-name">
@@ -2929,7 +3043,7 @@
               </h3>
 
               <p class="team-desc">
-                Analisis ESG, sustainability & target.
+                Analisis ESG, keberlanjutan & target.
               </p>
 
             </div>
@@ -2948,7 +3062,7 @@
             <div class="team-info">
 
               <div class="team-role">
-                Research & Design
+                Riset & Desain
               </div>
 
               <h3 class="team-name">
@@ -2979,18 +3093,18 @@
       <div class="container">
 
         <span class="eyebrow reveal">
-          02 · Research Archive
+          02 · Arsip Riset
         </span>
 
         <h2 class="section-title reveal">
-          Studies beyond<br>
-          the <span>green label.</span>
+          Studi melampaui<br>
+          label <span>hijau.</span>
         </h2>
 
         <p class="section-description reveal">
-          BEYONDGREEN.ID documents research projects that examine how corporate
-          responsibility is communicated, implemented, measured, and evidenced.
-          Each study is approached as an evidence-led assessment rather than a company profile.
+          BEYONDGREEN.ID mendokumentasikan proyek riset yang mengkaji bagaimana tanggung jawab perusahaan
+          dikomunikasikan, diterapkan, diukur, dan dibuktikan.
+          Setiap studi dilakukan sebagai penilaian berbasis bukti, bukan sekadar profil perusahaan.
         </p>
 
         <div class="research-identity glass reveal">
@@ -3000,23 +3114,23 @@
             <div>
 
               <h3>
-                A research initiative,<br>
-                not a <span style="color:var(--green)">company profile.</span>
+                Sebuah inisiatif riset,<br>
+                not a <span style="color:var(--green)">profil perusahaan.</span>
               </h3>
 
               <p>
-                Our work focuses on the distance between sustainability narratives
-                and measurable outcomes. We review public disclosures, targets,
-                environmental indicators, stakeholder dimensions, and supporting evidence
-                to build a more critical picture of corporate CSR performance.
+                Pekerjaan kami berfokus pada kesenjangan antara narasi keberlanjutan
+                dan hasil yang dapat diukur. Kami meninjau pengungkapan publik, target,
+                indikator lingkungan, dimensi pemangku kepentingan, dan bukti pendukung
+                untuk membangun gambaran yang lebih kritis mengenai kinerja CSR perusahaan.
               </p>
 
               <div class="research-principles">
 
-                <div class="research-principle">Evidence-led</div>
+                <div class="research-principle">Berbasis bukti</div>
                 <div class="research-principle">CSR & ESG</div>
                 <div class="research-principle">Critical review</div>
-                <div class="research-principle">Stakeholder impact</div>
+                <div class="research-principle">Dampak pemangku kepentingan</div>
 
               </div>
 
@@ -3025,7 +3139,7 @@
             <article class="research-card">
 
               <span class="research-card-tag">
-                Research 01 · Published Study
+                Riset 01 · Studi Terpublikasi
               </span>
 
               <h3>
@@ -3034,29 +3148,88 @@
               </h3>
 
               <p>
-                Environmental CSR assessment examining claims, targets, environmental
-                performance, stakeholder considerations, remaining risks, and the evidence
-                available to support sustainability narratives.
+                Penilaian CSR lingkungan yang mengkaji klaim, target, kinerja lingkungan,
+                pertimbangan pemangku kepentingan, risiko yang tersisa, serta bukti
+                yang tersedia untuk mendukung narasi keberlanjutan.
               </p>
 
               <div class="research-meta">
 
                 <div>
-                  Focus
-                  <strong>Environmental CSR</strong>
+                  Fokus
+                  <strong>CSR Lingkungan</strong>
                 </div>
 
                 <div>
-                  Approach
-                  <strong>Evidence-based assessment</strong>
+                  Pendekatan
+                  <strong>Penilaian berbasis bukti</strong>
                 </div>
 
               </div>
 
               <a class="btn btn-primary" href="laporan-pt-indah-kiat.pdf" target="_blank" rel="noopener">
-                Open Research Report ↗
+                Buka Laporan Riset ↗
               </a>
 
+            </article>
+
+          </div>
+
+        </div>
+
+        <!-- RESEARCH LISTING -->
+        <div class="research-listing reveal">
+
+          <div class="research-listing-header">
+            <div>
+              <div class="research-listing-title">Daftar Perusahaan</div>
+            </div>
+            <p class="research-listing-subtitle">
+              Perusahaan berikut sudah masuk dalam daftar riset BEYONDGREEN.ID.
+              Status saat ini masih terdaftar dan belum dianalisis secara mendalam.
+            </p>
+          </div>
+
+          <div class="research-list-grid">
+
+            <article class="research-list-card">
+              <div class="research-list-number">RISET 02</div>
+              <div class="research-list-status">Terdaftar · Belum Dianalisis</div>
+              <h4>PT Vale Indonesia Tbk.</h4>
+              <p>Menunggu penelitian mengenai CSR, ESG, keberlanjutan, dan dampak lingkungan.</p>
+              <div class="research-list-sector">Pertambangan</div>
+            </article>
+
+            <article class="research-list-card">
+              <div class="research-list-number">RISET 03</div>
+              <div class="research-list-status">Terdaftar · Belum Dianalisis</div>
+              <h4>PT Bukit Asam Tbk.</h4>
+              <p>Menunggu penelitian mengenai CSR, ESG, keberlanjutan, dan dampak lingkungan.</p>
+              <div class="research-list-sector">Energi & Pertambangan</div>
+            </article>
+
+            <article class="research-list-card">
+              <div class="research-list-number">RISET 04</div>
+              <div class="research-list-status">Terdaftar · Belum Dianalisis</div>
+              <h4>PT Semen Indonesia (Persero) Tbk.</h4>
+              <p>Menunggu penelitian mengenai CSR, ESG, keberlanjutan, dan dampak lingkungan.</p>
+              <div class="research-list-sector">Semen & Manufaktur</div>
+            </article>
+
+            <article class="research-list-card">
+              <div class="research-list-number">RISET 05</div>
+              <div class="research-list-status">Terdaftar · Belum Dianalisis</div>
+              <h4>PT Astra International Tbk.</h4>
+              <p>Menunggu penelitian mengenai CSR, ESG, keberlanjutan, dan dampak lingkungan.</p>
+              <div class="research-list-sector">Diversifikasi Usaha</div>
+            </article>
+
+            <article class="research-list-card">
+              <div class="research-list-number">RISET 06</div>
+              <div class="research-list-status">Terdaftar · Belum Dianalisis</div>
+              <h4>PT Unilever Indonesia Tbk.</h4>
+              <p>Menunggu penelitian mengenai CSR, ESG, keberlanjutan, dan dampak lingkungan.</p>
+              <div class="research-list-sector">Barang Konsumsi</div>
             </article>
 
           </div>
@@ -3077,12 +3250,12 @@
       <div class="container">
 
         <span class="eyebrow reveal">
-          03 · About the Project
+          02 · Tentang Proyek
         </span>
 
         <h2 class="section-title reveal">
-          Not a company profile.<br>
-          An <span>assessment.</span>
+          Bukan profil perusahaan.<br>
+          Sebuah <span>penilaian.</span>
         </h2>
 
 
@@ -3174,7 +3347,7 @@
         <div class="question-box reveal">
 
           <div class="question-label">
-            The Big Question
+            Pertanyaan Utama
           </div>
 
           <h2 class="question">
@@ -3183,13 +3356,13 @@
               SOLUSI NYATA
             </span><br>
             ATAU SEKADAR<br>
-            <span>GREEN IMAGE?</span>
+            <span>CITRA HIJAU?</span>
           </h2>
 
           <p class="question-description">
-            We don't simply ask what the company says.
-            We compare the narrative against the numbers,
-            targets, disclosures, and remaining environmental risks.
+            Kami tidak hanya menanyakan apa yang dikatakan perusahaan.
+            Kami membandingkan narasi dengan angka,
+            target, pengungkapan, dan risiko lingkungan yang masih tersisa.
           </p>
 
         </div>
@@ -3209,11 +3382,11 @@
       <div class="container">
 
         <span class="eyebrow reveal">
-          04 · Company & Context
+          03 · Perusahaan & Konteks
         </span>
 
         <h2 class="section-title reveal">
-          Understanding the <span>context.</span>
+          Memahami <span>konteks.</span>
         </h2>
 
         <p class="section-description reveal">
@@ -3228,7 +3401,7 @@
           <article class="context-card glass reveal">
 
             <h3>
-              Resource-intensive by nature.
+              Secara alami membutuhkan banyak sumber daya.
             </h3>
 
             <p>
@@ -3242,22 +3415,22 @@
 
               <div class="process-item">
                 <span>01</span>
-                Raw Material
+                Bahan Baku
               </div>
 
               <div class="process-item">
                 <span>02</span>
-                Production
+                Produksi
               </div>
 
               <div class="process-item">
                 <span>03</span>
-                Resource Use
+                Penggunaan Sumber Daya
               </div>
 
               <div class="process-item">
                 <span>04</span>
-                Environmental Output
+                Output Lingkungan
               </div>
 
             </div>
@@ -3268,7 +3441,7 @@
           <article class="context-card glass reveal">
 
             <h3>
-              The assessment lens.
+              Sudut Pandang Penilaian.
             </h3>
 
             <p>
@@ -3301,12 +3474,12 @@
       <div class="container">
 
         <span class="eyebrow reveal">
-          04 · Environmental Issues
+          04 · Isu Lingkungan
         </span>
 
         <h2 class="section-title reveal">
-          The numbers tell<br>
-          a <span>complex story.</span>
+          Angka menunjukkan<br>
+          sebuah <span>cerita yang kompleks.</span>
         </h2>
 
         <p class="section-description reveal">
@@ -3325,7 +3498,7 @@
             </div>
 
             <h3>
-              Scope 1 Emissions
+              Emisi Scope 1
             </h3>
 
             <p>
@@ -3337,7 +3510,7 @@
             </div>
 
             <div class="issue-change bad">
-              Carbon intensity: 1.08 → 1.17 tCO₂e/ton
+              Intensitas karbon: 1.08 → 1.17 tCO₂e/ton
             </div>
 
           </article>
@@ -3350,7 +3523,7 @@
             </div>
 
             <h3>
-              Air Pollution
+              Polusi Udara
             </h3>
 
             <p>
@@ -3375,7 +3548,7 @@
             </div>
 
             <h3>
-              Wastewater
+              Air Limbah
             </h3>
 
             <p>
@@ -3400,7 +3573,7 @@
             </div>
 
             <h3>
-              B3 Waste
+              Limbah B3
             </h3>
 
             <p>
@@ -3412,7 +3585,7 @@
             </div>
 
             <div class="issue-change good">
-              tons · turun dari baseline 768,431
+              ton · turun dari baseline 768,431
             </div>
 
           </article>
@@ -3435,12 +3608,12 @@
       <div class="container">
 
         <span class="eyebrow reveal">
-          05 · CSR Programs
+          05 · Program CSR
         </span>
 
         <h2 class="section-title reveal">
-          From programs<br>
-          to <span>real actions.</span>
+          Dari program<br>
+          menjadi <span>aksi nyata.</span>
         </h2>
 
         <p class="section-description reveal">
@@ -3455,7 +3628,7 @@
           <article class="program-card glass reveal">
 
             <span class="program-tag">
-              Community
+              Masyarakat
             </span>
 
             <h3>
@@ -3478,11 +3651,11 @@
           <article class="program-card glass reveal">
 
             <span class="program-tag">
-              Biodiversity
+              Keanekaragaman Hayati
             </span>
 
             <h3>
-              Mangrove Restoration
+              Restorasi Mangrove
             </h3>
 
             <p>
@@ -3491,7 +3664,7 @@
             </p>
 
             <div class="program-result">
-              <strong>~173,000</strong> seedlings
+              <strong>~173.000</strong> bibit
             </div>
 
           </article>
@@ -3500,11 +3673,11 @@
           <article class="program-card glass reveal">
 
             <span class="program-tag">
-              Energy
+              Energi
             </span>
 
             <h3>
-              Renewable Energy
+              Energi Terbarukan
             </h3>
 
             <p>
@@ -3523,11 +3696,11 @@
           <article class="program-card glass reveal">
 
             <span class="program-tag">
-              Circularity
+              Ekonomi Sirkular
             </span>
 
             <h3>
-              Recycled Fiber
+              Serat Daur Ulang
             </h3>
 
             <p>
@@ -3545,11 +3718,11 @@
           <article class="program-card glass reveal">
 
             <span class="program-tag">
-              Waste
+              Limbah
             </span>
 
             <h3>
-              Waste Management
+              Pengelolaan Limbah
             </h3>
 
             <p>
@@ -3567,11 +3740,11 @@
           <article class="program-card glass reveal">
 
             <span class="program-tag">
-              Conservation
+              Konservasi
             </span>
 
             <h3>
-              Biodiversity Conservation
+              Konservasi Keanekaragaman Hayati
             </h3>
 
             <p>
@@ -3581,7 +3754,7 @@
             </p>
 
             <div class="program-result">
-              <strong>Multi-year</strong> partnerships
+              <strong>Multi-tahun</strong> kemitraan
             </div>
 
           </article>
@@ -3604,18 +3777,18 @@
       <div class="container">
 
         <span class="eyebrow reveal">
-          06 · Impact Assessment
+          06 · Penilaian Dampak
         </span>
 
         <h2 class="section-title reveal">
-          Don't confuse<br>
-          <span>output</span> with impact.
+          Jangan samakan<br>
+          <span>output</span> dengan dampak.
         </h2>
 
         <p class="section-description reveal">
-          Sebuah program dapat menghasilkan output yang besar,
+          Sebuah program dapat menghasilkan keluaran yang besar,
           tetapi dampak jangka panjang harus dibuktikan dengan
-          indikator outcome dan impact.
+          indikator hasil dan dampak.
         </p>
 
 
@@ -3629,7 +3802,7 @@
             </div>
 
             <h3>
-              Resources
+              Sumber Daya
             </h3>
 
             <p>
@@ -3647,7 +3820,7 @@
             </div>
 
             <h3>
-              Activities
+              Aktivitas
             </h3>
 
             <p>
@@ -3666,7 +3839,7 @@
             </div>
 
             <h3>
-              Change
+              Perubahan
             </h3>
 
             <p>
@@ -3680,11 +3853,11 @@
           <article class="impact-step glass reveal">
 
             <div class="impact-step-number">
-              04 · IMPACT
+              04 · DAMPAK
             </div>
 
             <h3>
-              Long-term
+              Jangka Panjang
             </h3>
 
             <p>
@@ -3699,10 +3872,10 @@
 
 
         <div class="impact-note reveal">
-          <strong>Critical lens:</strong>
+          <strong>Sudut pandang kritis:</strong>
           173.000 bibit mangrove adalah output.
-          Untuk menyebutnya sebagai impact, diperlukan bukti
-          seperti survival rate, perubahan kondisi ekosistem,
+          Untuk menyebutnya sebagai dampak, diperlukan bukti
+          seperti tingkat kelangsungan hidup, perubahan kondisi ekosistem,
           kualitas pesisir, dan manfaat jangka panjang.
         </div>
 
@@ -3721,16 +3894,16 @@
       <div class="container">
 
         <span class="eyebrow reveal">
-          07 · Target vs Realization
+          07 · Target vs Realisasi
         </span>
 
         <h2 class="section-title reveal">
-          What was <span>promised</span><br>
-          vs what was achieved.
+          Apa yang <span>dijanjikan</span><br>
+          vs apa yang dicapai.
         </h2>
 
         <p class="section-description reveal">
-          SRV2030 menjadi benchmark utama untuk membaca
+          SRV2030 menjadi tolok ukur utama untuk membaca
           konsistensi target lingkungan perusahaan.
         </p>
 
@@ -3743,11 +3916,11 @@
             <div class="target-top">
 
               <span class="target-name">
-                Renewable Energy
+                Energi Terbarukan
               </span>
 
               <span class="target-status">
-                Achieved
+                Tercapai
               </span>
 
             </div>
@@ -3780,11 +3953,11 @@
             <div class="target-top">
 
               <span class="target-name">
-                Recycled Fiber
+                Serat Daur Ulang
               </span>
 
               <span class="target-status">
-                Strong Progress
+                Progres Kuat
               </span>
 
             </div>
@@ -3821,7 +3994,7 @@
               </span>
 
               <span class="target-status">
-                Needs Improvement
+                Perlu Perbaikan
               </span>
 
             </div>
@@ -3843,7 +4016,7 @@
             </div>
 
             <p class="target-description">
-              Progress terhadap target pengurangan intensitas karbon.
+              Kemajuan terhadap target pengurangan intensitas karbon.
             </p>
 
           </article>
@@ -3858,7 +4031,7 @@
               </span>
 
               <span class="target-status">
-                Needs Improvement
+                Perlu Perbaikan
               </span>
 
             </div>
@@ -3880,7 +4053,7 @@
             </div>
 
             <p class="target-description">
-              Progress masih membutuhkan akselerasi.
+              Kemajuan masih membutuhkan percepatan.
             </p>
 
           </article>
@@ -3895,7 +4068,7 @@
               </span>
 
               <span class="target-status">
-                Needs Improvement
+                Perlu Perbaikan
               </span>
 
             </div>
@@ -3928,11 +4101,11 @@
             <div class="target-top">
 
               <span class="target-name">
-                Environmental Direction
+                Arah Lingkungan
               </span>
 
               <span class="target-status">
-                Mixed
+                Campuran
               </span>
 
             </div>
@@ -3977,11 +4150,11 @@
       <div class="container">
 
         <span class="eyebrow reveal">
-          08 · Greenwashing Checker
+          08 · Pemeriksa Greenwashing
         </span>
 
         <h2 class="section-title reveal">
-          Test the <span>claim.</span>
+          Uji <span>klaim.</span>
         </h2>
 
         <p class="section-description reveal">
@@ -3999,7 +4172,7 @@
             <div>
 
               <h3>
-                Five evidence tests.
+                Lima uji bukti.
               </h3>
 
               <p>
@@ -4016,7 +4189,7 @@
 
                   <span class="check-dot check-good"></span>
 
-                  Evidence available
+                  Bukti tersedia
 
                 </div>
 
@@ -4025,7 +4198,7 @@
 
                   <span class="check-dot check-good"></span>
 
-                  Quantifiable targets
+                  Target terukur
 
                 </div>
 
@@ -4034,7 +4207,7 @@
 
                   <span class="check-dot check-good"></span>
 
-                  External validation
+                  Validasi eksternal
 
                 </div>
 
@@ -4043,7 +4216,7 @@
 
                   <span class="check-dot check-warn"></span>
 
-                  Negative performance disclosed
+                  Kinerja negatif diungkapkan
 
                 </div>
 
@@ -4052,7 +4225,7 @@
 
                   <span class="check-dot check-warn"></span>
 
-                  Claim vs impact consistency
+                  Konsistensi klaim vs dampak
 
                 </div>
 
@@ -4067,11 +4240,11 @@
               <div class="verdict-circle">
 
                 <small>
-                  Assessment
+                  Penilaian
                 </small>
 
                 <strong>
-                  CAUTION
+                  PERHATIAN
                 </strong>
 
                 <span>
@@ -4103,11 +4276,11 @@
       <div class="container">
 
         <span class="eyebrow reveal">
-          09 · Stakeholders
+          09 · Stakeholder
         </span>
 
         <h2 class="section-title reveal">
-          Who <span>feels</span> the impact?
+          Siapa yang <span>merasakan</span> dampaknya?
         </h2>
 
 
@@ -4117,7 +4290,7 @@
           <article class="stakeholder-card glass reveal">
 
             <h3>
-              Local Community
+              Masyarakat Lokal
             </h3>
 
             <p>
@@ -4127,7 +4300,7 @@
             </p>
 
             <div class="stakeholder-interest">
-              Interest · Air quality, odor, noise, water
+              Kepentingan · Kualitas udara, bau, kebisingan, air
             </div>
 
           </article>
@@ -4136,7 +4309,7 @@
           <article class="stakeholder-card glass reveal">
 
             <h3>
-              Government
+              Pemerintah
             </h3>
 
             <p>
@@ -4145,7 +4318,7 @@
             </p>
 
             <div class="stakeholder-interest">
-              Interest · Compliance & environmental standards
+              Kepentingan · Kepatuhan & standar lingkungan
             </div>
 
           </article>
@@ -4154,16 +4327,16 @@
           <article class="stakeholder-card glass reveal">
 
             <h3>
-              Employees
+              Karyawan
             </h3>
 
             <p>
               Karyawan berhubungan langsung dengan sistem
-              operasional, keselamatan, dan budaya sustainability.
+              operasional, keselamatan, dan budaya keberlanjutan.
             </p>
 
             <div class="stakeholder-interest">
-              Interest · Workplace & sustainability culture
+              Kepentingan · Tempat kerja & budaya keberlanjutan
             </div>
 
           </article>
@@ -4172,7 +4345,7 @@
           <article class="stakeholder-card glass reveal">
 
             <h3>
-              Consumers
+              Konsumen
             </h3>
 
             <p>
@@ -4181,7 +4354,7 @@
             </p>
 
             <div class="stakeholder-interest">
-              Interest · Responsible products & transparency
+              Kepentingan · Produk bertanggung jawab & transparansi
             </div>
 
           </article>
@@ -4190,7 +4363,7 @@
           <article class="stakeholder-card glass reveal">
 
             <h3>
-              Investors
+              Investor
             </h3>
 
             <p>
@@ -4199,7 +4372,7 @@
             </p>
 
             <div class="stakeholder-interest">
-              Interest · ESG risk & long-term value
+              Kepentingan · Risiko ESG & nilai jangka panjang
             </div>
 
           </article>
@@ -4208,7 +4381,7 @@
           <article class="stakeholder-card glass reveal">
 
             <h3>
-              Environmental Groups
+              Organisasi Lingkungan
             </h3>
 
             <p>
@@ -4217,7 +4390,7 @@
             </p>
 
             <div class="stakeholder-interest">
-              Interest · Ecosystem & biodiversity
+              Kepentingan · Ekosistem & keanekaragaman hayati
             </div>
 
           </article>
@@ -4240,17 +4413,17 @@
       <div class="container">
 
         <span class="eyebrow reveal">
-          10 · Evidence Room
+          10 · Ruang Bukti
         </span>
 
         <h2 class="section-title reveal">
-          Claims are easy.<br>
-          <span>Evidence matters.</span>
+          Klaim itu mudah.<br>
+          <span>Bukti yang penting.</span>
         </h2>
 
         <p class="section-description reveal">
           Setiap kesimpulan seharusnya dapat ditelusuri kembali
-          ke data, disclosure, target, atau validasi eksternal.
+          ke data, pengungkapan, target, atau validasi eksternal.
         </p>
 
 
@@ -4276,7 +4449,7 @@
             </div>
 
             <div class="evidence-status">
-              Quantified
+              Terukur
             </div>
 
           </div>
@@ -4301,7 +4474,7 @@
             </div>
 
             <div class="evidence-status">
-              Negative trend
+              Tren Negatif
             </div>
 
           </div>
@@ -4326,7 +4499,7 @@
             </div>
 
             <div class="evidence-status">
-              Negative trend
+              Tren Negatif
             </div>
 
           </div>
@@ -4351,7 +4524,7 @@
             </div>
 
             <div class="evidence-status">
-              Positive progress
+              Progres Positif
             </div>
 
           </div>
@@ -4366,17 +4539,17 @@
             <div class="evidence-content">
 
               <h3>
-                Current study · Renewable energy
+                Energi terbarukan
               </h3>
 
               <p>
-                54% renewable energy
+                54% energi terbarukan
               </p>
 
             </div>
 
             <div class="evidence-status">
-              Target achieved
+              Target Tercapai
             </div>
 
           </div>
@@ -4391,17 +4564,17 @@
             <div class="evidence-content">
 
               <h3>
-                Current study · Recycled fiber
+                Serat daur ulang
               </h3>
 
               <p>
-                52% recycled fiber
+                52% serat daur ulang
               </p>
 
             </div>
 
             <div class="evidence-status">
-              Strong progress
+              Progres kuat
             </div>
 
           </div>
@@ -4426,7 +4599,7 @@
             </div>
 
             <div class="evidence-status">
-              Disclosed
+              Diungkapkan
             </div>
 
           </div>
@@ -4449,12 +4622,12 @@
       <div class="container">
 
         <span class="eyebrow reveal">
-          11 · Critical Review
+          11 · Tinjauan Kritis
         </span>
 
         <h2 class="section-title reveal">
-          What looks good.<br>
-          What still needs <span>work.</span>
+          Apa yang terlihat baik.<br>
+          Apa yang masih perlu <span>diperbaiki.</span>
         </h2>
 
 
@@ -4464,37 +4637,37 @@
           <article class="split-card glass good-card reveal">
 
             <div class="split-label">
-              ✓ Positive Signals
+              ✓ Sinyal Positif
             </div>
 
             <h3>
-              Real actions exist.
+              Ada aksi nyata.
             </h3>
 
             <ul class="split-list">
 
               <li>
-                Current study · Renewable energy reached 54%.
+                Energi terbarukan mencapai 54%.
               </li>
 
               <li>
-                Current study · Recycled fiber reached 52%.
+                Serat daur ulang mencapai 52%.
               </li>
 
               <li>
-                B3 waste decreased substantially from the 2018 baseline.
+                Limbah B3 turun secara signifikan dari baseline 2018.
               </li>
 
               <li>
-                Solar PV capacity increased from 21.5 MWp to 32 MWp.
+                Kapasitas solar PV meningkat dari 21,5 MWp menjadi 32 MWp.
               </li>
 
               <li>
-                Biodiversity partnerships are multi-year.
+                Kemitraan biodiversitas berlangsung multi-tahun.
               </li>
 
               <li>
-                External validation such as PROPER strengthens credibility.
+                Validasi eksternal seperti PROPER memperkuat kredibilitas.
               </li>
 
             </ul>
@@ -4505,37 +4678,37 @@
           <article class="split-card glass work-card reveal">
 
             <div class="split-label">
-              ! Still Needs Work
+              ! Masih Perlu Perbaikan
             </div>
 
             <h3>
-              Impact is not yet optimal.
+              Dampaknya belum optimal.
             </h3>
 
             <ul class="split-list">
 
               <li>
-                Carbon intensity increased from 1.08 to 1.17.
+                Intensitas karbon meningkat dari 1.08 menjadi 1.17.
               </li>
 
               <li>
-                SO₂ increased from 141.8 to 230.02 mg/Nm³.
+                SO₂ meningkat dari 141.8 menjadi 230.02 mg/Nm³.
               </li>
 
               <li>
-                COD increased from 137.8 to 150.97 mg/l.
+                COD meningkat dari 137.8 menjadi 150.97 mg/l.
               </li>
 
               <li>
-                Carbon, energy, and water reduction targets remain challenging.
+                Target pengurangan karbon, energi, dan air masih menantang.
               </li>
 
               <li>
-                One administrative sanction was disclosed for Indah Kiat Serang.
+                Satu sanksi administratif untuk Indah Kiat Serang diungkapkan.
               </li>
 
               <li>
-                Public complaint data lacks longer-term trend context.
+                Data keluhan publik belum memiliki konteks tren jangka panjang.
               </li>
 
             </ul>
@@ -4562,19 +4735,19 @@
         <div class="verdict-card glass reveal">
 
           <span class="eyebrow">
-            12 · Our Verdict
+            12 · Kesimpulan Kami
           </span>
 
 
           <h2>
-            REAL ACTIONS EXIST.<br>
-            BUT THE <span>IMPACT</span><br>
-            IS NOT YET OPTIMAL.
+            ADA AKSI NYATA.<br>
+            TETAPI <span>DAMPAK</span><br>
+            BELUM OPTIMAL.
           </h2>
 
 
           <p>
-            Berdasarkan assessment kami, CSR lingkungan perusahaan
+            Berdasarkan penilaian kami, CSR lingkungan perusahaan
             menunjukkan tindakan nyata dan beberapa progres terukur.
             Namun, peningkatan pada sejumlah indikator lingkungan
             menunjukkan bahwa program tersebut belum dapat dianggap
@@ -4585,19 +4758,19 @@
           <div class="verdict-pills">
 
             <span class="pill">
-              CSR: Cukup Efektif
+              CSR: Moderately Effective
             </span>
 
             <span class="pill">
-              Sustainability: Needs Improvement
+              Keberlanjutan: Perlu Perbaikan
             </span>
 
             <span class="pill">
-              Greenwashing: Not Proven
+              Greenwashing: Belum Terbukti
             </span>
 
             <span class="pill">
-              Consistency: Further Review
+              Konsistensi: Perlu Peninjauan Lanjutan
             </span>
 
           </div>
@@ -4619,12 +4792,12 @@
       <div class="container">
 
         <span class="eyebrow reveal">
-          13 · Recommendations
+          13 · Rekomendasi
         </span>
 
         <h2 class="section-title reveal">
-          From criticism<br>
-          to <span>action.</span>
+          Dari kritik<br>
+          menjadi <span>action.</span>
         </h2>
 
         <p class="section-description reveal">
@@ -4644,7 +4817,7 @@
             </div>
 
             <h3>
-              Environmental Transparency Dashboard
+              Dashboard Transparansi Lingkungan
             </h3>
 
             <p>
@@ -4656,15 +4829,15 @@
             <div class="recommendation-meta">
 
               <span>
-                <strong>Who:</strong> Sustainability & Management
+                <strong>Penanggung Jawab:</strong> Keberlanjutan & Manajemen
               </span>
 
               <span>
-                <strong>When:</strong> Mulai 2027
+                <strong>Waktu:</strong> Starting 2027
               </span>
 
               <span>
-                <strong>Measure:</strong> ≥95% key indicators disclosed
+                <strong>Ukuran:</strong> ≥95% indikator utama diungkapkan
               </span>
 
             </div>
@@ -4679,27 +4852,27 @@
             </div>
 
             <h3>
-              Greenwashing Evidence Checker
+              Pemeriksa Bukti Greenwashing
             </h3>
 
             <p>
-              Setiap environmental claim yang digunakan dalam
-              komunikasi perusahaan harus memiliki evidence,
-              baseline, target, dan indikator hasil yang jelas.
+              Setiap klaim lingkungan yang digunakan dalam
+              komunikasi perusahaan harus memiliki bukti,
+              tolok ukur awal, target, dan indikator hasil yang jelas.
             </p>
 
             <div class="recommendation-meta">
 
               <span>
-                <strong>Who:</strong> Corporate Communication + ESG
+                <strong>Penanggung Jawab:</strong> Komunikasi Korporat + ESG
               </span>
 
               <span>
-                <strong>When:</strong> Setiap publikasi
+                <strong>Waktu:</strong> Every publication
               </span>
 
               <span>
-                <strong>Measure:</strong> 100% material claims supported
+                <strong>Ukuran:</strong> 100% klaim material didukung bukti
               </span>
 
             </div>
@@ -4714,7 +4887,7 @@
             </div>
 
             <h3>
-              Carbon · Water · Waste Acceleration
+              Percepatan Karbon · Air · Limbah
             </h3>
 
             <p>
@@ -4726,15 +4899,15 @@
             <div class="recommendation-meta">
 
               <span>
-                <strong>Who:</strong> Operations + Sustainability
+                <strong>Penanggung Jawab:</strong> Operasional + Keberlanjutan
               </span>
 
               <span>
-                <strong>When:</strong> 2027–2030
+                <strong>Waktu:</strong> 2027–2030
               </span>
 
               <span>
-                <strong>Measure:</strong> Annual reduction trajectory
+                <strong>Ukuran:</strong> Lintasan pengurangan tahunan
               </span>
 
             </div>
@@ -4761,18 +4934,18 @@
         <div class="question-box reveal">
 
           <div class="question-label">
-            Final Thought
+            Pikiran Akhir
           </div>
 
           <h2 class="question">
-            DON'T JUST<br>
-            READ THE <span>CLAIM.</span><br>
-            READ THE <span>EVIDENCE.</span>
+            JANGAN HANYA<br>
+            BACA <span>KLAIM.</span><br>
+            BACA <span>BUKTI.</span>
           </h2>
 
           <p class="question-description">
-            Sustainability is not defined by how green a story sounds,
-            but by whether the evidence supports it.
+            Keberlanjutan tidak ditentukan oleh seberapa hijau sebuah cerita terdengar,
+            tetapi oleh apakah bukti yang tersedia benar-benar mendukungnya.
           </p>
 
         </div>
@@ -4800,12 +4973,12 @@
     <div class="container">
 
       <span class="eyebrow reveal">
-        10 · Report Center
+        10 · Pusat Pelaporan
       </span>
 
       <h2 class="section-title reveal">
-        See something that<br>
-        needs <span>to be heard?</span>
+        Menemukan sesuatu yang<br>
+        perlu <span>didengar?</span>
       </h2>
 
       <p class="section-description reveal">
@@ -4821,8 +4994,8 @@
           <div class="report-intro">
 
             <h3>
-              Report it.<br>
-              We <span>look deeper.</span>
+              Laporkan.<br>
+              Kami <span>telusuri lebih dalam.</span>
             </h3>
 
             <p>
@@ -4836,7 +5009,7 @@
               <div class="report-point">
                 <div class="report-point-icon">01</div>
                 <div>
-                  <strong>CSR & Social Issues</strong>
+                  <strong>CSR & Isu Sosial</strong>
                   <small>Program, dampak masyarakat, stakeholder, atau keluhan sosial.</small>
                 </div>
               </div>
@@ -4844,7 +5017,7 @@
               <div class="report-point">
                 <div class="report-point-icon">02</div>
                 <div>
-                  <strong>Environmental Concerns</strong>
+                  <strong>Isu Lingkungan</strong>
                   <small>Pencemaran, limbah, emisi, deforestasi, atau dampak lingkungan.</small>
                 </div>
               </div>
@@ -4852,7 +5025,7 @@
               <div class="report-point">
                 <div class="report-point-icon">03</div>
                 <div>
-                  <strong>Greenwashing / Misleading Claims</strong>
+                  <strong>Greenwashing / Klaim Menyesatkan</strong>
                   <small>Klaim keberlanjutan yang menurut Anda tidak sesuai dengan bukti.</small>
                 </div>
               </div>
@@ -4860,7 +5033,7 @@
               <div class="report-point">
                 <div class="report-point-icon">04</div>
                 <div>
-                  <strong>Evidence & Research Leads</strong>
+                  <strong>Bukti & Petunjuk Riset</strong>
                   <small>Dokumen, tautan, data, atau informasi yang layak ditelusuri.</small>
                 </div>
               </div>
@@ -4904,11 +5077,11 @@
                 </label>
                 <select id="reportCategory" name="reportCategory" required>
                   <option value="">Pilih kategori</option>
-                  <option>CSR & Social Impact</option>
-                  <option>Environmental Concern</option>
+                  <option>CSR & Dampak Sosial</option>
+                  <option>Isu Lingkungan</option>
                   <option>ESG / Governance</option>
                   <option>Greenwashing / Misleading Claim</option>
-                  <option>Evidence / Research Lead</option>
+                  <option>Bukti / Petunjuk Riset</option>
                   <option>Other</option>
                 </select>
               </div>
@@ -4952,11 +5125,11 @@
             <div class="report-actions">
 
               <button type="submit" class="btn btn-primary">
-                Prepare Report ↗
+                Siapkan Laporan ↗
               </button>
 
               <button type="button" class="btn btn-secondary" id="downloadReport">
-                Download Copy ↓
+                Unduh Salinan ↓
               </button>
 
             </div>
@@ -4990,13 +5163,13 @@
         <div class="footer-brand">
 
           <h3>
-            GREEN CLAIMS.<br>
-            REAL EVIDENCE.
+            KLAIM HIJAU.<br>
+            BUKTI NYATA.
           </h3>
 
           <p>
-            CSR & Sustainability Research Lab ·
-            Evidence-led corporate impact research.
+            Laboratorium Riset CSR & Keberlanjutan ·
+            Riset dampak perusahaan berbasis bukti.
           </p>
 
         </div>
@@ -5004,25 +5177,25 @@
 
         <div class="footer-links">
 
-          <a href="#team">Team</a>
+          <a href="#team">Tim</a>
 
-          <a href="#project">Project</a>
+          <a href="#project">Proyek</a>
 
-          <a href="#issues">Issues</a>
+          <a href="#issues">Isu</a>
 
-          <a href="#programs">CSR Programs</a>
+          <a href="#programs">Program CSR</a>
 
-          <a href="#impact">Impact</a>
+          <a href="#impact">Dampak</a>
 
-          <a href="#targets">Targets</a>
+          <a href="#targets">Target</a>
 
           <a href="#checker">Greenwashing</a>
 
-          <a href="#evidence">Evidence</a>
+          <a href="#evidence">Bukti</a>
 
-          <a href="#verdict">Verdict</a>
+          <a href="#verdict">Kesimpulan</a>
 
-          <a href="#recommendations">Recommendations</a>
+          <a href="#recommendations">Rekomendasi</a>
 
         </div>
 
@@ -5033,11 +5206,11 @@
       <div class="footer-bottom">
 
         <span>
-          © 2026 · BEYONDGREEN.ID Research Initiative
+          © 2026 · BEYONDGREEN.ID Inisiatif Riset
         </span>
 
         <span>
-          CSR × ESG × Sustainability
+          CSR × ESG × Keberlanjutan
         </span>
 
       </div>
