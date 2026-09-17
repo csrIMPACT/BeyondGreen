@@ -1,6 +1,6111 @@
 <!DOCTYPE html>
 <html lang="id">
+<head><!DOCTYPE html>
+<html lang="id">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description" content="BEYONDGREEN.ID — Laboratorium Riset CSR & Keberlanjutan. Riset berbasis bukti tentang tanggung jawab sosial perusahaan, ESG, keberlanjutan, dan dampak lingkungan.">
+  <meta name="theme-color" content="#07130f">
+
+  <title>BEYONDGREEN.ID — Laboratorium Riset CSR & Keberlanjutan</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+
+    /* =========================================================
+       RESET
+    ========================================================= */
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "DM Sans", sans-serif;
+      background: #000000;
+      color: #f3f7f2;
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      font-family: inherit;
+    }
+
+    ::selection {
+      background: #b8f26b;
+      color: #07130f;
+    }
+
+
+    /* =========================================================
+       VARIABLES
+    ========================================================= */
+
+    :root {
+      --bg: #000000;
+      --bg-2: #080d0a;
+      --bg-3: #0d1711;
+
+      --green: #b8f26b;
+      --green-2: #7ddc62;
+      --green-dark: #163b27;
+
+      --cream: #f2f0df;
+      --muted: #9aa99f;
+      --white: #ffffff;
+
+      --line: rgba(255,255,255,.10);
+      --glass: rgba(255,255,255,.055);
+
+      --danger: #ff756b;
+      --warning: #ffc85b;
+      --success: #8ee46e;
+
+      --radius: 24px;
+      --radius-small: 14px;
+
+      --container: 1180px;
+    }
+
+
+    /* =========================================================
+       GLOBAL
+    ========================================================= */
+
+    .container {
+      width: min(var(--container), calc(100% - 40px));
+      margin: auto;
+    }
+
+    section {
+      position: relative;
+      padding: 120px 0;
+      scroll-margin-top: 90px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+
+      padding: 8px 13px;
+
+      border: 1px solid rgba(184,242,107,.25);
+      border-radius: 999px;
+
+      background: rgba(184,242,107,.06);
+
+      color: var(--green);
+
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 7px;
+      height: 7px;
+
+      background: var(--green);
+      border-radius: 50%;
+
+      box-shadow: 0 0 14px var(--green);
+    }
+
+    .section-title {
+      margin-top: 20px;
+
+      max-width: 850px;
+
+      font-family: "Space Grotesk", sans-serif;
+      font-size: clamp(40px, 6vw, 76px);
+      line-height: .98;
+      letter-spacing: -.055em;
+    }
+
+    .section-title span {
+      color: var(--green);
+    }
+
+    .section-description {
+      max-width: 680px;
+      margin-top: 24px;
+
+      color: var(--muted);
+
+      font-size: 17px;
+    }
+
+    .grid {
+      display: grid;
+      gap: 20px;
+    }
+
+    .glass {
+      border: 1px solid var(--line);
+      background: var(--glass);
+
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+
+      border-radius: var(--radius);
+    }
+
+
+    /* =========================================================
+       NOISE
+    ========================================================= */
+
+    body::before {
+      content: "";
+
+      position: fixed;
+      inset: 0;
+
+      pointer-events: none;
+      z-index: 9999;
+
+      opacity: .025;
+
+      background-image:
+        url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.7'/%3E%3C/svg%3E");
+    }
+
+
+    /* =========================================================
+       NAVBAR
+    ========================================================= */
+
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+
+      z-index: 1000;
+
+      height: 76px;
+
+      border-bottom: 1px solid transparent;
+
+      transition: .3s ease;
+    }
+
+    .navbar.scrolled {
+      background: rgba(0,0,0,.88);
+      backdrop-filter: blur(20px);
+      border-color: var(--line);
+    }
+
+    .nav-inner {
+      width: min(var(--container), calc(100% - 40px));
+      height: 100%;
+
+      margin: auto;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+      font-family: "Space Grotesk", sans-serif;
+      font-weight: 700;
+      letter-spacing: -.03em;
+    }
+
+
+    .logo-word {
+      display: inline-flex;
+      align-items: baseline;
+      gap: 0;
+      color: #ffffff;
+    }
+
+    .logo-beyond {
+      color: var(--green);
+    }
+
+    .logo-id {
+      color: #ffffff;
+      font-size: .62em;
+      letter-spacing: -.01em;
+      margin-left: 1px;
+    }
+
+    .logo-mark {
+      width: 30px;
+      height: 30px;
+
+      display: grid;
+      place-items: center;
+
+      border-radius: 9px;
+
+      background: var(--green);
+      color: var(--bg);
+
+      font-size: 15px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 26px;
+
+      color: #b4c0b8;
+
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .nav-links a {
+      transition: .2s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--green);
+    }
+
+    .nav-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+
+      padding: 11px 15px;
+
+      border: 1px solid rgba(184,242,107,.25);
+      border-radius: 999px;
+
+      color: var(--green);
+
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .mobile-menu {
+      display: none;
+
+      border: 0;
+      background: transparent;
+
+      color: white;
+
+      font-size: 25px;
+      cursor: pointer;
+    }
+
+
+    /* =========================================================
+       HERO
+    ========================================================= */
+
+    .hero {
+      min-height: 100vh;
+
+      display: flex;
+      align-items: center;
+
+      padding-top: 150px;
+      padding-bottom: 80px;
+
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+
+      position: absolute;
+
+      width: 700px;
+      height: 700px;
+
+      right: -250px;
+      top: 0;
+
+      background: radial-gradient(
+        circle,
+        rgba(111,220,98,.17),
+        transparent 65%
+      );
+
+      filter: blur(20px);
+
+      pointer-events: none;
+    }
+
+    .hero::after {
+      content: "";
+
+      position: absolute;
+
+      width: 500px;
+      height: 500px;
+
+      left: -250px;
+      bottom: -250px;
+
+      background: radial-gradient(
+        circle,
+        rgba(184,242,107,.10),
+        transparent 65%
+      );
+
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-kicker {
+      margin-bottom: 25px;
+    }
+
+    .hero h1 {
+      max-width: 1050px;
+
+      font-family: "Space Grotesk", sans-serif;
+
+      font-size: clamp(58px, 9vw, 130px);
+
+      line-height: .84;
+
+      letter-spacing: -.075em;
+    }
+
+    .hero h1 .green {
+      color: var(--green);
+    }
+
+    .hero-subtitle {
+      max-width: 700px;
+
+      margin-top: 30px;
+
+      color: #aebbb2;
+
+      font-size: clamp(16px, 2vw, 21px);
+    }
+
+    .hero-subtitle strong {
+      color: white;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+
+      margin-top: 38px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+
+      min-height: 50px;
+
+      padding: 0 20px;
+
+      border-radius: 999px;
+
+      border: 1px solid var(--line);
+
+      font-weight: 700;
+      font-size: 13px;
+
+      cursor: pointer;
+
+      transition: .25s ease;
+    }
+
+    .btn-primary {
+      background: var(--green);
+      color: var(--bg);
+
+      border-color: var(--green);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 35px rgba(184,242,107,.18);
+    }
+
+    .btn-secondary {
+      background: rgba(255,255,255,.04);
+      color: white;
+    }
+
+    .btn-secondary:hover {
+      border-color: rgba(184,242,107,.4);
+      color: var(--green);
+    }
+
+    .hero-bottom {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+
+      margin-top: 100px;
+
+      border-top: 1px solid var(--line);
+    }
+
+    .hero-stat {
+      padding: 24px 0;
+      padding-right: 30px;
+
+      border-right: 1px solid var(--line);
+    }
+
+    .hero-stat:not(:first-child) {
+      padding-left: 30px;
+    }
+
+    .hero-stat:last-child {
+      border-right: 0;
+    }
+
+    .hero-stat-number {
+      font-family: "Space Grotesk", sans-serif;
+
+      font-size: 35px;
+      font-weight: 700;
+
+      letter-spacing: -.05em;
+    }
+
+    .hero-stat-label {
+      margin-top: 4px;
+
+      color: var(--muted);
+
+      font-size: 12px;
+    }
+
+
+    /* =========================================================
+       MARQUEE
+    ========================================================= */
+
+    .marquee {
+      overflow: hidden;
+
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+
+      background: rgba(255,255,255,.025);
+    }
+
+    .marquee-track {
+      width: max-content;
+
+      display: flex;
+      align-items: center;
+      gap: 45px;
+
+      padding: 17px 0;
+
+      animation: marquee 24s linear infinite;
+    }
+
+    .marquee-item {
+      color: #77857d;
+
+      font-size: 11px;
+      font-weight: 700;
+
+      letter-spacing: .15em;
+      text-transform: uppercase;
+    }
+
+    .marquee-item::before {
+      content: "✦";
+      color: var(--green);
+
+      margin-right: 45px;
+    }
+
+    @keyframes marquee {
+      from {
+        transform: translateX(0);
+      }
+
+      to {
+        transform: translateX(-50%);
+      }
+    }
+
+
+    /* =========================================================
+       TEAM — BEYONDGREEN PREMIUM
+    ========================================================= */
+
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+      margin-top: 55px;
+    }
+
+    .team-card {
+      position: relative;
+      min-height: 470px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,.10);
+      border-radius: 26px;
+      background: #0b1c16;
+      transition: transform .4s ease, border-color .4s ease, box-shadow .4s ease;
+    }
+
+    .team-card:hover {
+      transform: translateY(-10px);
+      border-color: rgba(184,242,107,.35);
+      box-shadow: 0 25px 60px rgba(0,0,0,.35), 0 0 35px rgba(184,242,107,.06);
+    }
+
+    .team-photo {
+      position: relative;
+      height: 320px;
+      overflow: hidden;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      background: radial-gradient(circle at 50% 35%, rgba(184,242,107,.18), transparent 55%), linear-gradient(180deg, #10291f 0%, #0b1c16 100%);
+      border-bottom: 1px solid rgba(184,242,107,.08);
+    }
+
+    .team-photo::before {
+      content: attr(data-number);
+      position: absolute;
+      top: 8px;
+      right: 15px;
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 95px;
+      font-weight: 700;
+      line-height: 1;
+      color: rgba(184,242,107,.045);
+      pointer-events: none;
+    }
+
+    .team-photo::after {
+      content: "";
+      position: absolute;
+      width: 180px;
+      height: 180px;
+      left: 50%;
+      bottom: -100px;
+      transform: translateX(-50%);
+      background: rgba(184,242,107,.12);
+      border-radius: 50%;
+      filter: blur(45px);
+      pointer-events: none;
+    }
+
+    .team-photo img {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center bottom;
+      display: block;
+      transition: transform .6s cubic-bezier(.2,.8,.2,1), filter .6s ease;
+    }
+
+    .team-card:hover .team-photo img {
+      transform: scale(1.045);
+      filter: brightness(1.04);
+    }
+
+    .team-info {
+      position: relative;
+      z-index: 5;
+      padding: 22px 22px 24px;
+      background: linear-gradient(180deg, #0b1c16 0%, #091711 100%);
+    }
+
+    .team-role {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--green);
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .13em;
+      line-height: 1.3;
+      margin-bottom: 7px;
+    }
+
+    .team-role::before {
+      content: "";
+      width: 18px;
+      height: 1px;
+      background: var(--green);
+      box-shadow: 0 0 8px rgba(184,242,107,.5);
+    }
+
+    .team-name {
+      margin-top: 9px;
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 24px;
+      font-weight: 700;
+      line-height: 1.1;
+      letter-spacing: -.035em;
+      color: var(--white);
+    }
+
+    .team-desc {
+      margin-top: 9px;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.55;
+    }
+
+    .team-number {
+      position: absolute;
+      right: 20px;
+      bottom: 24px;
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      color: rgba(255,255,255,.25);
+      letter-spacing: .08em;
+    }
+
+    @media (max-width: 1000px) {
+      .team-grid { grid-template-columns: repeat(2, 1fr); gap: 18px; }
+      .team-card { min-height: 450px; }
+      .team-photo { height: 300px; }
+    }
+
+    @media (max-width: 700px) {
+      .team-grid { grid-template-columns: 1fr; gap: 18px; }
+      .team-card { min-height: 0; }
+      .team-photo { height: 330px; }
+      .team-info { padding: 21px 20px 23px; }
+      .team-name { font-size: 23px; }
+      .team-desc { font-size: 12px; }
+    }
+
+    @media (max-width: 380px) {
+      .team-photo { height: 300px; }
+      .team-name { font-size: 21px; }
+    }
+
+
+    /* =========================================================
+       PENASIHAT PROYEK
+    ========================================================= */
+
+    .advisor-wrap {
+      display: flex;
+      justify-content: center;
+      margin-top: 55px;
+      margin-bottom: 75px;
+    }
+
+    .advisor-card {
+      width: min(440px, 100%);
+      min-height: 0;
+      border-color: rgba(184,242,107,.28);
+      background:
+        radial-gradient(circle at 50% 0%, rgba(184,242,107,.08), transparent 50%),
+        #0b1c16;
+      box-shadow:
+        0 25px 70px rgba(0,0,0,.28),
+        0 0 45px rgba(184,242,107,.055);
+    }
+
+    .advisor-card .team-photo {
+      height: 360px;
+    }
+
+    .advisor-card .team-name {
+      font-size: 25px;
+    }
+
+    .advisor-card:hover {
+      border-color: rgba(184,242,107,.48);
+    }
+
+    .advisor-kicker {
+      margin-top: 35px;
+      text-align: center;
+      color: #77857d;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+
+    .research-team-label {
+      margin-top: 8px;
+      text-align: center;
+      font-family: "Space Grotesk", sans-serif;
+      font-size: clamp(28px, 4vw, 42px);
+      letter-spacing: -.045em;
+    }
+
+    /* =========================================================
+       RESEARCH ARCHIVE
+    ========================================================= */
+
+    .research-identity {
+      margin-top: 55px;
+      padding: 34px;
+    }
+
+    .research-identity-grid {
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 20px;
+      align-items: stretch;
+    }
+
+    .research-identity h3,
+    .research-card h3 {
+      font-family: "Space Grotesk", sans-serif;
+    }
+
+    .research-identity h3 {
+      font-size: 31px;
+      letter-spacing: -.04em;
+    }
+
+    .research-identity p {
+      margin-top: 12px;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.75;
+    }
+
+    .research-principles {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+      margin-top: 25px;
+    }
+
+    .research-principle {
+      padding: 13px 14px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: rgba(255,255,255,.025);
+      color: #c7d1ca;
+      font-size: 11px;
+      font-weight: 700;
+    }
+
+    .research-card {
+      position: relative;
+      overflow: hidden;
+      padding: 30px;
+      border: 1px solid rgba(184,242,107,.20);
+      border-radius: var(--radius);
+      background:
+        radial-gradient(circle at 90% 10%, rgba(184,242,107,.10), transparent 38%),
+        rgba(255,255,255,.035);
+      transition: .3s ease;
+    }
+
+    .research-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(184,242,107,.38);
+    }
+
+    .research-card-tag {
+      display: inline-flex;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(184,242,107,.08);
+      color: var(--green);
+      font-size: 9px;
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .research-card h3 {
+      margin-top: 18px;
+      font-size: 26px;
+      line-height: 1.05;
+    }
+
+    .research-card p {
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.65;
+    }
+
+    .research-meta {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-top: 22px;
+    }
+
+    .research-meta div {
+      padding: 12px;
+      border-top: 1px solid var(--line);
+      color: #9ba89f;
+      font-size: 10px;
+    }
+
+    .research-meta strong {
+      display: block;
+      margin-top: 4px;
+      color: #d9e1dc;
+      font-size: 11px;
+    }
+
+    .research-card .btn {
+      margin-top: 22px;
+      width: 100%;
+    }
+
+    /* =========================================================
+       DAFTAR RISET
+    ========================================================= */
+
+    .research-listing {
+      margin-top: 28px;
+    }
+
+    .research-listing-header {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 20px;
+      margin-bottom: 18px;
+    }
+
+    .research-listing-title {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 25px;
+      letter-spacing: -.035em;
+    }
+
+    .research-listing-subtitle {
+      max-width: 560px;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.6;
+    }
+
+    .research-list-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .research-list-card {
+      position: relative;
+      overflow: hidden;
+      min-height: 245px;
+      padding: 25px;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      background: rgba(255,255,255,.025);
+      transition: .3s ease;
+    }
+
+    .research-list-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(184,242,107,.28);
+      background: rgba(255,255,255,.04);
+    }
+
+    .research-list-number {
+      color: rgba(184,242,107,.55);
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .12em;
+    }
+
+    .research-list-status {
+      display: inline-flex;
+      margin-top: 12px;
+      padding: 5px 9px;
+      border: 1px solid rgba(255,200,91,.20);
+      border-radius: 999px;
+      background: rgba(255,200,91,.06);
+      color: var(--warning);
+      font-size: 9px;
+      font-weight: 800;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .research-list-card h4 {
+      margin-top: 18px;
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 21px;
+      line-height: 1.1;
+      letter-spacing: -.03em;
+    }
+
+    .research-list-card p {
+      margin-top: 9px;
+      color: var(--muted);
+      font-size: 11px;
+      line-height: 1.6;
+    }
+
+    .research-list-sector {
+      position: absolute;
+      left: 25px;
+      bottom: 22px;
+      color: #7f8d85;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    @media (max-width: 900px) {
+      .research-list-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 600px) {
+      .research-listing-header {
+        display: block;
+      }
+      .research-listing-subtitle {
+        margin-top: 8px;
+      }
+      .research-list-grid { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 1000px) {
+      .research-identity-grid { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 700px) {
+      .advisor-card { width: 100%; }
+      .advisor-card .team-photo { height: 330px; }
+      .research-identity { padding: 27px; }
+      .research-principles { grid-template-columns: 1fr; }
+      .research-meta { grid-template-columns: 1fr; }
+    }
+
+    /* =========================================================
+       ABOUT
+    ========================================================= */
+
+    .about-grid {
+      display: grid;
+
+      grid-template-columns: 1.2fr .8fr;
+
+      gap: 30px;
+
+      margin-top: 60px;
+    }
+
+    .about-main {
+      padding: 42px;
+    }
+
+    .about-main p {
+      color: #b8c3bc;
+
+      font-size: 18px;
+      line-height: 1.8;
+    }
+
+    .about-main p + p {
+      margin-top: 20px;
+    }
+
+    .about-side {
+      display: grid;
+      gap: 15px;
+    }
+
+    .focus-card {
+      padding: 27px;
+    }
+
+    .focus-number {
+      color: var(--green);
+
+      font-family: "Space Grotesk", sans-serif;
+
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .focus-card h3 {
+      margin-top: 8px;
+
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 21px;
+    }
+
+    .focus-card p {
+      margin-top: 7px;
+
+      color: var(--muted);
+
+      font-size: 13px;
+    }
+
+
+    /* =========================================================
+       BIG QUESTION
+    ========================================================= */
+
+    .question-section {
+      min-height: 80vh;
+
+      display: flex;
+      align-items: center;
+
+      overflow: hidden;
+    }
+
+    .question-box {
+      position: relative;
+
+      width: 100%;
+
+      padding: clamp(35px, 7vw, 90px);
+
+      border: 1px solid rgba(184,242,107,.20);
+      border-radius: 35px;
+
+      background:
+        radial-gradient(
+          circle at 85% 15%,
+          rgba(184,242,107,.15),
+          transparent 35%
+        ),
+        rgba(255,255,255,.035);
+    }
+
+    .question-label {
+      color: var(--green);
+
+      font-size: 12px;
+      font-weight: 700;
+
+      letter-spacing: .15em;
+      text-transform: uppercase;
+    }
+
+    .question {
+      max-width: 950px;
+
+      margin-top: 28px;
+
+      font-family: "Space Grotesk", sans-serif;
+
+      font-size: clamp(48px, 8vw, 105px);
+
+      line-height: .91;
+
+      letter-spacing: -.07em;
+    }
+
+    .question .dim {
+      color: #68766f;
+    }
+
+    .question-description {
+      max-width: 650px;
+
+      margin-top: 35px;
+
+      color: #a7b4ac;
+
+      font-size: 17px;
+    }
+
+
+    /* =========================================================
+       COMPANY CONTEXT
+    ========================================================= */
+
+    .context-grid {
+      display: grid;
+
+      grid-template-columns: 1fr 1fr;
+
+      gap: 20px;
+
+      margin-top: 55px;
+    }
+
+    .context-card {
+      padding: 35px;
+      min-height: 300px;
+    }
+
+    .context-card h3 {
+      font-family: "Space Grotesk", sans-serif;
+
+      font-size: 27px;
+    }
+
+    .context-card p {
+      margin-top: 15px;
+
+      color: var(--muted);
+
+      font-size: 14px;
+    }
+
+    .process {
+      margin-top: 35px;
+
+      display: grid;
+
+      grid-template-columns: repeat(4,1fr);
+
+      gap: 8px;
+    }
+
+    .process-item {
+      padding: 15px 12px;
+
+      border: 1px solid var(--line);
+
+      border-radius: 13px;
+
+      text-align: center;
+
+      font-size: 11px;
+      color: #c6d0c9;
+    }
+
+    .process-item span {
+      display: block;
+
+      margin-bottom: 7px;
+
+      color: var(--green);
+
+      font-weight: 700;
+    }
+
+
+    /* =========================================================
+       ISSUE DASHBOARD
+    ========================================================= */
+
+    .issue-grid {
+      display: grid;
+
+      grid-template-columns: repeat(4,1fr);
+
+      gap: 15px;
+
+      margin-top: 55px;
+    }
+
+    .issue-card {
+      padding: 27px;
+
+      min-height: 280px;
+
+      transition: .3s ease;
+    }
+
+    .issue-card:hover {
+      transform: translateY(-6px);
+    }
+
+    .issue-icon {
+      width: 45px;
+      height: 45px;
+
+      display: grid;
+      place-items: center;
+
+      border-radius: 13px;
+
+      background: rgba(184,242,107,.09);
+
+      color: var(--green);
+
+      font-size: 20px;
+    }
+
+    .issue-card h3 {
+      margin-top: 25px;
+
+      font-family: "Space Grotesk", sans-serif;
+
+      font-size: 20px;
+    }
+
+    .issue-card p {
+      margin-top: 8px;
+
+      color: var(--muted);
+
+      font-size: 12px;
+    }
+
+    .issue-number {
+      margin-top: 25px;
+
+      font-family: "Space Grotesk", sans-serif;
+
+      font-size: 28px;
+      font-weight: 700;
+    }
+
+    .issue-change {
+      margin-top: 2px;
+
+      font-size: 11px;
+      font-weight: 700;
+    }
+
+    .bad {
+      color: var(--danger);
+    }
+
+    .good {
+      color: var(--success);
+    }
+
+    .neutral {
+      color: var(--warning);
+    }
+
+
+    /* =========================================================
+       PROGRAMS
+    ========================================================= */
+
+    .program-grid {
+      display: grid;
+
+      grid-template-columns: repeat(3,1fr);
+
+      gap: 18px;
+
+      margin-top: 55px;
+    }
+
+    .program-card {
+      position: relative;
+
+      padding: 30px;
+
+      min-height: 300px;
+
+      overflow: hidden;
+    }
+
+    .program-card::after {
+      content: "";
+
+      position: absolute;
+
+      width: 150px;
+      height: 150px;
+
+      right: -60px;
+      bottom: -60px;
+
+      border-radius: 50%;
+
+      background: rgba(184,242,107,.08);
+    }
+
+    .program-tag {
+      display: inline-block;
+
+      padding: 5px 9px;
+
+      border-radius: 999px;
+
+      background: rgba(184,242,107,.08);
+
+      color: var(--green);
+
+      font-size: 9px;
+      font-weight: 700;
+
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .program-card h3 {
+      margin-top: 22px;
+
+      font-family: "Space Grotesk", sans-serif;
+
+      font-size: 25px;
+    }
+
+    .program-card p {
+      margin-top: 10px;
+
+      color: var(--muted);
+
+      font-size: 13px;
+    }
+
+    .program-result {
+      position: absolute;
+
+      left: 30px;
+      bottom: 25px;
+
+      color: white;
+
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .program-result strong {
+      color: var(--green);
+    }
+
+
+    /* =========================================================
+       IMPACT MODEL
+    ========================================================= */
+
+    .impact-flow {
+      margin-top: 60px;
+
+      display: grid;
+
+      grid-template-columns: repeat(4,1fr);
+
+      gap: 14px;
+    }
+
+    .impact-step {
+      position: relative;
+
+      padding: 32px 25px;
+
+      min-height: 230px;
+    }
+
+    .impact-step:not(:last-child)::after {
+      content: "→";
+
+      position: absolute;
+
+      right: -15px;
+      top: 50%;
+
+      transform: translateY(-50%);
+
+      z-index: 3;
+
+      color: var(--green);
+
+      font-size: 22px;
+    }
+
+    .impact-step-number {
+      color: var(--green);
+
+      font-family: "Space Grotesk", sans-serif;
+
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .impact-step h3 {
+      margin-top: 25px;
+
+      font-family: "Space Grotesk", sans-serif;
+
+      font-size: 23px;
+    }
+
+    .impact-step p {
+      margin-top: 8px;
+
+      color: var(--muted);
+
+      font-size: 12px;
+    }
+
+    .impact-note {
+      margin-top: 25px;
+
+      padding: 20px 25px;
+
+      border-left: 3px solid var(--green);
+
+      background: rgba(184,242,107,.04);
+
+      color: #abb8b0;
+
+      font-size: 13px;
+    }
+
+
+    /* =========================================================
+       TARGET
+    ========================================================= */
+
+    .target-grid {
+      display: grid;
+
+      grid-template-columns: 1fr 1fr;
+
+      gap: 18px;
+
+      margin-top: 55px;
+    }
+
+    .target-card {
+      padding: 27px;
+    }
+
+    .target-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .target-name {
+      font-weight: 700;
+      font-size: 14px;
+    }
+
+    .target-status {
+      font-size: 10px;
+      font-weight: 700;
+
+      color: var(--green);
+
+      text-transform: uppercase;
+    }
+
+    .target-numbers {
+      display: flex;
+      justify-content: space-between;
+
+      margin-top: 22px;
+
+      font-family: "Space Grotesk", sans-serif;
+    }
+
+    .target-current {
+      font-size: 31px;
+    }
+
+    .target-goal {
+      color: #7c8a82;
+
+      font-size: 17px;
+    }
+
+    .progress {
+      width: 100%;
+      height: 8px;
+
+      margin-top: 15px;
+
+      overflow: hidden;
+
+      border-radius: 99px;
+
+      background: rgba(255,255,255,.07);
+    }
+
+    .progress-bar {
+      height: 100%;
+
+      border-radius: inherit;
+
+      background: linear-gradient(
+        90deg,
+        var(--green-dark),
+        var(--green)
+      );
+
+      width: var(--progress);
+
+      transition: width 1.5s ease;
+    }
+
+    .target-description {
+      margin-top: 10px;
+
+      color: var(--muted);
+
+      font-size: 11px;
+    }
+
+
+    /* =========================================================
+       GREENWASHING CHECKER
+    ========================================================= */
+
+    .checker {
+      margin-top: 60px;
+
+      padding: 45px;
+    }
+
+    .checker-grid {
+      display: grid;
+
+      grid-template-columns: 1fr .8fr;
+
+      gap: 50px;
+
+      align-items: center;
+    }
+
+    .checker h3 {
+      font-family: "Space Grotesk", sans-serif;
+
+      font-size: 38px;
+
+      letter-spacing: -.04em;
+    }
+
+    .checker p {
+      margin-top: 12px;
+
+      color: var(--muted);
+
+      font-size: 14px;
+    }
+
+    .checks {
+      margin-top: 28px;
+
+      display: grid;
+
+      gap: 10px;
+    }
+
+    .check-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+
+      padding: 13px 15px;
+
+      border: 1px solid var(--line);
+      border-radius: 12px;
+
+      background: rgba(255,255,255,.025);
+
+      color: #c3cec7;
+
+      font-size: 12px;
+    }
+
+    .check-dot {
+      width: 9px;
+      height: 9px;
+
+      flex-shrink: 0;
+
+      border-radius: 50%;
+    }
+
+    .check-good {
+      background: var(--success);
+      box-shadow: 0 0 12px rgba(142,228,110,.4);
+    }
+
+    .check-warn {
+      background: var(--warning);
+      box-shadow: 0 0 12px rgba(255,200,91,.4);
+    }
+
+    .verdict-circle {
+      width: 260px;
+      height: 260px;
+
+      margin: auto;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      border-radius: 50%;
+
+      border: 1px solid rgba(255,200,91,.3);
+
+      background:
+        radial-gradient(
+          circle,
+          rgba(255,200,91,.09),
+          transparent 68%
+        );
+
+      text-align: center;
+    }
+
+    .verdict-circle small {
+      color: var(--warning);
+
+      font-size: 10px;
+      font-weight: 700;
+
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+
+    .verdict-circle strong {
+      margin-top: 7px;
+
+      font-family: "Space Grotesk", sans-serif;
+
+      font-size: 28px;
+    }
+
+    .verdict-circle span {
+      margin-top: 5px;
+
+      max-width: 170px;
+
+      color: #929e97;
+
+      font-size: 10px;
+    }
+
+
+    /* =========================================================
+       STAKEHOLDERS
+    ========================================================= */
+
+    .stakeholder-grid {
+      display: grid;
+
+      grid-template-columns: repeat(3,1fr);
+
+      gap: 16px;
+
+      margin-top: 55px;
+    }
+
+    .stakeholder-card {
+      padding: 27px;
+    }
+
+    .stakeholder-card h3 {
+      font-family: "Space Grotesk", sans-serif;
+
+      font-size: 20px;
+    }
+
+    .stakeholder-card p {
+      margin-top: 8px;
+
+      color: var(--muted);
+
+      font-size: 12px;
+    }
+
+    .stakeholder-interest {
+      margin-top: 18px;
+
+      padding-top: 15px;
+
+      border-top: 1px solid var(--line);
+
+      color: #cbd4ce;
+
+      font-size: 11px;
+    }
+
+
+    /* =========================================================
+       EVIDENCE
+    ========================================================= */
+
+    .evidence-list {
+      margin-top: 55px;
+
+      display: grid;
+
+      gap: 12px;
+    }
+
+    .evidence-row {
+      display: grid;
+
+      grid-template-columns: 70px 1fr 160px;
+
+      align-items: center;
+
+      gap: 20px;
+
+      padding: 23px 25px;
+
+      border: 1px solid var(--line);
+
+      border-radius: 17px;
+
+      background: rgba(255,255,255,.025);
+    }
+
+    .evidence-number {
+      color: var(--green);
+
+      font-family: "Space Grotesk", sans-serif;
+
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .evidence-content h3 {
+      font-size: 15px;
+    }
+
+    .evidence-content p {
+      margin-top: 3px;
+
+      color: var(--muted);
+
+      font-size: 11px;
+    }
+
+    .evidence-status {
+      text-align: right;
+
+      color: var(--green);
+
+      font-size: 10px;
+      font-weight: 700;
+
+      text-transform: uppercase;
+    }
+
+
+    /* =========================================================
+       GOOD VS WORK
+    ========================================================= */
+
+    .split-grid {
+      display: grid;
+
+      grid-template-columns: 1fr 1fr;
+
+      gap: 18px;
+
+      margin-top: 55px;
+    }
+
+    .split-card {
+      padding: 35px;
+    }
+
+    .split-card.good-card {
+      border-color: rgba(142,228,110,.18);
+    }
+
+    .split-card.work-card {
+      border-color: rgba(255,117,107,.18);
+    }
+
+    .split-label {
+      font-size: 11px;
+      font-weight: 700;
+
+      letter-spacing: .13em;
+      text-transform: uppercase;
+    }
+
+    .good-card .split-label {
+      color: var(--success);
+    }
+
+    .work-card .split-label {
+      color: var(--danger);
+    }
+
+    .split-card h3 {
+      margin-top: 10px;
+
+      font-family: "Space Grotesk", sans-serif;
+
+      font-size: 30px;
+    }
+
+    .split-list {
+      margin-top: 25px;
+
+      display: grid;
+
+      gap: 13px;
+    }
+
+    .split-list li {
+      list-style: none;
+
+      position: relative;
+
+      padding-left: 20px;
+
+      color: #adb9b1;
+
+      font-size: 13px;
+    }
+
+    .split-list li::before {
+      content: "•";
+
+      position: absolute;
+      left: 0;
+
+      color: var(--green);
+
+      font-size: 18px;
+    }
+
+    .work-card .split-list li::before {
+      color: var(--danger);
+    }
+
+
+    /* =========================================================
+       VERDICT
+    ========================================================= */
+
+    .verdict-section {
+      padding-top: 150px;
+      padding-bottom: 150px;
+    }
+
+    .verdict-card {
+      padding: clamp(35px, 8vw, 100px);
+
+      text-align: center;
+
+      background:
+        radial-gradient(
+          circle at center,
+          rgba(184,242,107,.10),
+          transparent 55%
+        ),
+        rgba(255,255,255,.025);
+    }
+
+    .verdict-card h2 {
+      max-width: 950px;
+
+      margin: 25px auto 0;
+
+      font-family: "Space Grotesk", sans-serif;
+
+      font-size: clamp(45px, 7vw, 92px);
+
+      line-height: .92;
+
+      letter-spacing: -.065em;
+    }
+
+    .verdict-card h2 span {
+      color: var(--green);
+    }
+
+    .verdict-card p {
+      max-width: 650px;
+
+      margin: 30px auto 0;
+
+      color: var(--muted);
+
+      font-size: 16px;
+    }
+
+    .verdict-pills {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+
+      gap: 10px;
+
+      margin-top: 30px;
+    }
+
+    .pill {
+      padding: 9px 14px;
+
+      border: 1px solid var(--line);
+
+      border-radius: 999px;
+
+      color: #b9c5bd;
+
+      font-size: 11px;
+      font-weight: 700;
+    }
+
+
+    /* =========================================================
+       RECOMMENDATIONS
+    ========================================================= */
+
+    .recommendation-grid {
+      display: grid;
+
+      grid-template-columns: repeat(3,1fr);
+
+      gap: 17px;
+
+      margin-top: 55px;
+    }
+
+    .recommendation {
+      padding: 30px;
+    }
+
+    .recommendation-number {
+      color: var(--green);
+
+      font-family: "Space Grotesk", sans-serif;
+
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .recommendation h3 {
+      margin-top: 22px;
+
+      font-family: "Space Grotesk", sans-serif;
+
+      font-size: 22px;
+    }
+
+    .recommendation p {
+      margin-top: 9px;
+
+      color: var(--muted);
+
+      font-size: 12px;
+    }
+
+    .recommendation-meta {
+      margin-top: 25px;
+
+      padding-top: 15px;
+
+      border-top: 1px solid var(--line);
+
+      display: grid;
+
+      gap: 6px;
+
+      font-size: 10px;
+
+      color: #849188;
+    }
+
+    .recommendation-meta strong {
+      color: #c8d2cb;
+    }
+
+
+
+    /* =========================================================
+       REPORT CENTER
+    ========================================================= */
+
+    .report-section {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .report-section::before {
+      content: "";
+      position: absolute;
+      width: 520px;
+      height: 520px;
+      right: -220px;
+      top: 80px;
+      background: radial-gradient(circle, rgba(184,242,107,.10), transparent 68%);
+      pointer-events: none;
+    }
+
+    .report-shell {
+      margin-top: 55px;
+      padding: clamp(24px, 4vw, 45px);
+      border: 1px solid rgba(184,242,107,.18);
+      border-radius: 30px;
+      background:
+        radial-gradient(circle at 85% 10%, rgba(184,242,107,.07), transparent 30%),
+        rgba(255,255,255,.025);
+    }
+
+    .report-grid {
+      display: grid;
+      grid-template-columns: .78fr 1.22fr;
+      gap: 45px;
+      align-items: start;
+    }
+
+    .report-intro h3 {
+      margin-top: 20px;
+      font-family: "Space Grotesk", sans-serif;
+      font-size: clamp(32px, 4vw, 52px);
+      line-height: .98;
+      letter-spacing: -.055em;
+    }
+
+    .report-intro h3 span {
+      color: var(--green);
+    }
+
+    .report-intro > p {
+      margin-top: 18px;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.75;
+    }
+
+    .report-points {
+      display: grid;
+      gap: 10px;
+      margin-top: 28px;
+    }
+
+    .report-point {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      padding: 13px 14px;
+      border: 1px solid var(--line);
+      border-radius: 13px;
+      background: rgba(255,255,255,.025);
+    }
+
+    .report-point-icon {
+      width: 26px;
+      height: 26px;
+      flex: 0 0 26px;
+      display: grid;
+      place-items: center;
+      border-radius: 8px;
+      background: rgba(184,242,107,.09);
+      color: var(--green);
+      font-size: 11px;
+      font-weight: 800;
+    }
+
+    .report-point strong {
+      display: block;
+      font-size: 12px;
+    }
+
+    .report-point small {
+      display: block;
+      margin-top: 2px;
+      color: var(--muted);
+      font-size: 10px;
+      line-height: 1.5;
+    }
+
+    .report-form {
+      padding: 25px;
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      background: rgba(5,12,9,.62);
+    }
+
+    .report-form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    .field {
+      display: grid;
+      gap: 7px;
+    }
+
+    .field.full {
+      grid-column: 1 / -1;
+    }
+
+    .field label {
+      color: #cbd5ce;
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: .10em;
+      text-transform: uppercase;
+    }
+
+    .field label span {
+      color: #66746c;
+      font-weight: 600;
+      letter-spacing: 0;
+      text-transform: none;
+    }
+
+    .field input,
+    .field select,
+    .field textarea {
+      width: 100%;
+      border: 1px solid rgba(255,255,255,.11);
+      border-radius: 12px;
+      outline: none;
+      background: #050a07;
+      color: #f3f7f2;
+      font: inherit;
+      font-size: 12px;
+      padding: 12px 13px;
+      transition: .2s ease;
+    }
+
+    .field input,
+    .field select {
+      min-height: 45px;
+    }
+
+    .field textarea {
+      min-height: 145px;
+      resize: vertical;
+      line-height: 1.6;
+    }
+
+    .field input::placeholder,
+    .field textarea::placeholder {
+      color: #59665f;
+    }
+
+    .field input:focus,
+    .field select:focus,
+    .field textarea:focus {
+      border-color: rgba(184,242,107,.48);
+      box-shadow: 0 0 0 3px rgba(184,242,107,.055);
+    }
+
+    .report-consent {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      margin-top: 14px;
+      color: #8e9b93;
+      font-size: 10px;
+      line-height: 1.55;
+    }
+
+    .report-consent input {
+      margin-top: 2px;
+      accent-color: var(--green);
+    }
+
+    .report-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .report-actions .btn {
+      flex: 1 1 180px;
+    }
+
+    .report-note {
+      margin-top: 14px;
+      padding: 11px 13px;
+      border-left: 2px solid rgba(184,242,107,.55);
+      color: #738078;
+      font-size: 10px;
+      line-height: 1.55;
+      background: rgba(184,242,107,.025);
+    }
+
+    .report-status {
+      display: none;
+      margin-top: 14px;
+      padding: 13px 15px;
+      border: 1px solid rgba(142,228,110,.22);
+      border-radius: 12px;
+      background: rgba(142,228,110,.055);
+      color: #bfe9ad;
+      font-size: 11px;
+      line-height: 1.55;
+    }
+
+    .report-status.show {
+      display: block;
+    }
+
+    @media (max-width: 900px) {
+      .report-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .report-shell {
+        padding: 18px;
+        border-radius: 22px;
+      }
+
+      .report-form {
+        padding: 18px;
+      }
+
+      .report-form-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .field.full {
+        grid-column: auto;
+      }
+
+      .report-intro h3 {
+        font-size: 39px;
+      }
+    }
+
+    /* =========================================================
+       FOOTER
+    ========================================================= */
+
+    footer {
+      padding: 70px 0 35px;
+
+      border-top: 1px solid var(--line);
+    }
+
+    .footer-top {
+      display: flex;
+
+      justify-content: space-between;
+      gap: 40px;
+    }
+
+    .footer-brand {
+      max-width: 500px;
+    }
+
+    .footer-brand h3 {
+      font-family: "Space Grotesk", sans-serif;
+
+      font-size: 30px;
+
+      letter-spacing: -.04em;
+    }
+
+    .footer-brand p {
+      margin-top: 10px;
+
+      color: var(--muted);
+
+      font-size: 12px;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+
+      gap: 15px;
+
+      max-width: 400px;
+
+      justify-content: flex-end;
+    }
+
+    .footer-links a {
+      color: #87958c;
+
+      font-size: 11px;
+    }
+
+    .footer-links a:hover {
+      color: var(--green);
+    }
+
+    .footer-bottom {
+      display: flex;
+
+      justify-content: space-between;
+
+      margin-top: 65px;
+      padding-top: 20px;
+
+      border-top: 1px solid var(--line);
+
+      color: #66746c;
+
+      font-size: 10px;
+    }
+
+
+    /* =========================================================
+       REVEAL ANIMATION
+    ========================================================= */
+
+    .reveal {
+      opacity: 0;
+
+      transform: translateY(30px);
+
+      transition:
+        opacity .8s ease,
+        transform .8s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+
+    /* =========================================================
+       RESPONSIVE TABLET
+    ========================================================= */
+
+    @media (max-width: 1000px) {
+
+      .nav-links {
+        display: none;
+      }
+
+      .mobile-menu {
+        display: block;
+      }
+
+      .nav-button {
+        display: none;
+      }
+
+      .team-grid {
+        grid-template-columns: repeat(2,1fr);
+      }
+
+      .issue-grid {
+        grid-template-columns: repeat(2,1fr);
+      }
+
+      .program-grid {
+        grid-template-columns: repeat(2,1fr);
+      }
+
+      .stakeholder-grid {
+        grid-template-columns: repeat(2,1fr);
+      }
+
+      .recommendation-grid {
+        grid-template-columns: repeat(2,1fr);
+      }
+
+      .impact-flow {
+        grid-template-columns: repeat(2,1fr);
+      }
+
+      .impact-step:not(:last-child)::after {
+        display: none;
+      }
+    }
+
+
+    /* =========================================================
+       RESPONSIVE MOBILE
+    ========================================================= */
+
+    @media (max-width: 700px) {
+
+      .container {
+        width: min(100% - 28px, var(--container));
+      }
+
+      section {
+        padding: 85px 0;
+      }
+
+      .navbar {
+        height: 65px;
+      }
+
+      .logo {
+        font-size: 13px;
+      }
+
+      .logo-id {
+        font-size: .60em;
+      }
+
+      .hero {
+        min-height: auto;
+
+        padding-top: 130px;
+        padding-bottom: 70px;
+      }
+
+      .hero h1 {
+        font-size: clamp(54px, 17vw, 88px);
+      }
+
+      .hero-subtitle {
+        font-size: 15px;
+      }
+
+      .hero-bottom {
+        grid-template-columns: 1fr;
+
+        margin-top: 65px;
+      }
+
+      .hero-stat {
+        border-right: 0;
+
+        border-bottom: 1px solid var(--line);
+
+        padding: 18px 0 !important;
+      }
+
+      .hero-stat:last-child {
+        border-bottom: 0;
+      }
+
+      .hero-stat-number {
+        font-size: 28px;
+      }
+
+      .section-title {
+        font-size: 45px;
+      }
+
+      .section-description {
+        font-size: 14px;
+      }
+
+      .team-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .team-card {
+        min-height: 0;
+      }
+
+      .team-photo {
+        height: 330px;
+      }
+
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .about-main {
+        padding: 27px;
+      }
+
+      .about-main p {
+        font-size: 15px;
+      }
+
+      .question-section {
+        min-height: auto;
+      }
+
+      .question-box {
+        padding: 30px 23px;
+        border-radius: 25px;
+      }
+
+      .question {
+        font-size: 48px;
+      }
+
+      .question-description {
+        font-size: 14px;
+      }
+
+      .context-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .process {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .issue-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .program-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .impact-flow {
+        grid-template-columns: 1fr;
+      }
+
+      .impact-step {
+        min-height: auto;
+      }
+
+      .target-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .checker {
+        padding: 27px;
+      }
+
+      .checker-grid {
+        grid-template-columns: 1fr;
+
+        gap: 40px;
+      }
+
+      .checker h3 {
+        font-size: 31px;
+      }
+
+      .verdict-circle {
+        width: 220px;
+        height: 220px;
+      }
+
+      .stakeholder-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .evidence-row {
+        grid-template-columns: 45px 1fr;
+
+        gap: 13px;
+      }
+
+      .evidence-status {
+        grid-column: 2;
+
+        text-align: left;
+      }
+
+      .split-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .recommendation-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .verdict-card {
+        padding: 45px 23px;
+      }
+
+      .verdict-card h2 {
+        font-size: 49px;
+      }
+
+      .footer-top {
+        flex-direction: column;
+      }
+
+      .footer-links {
+        justify-content: flex-start;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        gap: 7px;
+      }
+
+    }
+
+
+    /* =========================================================
+       VERY SMALL DEVICES
+    ========================================================= */
+
+    @media (max-width: 380px) {
+
+      .hero h1 {
+        font-size: 49px;
+      }
+
+      .section-title {
+        font-size: 39px;
+      }
+
+      .question {
+        font-size: 42px;
+      }
+
+      .verdict-card h2 {
+        font-size: 42px;
+      }
+
+    }
+
+
+
+    /* =========================================================
+       LANGUAGE SWITCHER
+    ========================================================= */
+
+    .language-switcher {
+      display: inline-flex;
+      align-items: center;
+      gap: 3px;
+      margin-left: 10px;
+      padding: 4px;
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 999px;
+      background: rgba(255,255,255,.045);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+    }
+
+    .lang-btn {
+      min-width: 38px;
+      height: 30px;
+      padding: 0 9px;
+      border: 0;
+      border-radius: 999px;
+      background: transparent;
+      color: rgba(255,255,255,.48);
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: .08em;
+      cursor: pointer;
+      transition: .25s ease;
+    }
+
+    .lang-btn:hover {
+      color: var(--white);
+      background: rgba(255,255,255,.06);
+    }
+
+    .lang-btn.active {
+      color: var(--bg);
+      background: var(--green);
+      box-shadow: 0 0 18px rgba(184,242,107,.16);
+    }
+
+    @media (max-width: 1000px) {
+      .language-switcher {
+        margin-left: auto;
+        margin-right: 8px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .language-switcher {
+        margin-right: 5px;
+      }
+
+      .lang-btn {
+        min-width: 34px;
+        height: 28px;
+        padding: 0 7px;
+        font-size: 9px;
+      }
+    }
+
+  </style>
+</head>
+
+
+<body>
+
+
+  <!-- ========================================================
+       NAVIGATION
+  ========================================================= -->
+
+  <header class="navbar" id="navbar">
+
+    <div class="nav-inner">
+
+      <a href="#home" class="logo" aria-label="BEYONDGREEN.ID">
+        <span class="logo-mark">G</span>
+        <span class="logo-word"><span class="logo-beyond">BEYOND</span>GREEN<span class="logo-id">.ID</span></span>
+      </a>
+
+      <nav class="nav-links">
+
+        <a href="#about" data-lang-key="nav-about">Tentang</a>
+        <a href="#research" data-lang-key="nav-research">Riset</a>
+        <a href="#team" data-lang-key="nav-team">Tim</a>
+        <a href="#issues" data-lang-key="nav-issues">Isu</a>
+        <a href="#programs" data-lang-key="nav-csr">CSR</a>
+        <a href="#checker" data-lang-key="nav-greenwashing">Pencitraan Hijau</a>
+        <a href="#evidence" data-lang-key="nav-evidence">Bukti</a>
+        <a href="#report" data-lang-key="nav-report">Laporkan</a>
+
+      </nav>
+
+      <a href="#report" class="nav-button">
+        <span data-lang-key="report-now">Laporkan Isu</span> ↗
+      </a>
+
+      <div class="language-switcher" aria-label="Language switcher">
+        <button class="lang-btn active" id="langID" type="button" aria-label="Bahasa Indonesia">ID</button>
+        <button class="lang-btn" id="langEN" type="button" aria-label="English">EN</button>
+      </div>
+
+      <button class="mobile-menu" id="mobileMenu">
+        ☰
+      </button>
+
+    </div>
+
+  </header>
+
+
+
+  <!-- ========================================================
+       HERO
+  ======================================================== -->
+
+  <main>
+
+    <section class="hero" id="home">
+
+      <div class="container">
+
+        <div class="hero-content reveal">
+
+          <div class="hero-kicker">
+            <span class="eyebrow">
+              Laboratorium Riset CSR & Keberlanjutan
+            </span>
+          </div>
+
+          <h1>
+            LIHAT<br>
+            LEBIH DARI<br>
+            <span class="green">SEKADAR HIJAU.</span>
+          </h1>
+
+          <p class="hero-subtitle">
+            <strong>BEYONDGREEN.ID</strong> merupakan inisiatif riset yang berfokus pada
+            Tanggung Jawab Sosial Perusahaan (CSR), ESG, keberlanjutan, dan dampak lingkungan.
+            Studi pertama kami mengkaji
+            <strong>PT Indah Kiat Pulp & Paper Tbk.</strong>
+          </p>
+
+          <div class="hero-actions">
+
+            <a href="#research" class="btn btn-primary">
+              Jelajahi Riset Kami
+              →
+            </a>
+
+            <a href="#evidence" class="btn btn-secondary">
+              Lihat Bukti
+            </a>
+
+          </div>
+
+
+          <div class="hero-bottom">
+
+            <div class="hero-stat">
+
+              <div class="hero-stat-number">
+                6.34M
+              </div>
+
+              <div class="hero-stat-label">
+                Emisi Scope 1 · tCO₂e
+              </div>
+
+            </div>
+
+
+            <div class="hero-stat">
+
+              <div class="hero-stat-number">
+                54%
+              </div>
+
+              <div class="hero-stat-label">
+                Energi terbarukan
+              </div>
+
+            </div>
+
+
+            <div class="hero-stat">
+
+              <div class="hero-stat-number">
+                52%
+              </div>
+
+              <div class="hero-stat-label">
+                Serat daur ulang
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ======================================================
+         MARQUEE
+    ====================================================== -->
+
+    <div class="marquee">
+
+      <div class="marquee-track">
+
+        <span class="marquee-item">CSR</span>
+        <span class="marquee-item">ESG</span>
+        <span class="marquee-item">Keberlanjutan</span>
+        <span class="marquee-item">Dampak Lingkungan</span>
+        <span class="marquee-item">Pencitraan Hijau</span>
+        <span class="marquee-item">Pemangku Kepentingan</span>
+        <span class="marquee-item">Bukti</span>
+
+        <span class="marquee-item">CSR</span>
+        <span class="marquee-item">ESG</span>
+        <span class="marquee-item">Keberlanjutan</span>
+        <span class="marquee-item">Dampak Lingkungan</span>
+        <span class="marquee-item">Pencitraan Hijau</span>
+        <span class="marquee-item">Pemangku Kepentingan</span>
+        <span class="marquee-item">Bukti</span>
+
+      </div>
+
+    </div>
+
+
+
+    <!-- ======================================================
+         TEAM
+    ====================================================== -->
+
+    <section id="team">
+
+      <div class="container">
+
+        <span class="eyebrow reveal">
+          01 · Tim Riset
+        </span>
+
+        <h2 class="section-title reveal">
+          Riset menjadi lebih kuat<br>
+          dengan perspektif yang <span>tepat.</span>
+        </h2>
+
+        <p class="section-description reveal">
+          BEYONDGREEN.ID menggabungkan arahan akademik dan riset kolaboratif
+          untuk mengkaji klaim CSR, kinerja lingkungan, target keberlanjutan,
+          dampak terhadap pemangku kepentingan, dan bukti yang mendasarinya.
+        </p>
+
+        <!-- PENASIHAT PROYEK -->
+
+        <div class="advisor-wrap">
+
+          <article class="team-card advisor-card reveal">
+
+            <div class="team-photo" data-number="AD">
+              <img src="ingga maulana.png" alt="Ingga Maulana">
+            </div>
+
+            <div class="team-info">
+
+              <div class="team-role">
+                Penasihat Proyek
+              </div>
+
+              <h3 class="team-name">
+                Ingga Maulana, S.Ak., M.Ak.
+              </h3>
+
+              <p class="team-desc">
+                Arahan konseptual, akademik, dan supervisi dalam pengembangan penelitian.
+              </p>
+
+            </div>
+
+          </article>
+
+        </div>
+
+        <div class="advisor-kicker reveal">
+          Tim Riset
+        </div>
+
+        <h3 class="research-team-label reveal">
+          Dibangun melalui <span style="color:var(--green)">kolaborasi.</span>
+        </h3>
+
+        <div class="team-grid">
+
+          <!-- ANGGOTA 1 -->
+
+          <article class="team-card reveal">
+
+            <div class="team-photo" data-number="01">
+              <img src="masdianrusdianapng.png" alt="Dian Rusdiana">
+            </div>
+
+            <div class="team-info">
+
+              <div class="team-role">
+                Ketua Proyek
+              </div>
+
+              <h3 class="team-name">
+                Dian Rusdiana
+              </h3>
+
+              <p class="team-desc">
+                Koordinasi proyek & integrasi analisis.
+              </p>
+
+            </div>
+
+          </article>
+
+
+          <!-- ANGGOTA 2 -->
+
+          <article class="team-card reveal">
+
+            <div class="team-photo" data-number="02">
+              <img src="Salsa Desi.png" alt="Salsa Desi">
+            </div>
+
+            <div class="team-info">
+
+              <div class="team-role">
+                Analis Dampak
+              </div>
+
+              <h3 class="team-name">
+                Salsa Desi P
+              </h3>
+
+              <p class="team-desc">
+                Analisis dampak lingkungan & sosial.
+              </p>
+
+            </div>
+
+          </article>
+
+
+          <!-- ANGGOTA 3 -->
+
+          <article class="team-card reveal">
+
+            <div class="team-photo" data-number="03">
+              <img src="Sri Cahyani.png" alt="Sri Cahyani">
+            </div>
+
+            <div class="team-info">
+
+              <div class="team-role">
+                Analis ESG
+              </div>
+
+              <h3 class="team-name">
+                Sri Cahyani
+              </h3>
+
+              <p class="team-desc">
+                Analisis ESG, keberlanjutan & target.
+              </p>
+
+            </div>
+
+          </article>
+
+
+          <!-- ANGGOTA 4 -->
+
+          <article class="team-card reveal">
+
+            <div class="team-photo" data-number="04">
+              <img src="Putri Slaras.png" alt="Putri Slaras">
+            </div>
+
+            <div class="team-info">
+
+              <div class="team-role">
+                Riset & Desain
+              </div>
+
+              <h3 class="team-name">
+                Putri Slaras I
+              </h3>
+
+              <p class="team-desc">
+                Riset sumber, visualisasi & dokumentasi.
+              </p>
+
+            </div>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ======================================================
+         RESEARCH ARCHIVE
+    ====================================================== -->
+
+    <section id="research">
+
+      <div class="container">
+
+        <span class="eyebrow reveal">
+          02 · Arsip Riset
+        </span>
+
+        <h2 class="section-title reveal">
+          Studi melampaui<br>
+          label <span>hijau.</span>
+        </h2>
+
+        <p class="section-description reveal">
+          BEYONDGREEN.ID mendokumentasikan proyek riset yang mengkaji bagaimana tanggung jawab perusahaan
+          dikomunikasikan, diterapkan, diukur, dan dibuktikan.
+          Setiap studi dilakukan sebagai penilaian berbasis bukti, bukan sekadar profil perusahaan.
+        </p>
+
+        <div class="research-identity glass reveal">
+
+          <div class="research-identity-grid">
+
+            <div>
+
+              <h3>
+                Sebuah inisiatif riset,<br>
+                bukan sekadar <span style="color:var(--green)">profil perusahaan.</span>
+              </h3>
+
+              <p>
+                Pekerjaan kami berfokus pada kesenjangan antara narasi keberlanjutan
+                dan hasil yang dapat diukur. Kami meninjau pengungkapan publik, target,
+                indikator lingkungan, dimensi pemangku kepentingan, dan bukti pendukung
+                untuk membangun gambaran yang lebih kritis mengenai kinerja CSR perusahaan.
+              </p>
+
+              <div class="research-principles">
+
+                <div class="research-principle">Berbasis bukti</div>
+                <div class="research-principle">CSR & ESG</div>
+                <div class="research-principle">Tinjauan kritis</div>
+                <div class="research-principle">Dampak pemangku kepentingan</div>
+
+              </div>
+
+            </div>
+
+            <article class="research-card">
+
+              <span class="research-card-tag">
+                Riset 01 · Studi Terpublikasi
+              </span>
+
+              <h3>
+                PT Indah Kiat<br>
+                Pulp & Paper Tbk.
+              </h3>
+
+              <p>
+                Penilaian CSR lingkungan yang mengkaji klaim, target, kinerja lingkungan,
+                pertimbangan pemangku kepentingan, risiko yang tersisa, serta bukti
+                yang tersedia untuk mendukung narasi keberlanjutan.
+              </p>
+
+              <div class="research-meta">
+
+                <div>
+                  Fokus
+                  <strong>CSR Lingkungan</strong>
+                </div>
+
+                <div>
+                  Pendekatan
+                  <strong>Penilaian berbasis bukti</strong>
+                </div>
+
+              </div>
+
+              <a class="btn btn-primary" href="https://docs.google.com/document/d/1bBAVjxXHsylVaO4L6Kh1_EXdctF1tn9u/edit?usp=sharing&ouid=111047470013285451337&rtpof=true&sd=true" target="_blank" rel="noopener">
+                Buka Laporan Riset ↗
+              </a>
+
+            </article>
+
+          </div>
+
+        </div>
+
+        <!-- DAFTAR RISET -->
+        <div class="research-listing reveal">
+
+          <div class="research-listing-header">
+            <div>
+              <div class="research-listing-title">Daftar Perusahaan</div>
+            </div>
+            <p class="research-listing-subtitle">
+              Perusahaan berikut sudah masuk dalam daftar riset BEYONDGREEN.ID.
+              Status saat ini masih terdaftar dan belum dianalisis secara mendalam.
+            </p>
+          </div>
+
+          <div class="research-list-grid">
+
+            <article class="research-list-card">
+              <div class="research-list-number">RISET 02</div>
+              <div class="research-list-status">Terdaftar · Belum Dianalisis</div>
+              <h4>PT Vale Indonesia Tbk.</h4>
+              <p>Menunggu penelitian mengenai CSR, ESG, keberlanjutan, dan dampak lingkungan.</p>
+              <div class="research-list-sector">Pertambangan</div>
+            </article>
+
+            <article class="research-list-card">
+              <div class="research-list-number">RISET 03</div>
+              <div class="research-list-status">Terdaftar · Belum Dianalisis</div>
+              <h4>PT Bukit Asam Tbk.</h4>
+              <p>Menunggu penelitian mengenai CSR, ESG, keberlanjutan, dan dampak lingkungan.</p>
+              <div class="research-list-sector">Energi & Pertambangan</div>
+            </article>
+
+            <article class="research-list-card">
+              <div class="research-list-number">RISET 04</div>
+              <div class="research-list-status">Terdaftar · Belum Dianalisis</div>
+              <h4>PT Semen Indonesia (Persero) Tbk.</h4>
+              <p>Menunggu penelitian mengenai CSR, ESG, keberlanjutan, dan dampak lingkungan.</p>
+              <div class="research-list-sector">Semen & Manufaktur</div>
+            </article>
+
+            <article class="research-list-card">
+              <div class="research-list-number">RISET 05</div>
+              <div class="research-list-status">Terdaftar · Belum Dianalisis</div>
+              <h4>PT Astra International Tbk.</h4>
+              <p>Menunggu penelitian mengenai CSR, ESG, keberlanjutan, dan dampak lingkungan.</p>
+              <div class="research-list-sector">Diversifikasi Usaha</div>
+            </article>
+
+            <article class="research-list-card">
+              <div class="research-list-number">RISET 06</div>
+              <div class="research-list-status">Terdaftar · Belum Dianalisis</div>
+              <h4>PT Unilever Indonesia Tbk.</h4>
+              <p>Menunggu penelitian mengenai CSR, ESG, keberlanjutan, dan dampak lingkungan.</p>
+              <div class="research-list-sector">Barang Konsumsi</div>
+            </article>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ======================================================
+         ABOUT PROJECT
+    ====================================================== -->
+
+    <section id="project">
+
+      <div class="container">
+
+        <span class="eyebrow reveal">
+          02 · Tentang Proyek
+        </span>
+
+        <h2 class="section-title reveal">
+          Bukan profil perusahaan.<br>
+          Sebuah <span>penilaian.</span>
+        </h2>
+
+
+        <div class="about-grid">
+
+          <div class="about-main glass reveal">
+
+            <p>
+              Website ini merupakan proyek akademik untuk menilai
+              praktik Tanggung Jawab Sosial Perusahaan (CSR)
+              lingkungan PT Indah Kiat Pulp & Paper Tbk.
+            </p>
+
+            <p>
+              Fokus kami bukan hanya melihat program yang dilakukan,
+              tetapi membandingkan antara klaim, target, data,
+              hasil, dampak, serta masalah yang masih tersisa.
+            </p>
+
+            <p>
+              Karena sebuah program lingkungan tidak otomatis berarti
+              dampak lingkungannya sudah selesai.
+            </p>
+
+          </div>
+
+
+          <div class="about-side">
+
+            <div class="focus-card glass reveal">
+
+              <div class="focus-number">01</div>
+
+              <h3>CSR</h3>
+
+              <p>
+                Menilai relevansi dan efektivitas program CSR
+                terhadap masalah lingkungan.
+              </p>
+
+            </div>
+
+
+            <div class="focus-card glass reveal">
+
+              <div class="focus-number">02</div>
+
+              <h3>ESG</h3>
+
+              <p>
+                Membaca kinerja lingkungan melalui indikator
+                yang terukur.
+              </p>
+
+            </div>
+
+
+            <div class="focus-card glass reveal">
+
+              <div class="focus-number">03</div>
+
+              <h3>Pencitraan Hijau</h3>
+
+              <p>
+                Menguji konsistensi antara klaim keberlanjutan
+                dan bukti yang tersedia.
+              </p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ======================================================
+         BIG QUESTION
+    ====================================================== -->
+
+    <section class="question-section" id="question">
+
+      <div class="container">
+
+        <div class="question-box reveal">
+
+          <div class="question-label">
+            Pertanyaan Utama
+          </div>
+
+          <h2 class="question">
+            CSR LINGKUNGAN:<br>
+            <span class="dim">
+              SOLUSI NYATA
+            </span><br>
+            ATAU SEKADAR<br>
+            <span>CITRA HIJAU?</span>
+          </h2>
+
+          <p class="question-description">
+            Kami tidak hanya menanyakan apa yang dikatakan perusahaan.
+            Kami membandingkan narasi dengan angka,
+            target, pengungkapan, dan risiko lingkungan yang masih tersisa.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ======================================================
+         COMPANY CONTEXT
+    ====================================================== -->
+
+    <section id="company">
+
+      <div class="container">
+
+        <span class="eyebrow reveal">
+          03 · Perusahaan & Konteks
+        </span>
+
+        <h2 class="section-title reveal">
+          Memahami <span>konteks.</span>
+        </h2>
+
+        <p class="section-description reveal">
+          Operasional industri pulp & paper memiliki potensi dampak
+          lingkungan yang bersifat struktural: emisi, penggunaan air,
+          air limbah, limbah, serta bahan baku kayu.
+        </p>
+
+
+        <div class="context-grid">
+
+          <article class="context-card glass reveal">
+
+            <h3>
+              Secara alami membutuhkan banyak sumber daya.
+            </h3>
+
+            <p>
+              Potensi dampak lingkungan bukan hanya berasal dari
+              aktivitas CSR atau satu program tertentu, tetapi juga
+              dari karakteristik proses produksi pulp & paper.
+            </p>
+
+
+            <div class="process">
+
+              <div class="process-item">
+                <span>01</span>
+                Bahan Baku
+              </div>
+
+              <div class="process-item">
+                <span>02</span>
+                Produksi
+              </div>
+
+              <div class="process-item">
+                <span>03</span>
+                Penggunaan Sumber Daya
+              </div>
+
+              <div class="process-item">
+                <span>04</span>
+                Output Lingkungan
+              </div>
+
+            </div>
+
+          </article>
+
+
+          <article class="context-card glass reveal">
+
+            <h3>
+              Sudut Pandang Penilaian.
+            </h3>
+
+            <p>
+              Kami melihat CSR sebagai bagian dari sistem pengelolaan
+              dampak, bukan sebagai pengganti pengendalian dampak
+              operasional utama.
+            </p>
+
+            <p>
+              Karena itu, indikator negatif juga tetap diperhatikan
+              ketika mengevaluasi keberhasilan program.
+            </p>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ======================================================
+         ENVIRONMENTAL ISSUES
+    ====================================================== -->
+
+    <section id="issues">
+
+      <div class="container">
+
+        <span class="eyebrow reveal">
+          04 · Isu Lingkungan
+        </span>
+
+        <h2 class="section-title reveal">
+          Angka menunjukkan<br>
+          sebuah <span>cerita yang kompleks.</span>
+        </h2>
+
+        <p class="section-description reveal">
+          Ada progres nyata, tetapi beberapa indikator lingkungan
+          justru bergerak ke arah yang berlawanan dengan target.
+        </p>
+
+
+        <div class="issue-grid">
+
+
+          <article class="issue-card glass reveal">
+
+            <div class="issue-icon">
+              CO₂
+            </div>
+
+            <h3>
+              Emisi Scope 1
+            </h3>
+
+            <p>
+              Emisi langsung dari aktivitas operasional.
+            </p>
+
+            <div class="issue-number">
+              6.34M
+            </div>
+
+            <div class="issue-change bad">
+              Intensitas karbon: 1.08 → 1.17 tCO₂e/ton
+            </div>
+
+          </article>
+
+
+          <article class="issue-card glass reveal">
+
+            <div class="issue-icon">
+              SO₂
+            </div>
+
+            <h3>
+              Polusi Udara
+            </h3>
+
+            <p>
+              Parameter SO₂ mengalami peningkatan.
+            </p>
+
+            <div class="issue-number">
+              230.02
+            </div>
+
+            <div class="issue-change bad">
+              mg/Nm³ · 141.8 → 230.02
+            </div>
+
+          </article>
+
+
+          <article class="issue-card glass reveal">
+
+            <div class="issue-icon">
+              H₂O
+            </div>
+
+            <h3>
+              Air Limbah
+            </h3>
+
+            <p>
+              Chemical Oxygen Demand pada air limbah.
+            </p>
+
+            <div class="issue-number">
+              150.97
+            </div>
+
+            <div class="issue-change bad">
+              COD mg/l · 137.8 → 150.97
+            </div>
+
+          </article>
+
+
+          <article class="issue-card glass reveal">
+
+            <div class="issue-icon">
+              ♻
+            </div>
+
+            <h3>
+              Limbah B3
+            </h3>
+
+            <p>
+              Limbah B3 tetap besar tetapi turun dari tolok ukur.
+            </p>
+
+            <div class="issue-number">
+              364,294
+            </div>
+
+            <div class="issue-change good">
+              ton · turun dari tolok ukur 768.431
+            </div>
+
+          </article>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ======================================================
+         CSR PROGRAMS
+    ====================================================== -->
+
+    <section id="programs">
+
+      <div class="container">
+
+        <span class="eyebrow reveal">
+          05 · Program CSR
+        </span>
+
+        <h2 class="section-title reveal">
+          Dari program<br>
+          menjadi <span>aksi nyata.</span>
+        </h2>
+
+        <p class="section-description reveal">
+          Program-program berikut dinilai bukan hanya berdasarkan
+          keberadaannya, tetapi juga keluaran, hasil, dan dampaknya.
+        </p>
+
+
+        <div class="program-grid">
+
+
+          <article class="program-card glass reveal">
+
+            <span class="program-tag">
+              Masyarakat
+            </span>
+
+            <h3>
+              Bank Sampah Digital
+            </h3>
+
+            <p>
+              Program pengelolaan sampah berbasis masyarakat
+              di Serang untuk mendorong partisipasi dan
+              pengelolaan sampah yang lebih terstruktur.
+            </p>
+
+            <div class="program-result">
+              <strong>~120 ton/tahun</strong> · 4.700+ anggota
+            </div>
+
+          </article>
+
+
+          <article class="program-card glass reveal">
+
+            <span class="program-tag">
+              Keanekaragaman Hayati
+            </span>
+
+            <h3>
+              Restorasi Mangrove
+            </h3>
+
+            <p>
+              Rehabilitasi ekosistem pesisir melalui penanaman
+              dan pemulihan kawasan mangrove.
+            </p>
+
+            <div class="program-result">
+              <strong>~173.000</strong> bibit
+            </div>
+
+          </article>
+
+
+          <article class="program-card glass reveal">
+
+            <span class="program-tag">
+              Energi
+            </span>
+
+            <h3>
+              Energi Terbarukan
+            </h3>
+
+            <p>
+              Peningkatan energi terbarukan melalui solar PV,
+              biogas, serta pemanfaatan RDF sebagai bagian
+              dari transisi energi.
+            </p>
+
+            <div class="program-result">
+              <strong>54%</strong> energi terbarukan
+            </div>
+
+          </article>
+
+
+          <article class="program-card glass reveal">
+
+            <span class="program-tag">
+              Ekonomi Sirkular
+            </span>
+
+            <h3>
+              Serat Daur Ulang
+            </h3>
+
+            <p>
+              Peningkatan penggunaan serat daur ulang sebagai
+              bagian dari pendekatan ekonomi sirkular.
+            </p>
+
+            <div class="program-result">
+              <strong>52%</strong> recycled fiber
+            </div>
+
+          </article>
+
+
+          <article class="program-card glass reveal">
+
+            <span class="program-tag">
+              Limbah
+            </span>
+
+            <h3>
+              Pengelolaan Limbah
+            </h3>
+
+            <p>
+              Upaya mengurangi dan mengelola limbah B3
+              serta berbagai jenis limbah operasional.
+            </p>
+
+            <div class="program-result">
+              <strong>&gt;50%</strong> pengurangan dibandingkan tolok ukur 2018
+            </div>
+
+          </article>
+
+
+          <article class="program-card glass reveal">
+
+            <span class="program-tag">
+              Konservasi
+            </span>
+
+            <h3>
+              Konservasi Keanekaragaman Hayati
+            </h3>
+
+            <p>
+              Kemitraan konservasi biodiversitas dengan
+              lembaga dan organisasi terkait untuk mitigasi
+              risiko ekosistem dan satwa.
+            </p>
+
+            <div class="program-result">
+              <strong>Multi-tahun</strong> kemitraan
+            </div>
+
+          </article>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ======================================================
+         IMPACT MODEL
+    ====================================================== -->
+
+    <section id="impact">
+
+      <div class="container">
+
+        <span class="eyebrow reveal">
+          06 · Penilaian Dampak
+        </span>
+
+        <h2 class="section-title reveal">
+          Jangan samakan<br>
+          <span>output</span> dengan dampak.
+        </h2>
+
+        <p class="section-description reveal">
+          Sebuah program dapat menghasilkan keluaran yang besar,
+          tetapi dampak jangka panjang harus dibuktikan dengan
+          indikator hasil dan dampak.
+        </p>
+
+
+        <div class="impact-flow">
+
+
+          <article class="impact-step glass reveal">
+
+            <div class="impact-step-number">
+              01 · INPUT
+            </div>
+
+            <h3>
+              Sumber Daya
+            </h3>
+
+            <p>
+              Dana, manusia, teknologi, fasilitas,
+              energi, kemitraan, dan sumber daya lain.
+            </p>
+
+          </article>
+
+
+          <article class="impact-step glass reveal">
+
+            <div class="impact-step-number">
+              02 · OUTPUT
+            </div>
+
+            <h3>
+              Aktivitas
+            </h3>
+
+            <p>
+              Contoh: jumlah bibit ditanam,
+              volume sampah dikelola,
+              kapasitas solar PV.
+            </p>
+
+          </article>
+
+
+          <article class="impact-step glass reveal">
+
+            <div class="impact-step-number">
+              03 · HASIL
+            </div>
+
+            <h3>
+              Perubahan
+            </h3>
+
+            <p>
+              Perubahan perilaku, kualitas lingkungan,
+              pengurangan risiko, atau efisiensi.
+            </p>
+
+          </article>
+
+
+          <article class="impact-step glass reveal">
+
+            <div class="impact-step-number">
+              04 · DAMPAK
+            </div>
+
+            <h3>
+              Jangka Panjang
+            </h3>
+
+            <p>
+              Perubahan lingkungan dan sosial
+              yang bertahan dalam jangka panjang.
+            </p>
+
+          </article>
+
+
+        </div>
+
+
+        <div class="impact-note reveal">
+          <strong>Sudut pandang kritis:</strong>
+          173.000 bibit mangrove adalah output.
+          Untuk menyebutnya sebagai dampak, diperlukan bukti
+          seperti tingkat kelangsungan hidup, perubahan kondisi ekosistem,
+          kualitas pesisir, dan manfaat jangka panjang.
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ======================================================
+         TARGET VS REALIZATION
+    ====================================================== -->
+
+    <section id="targets">
+
+      <div class="container">
+
+        <span class="eyebrow reveal">
+          07 · Target vs Realisasi
+        </span>
+
+        <h2 class="section-title reveal">
+          Apa yang <span>dijanjikan</span><br>
+          vs apa yang dicapai.
+        </h2>
+
+        <p class="section-description reveal">
+          SRV2030 menjadi tolok ukur utama untuk membaca
+          konsistensi target lingkungan perusahaan.
+        </p>
+
+
+        <div class="target-grid">
+
+
+          <article class="target-card glass reveal">
+
+            <div class="target-top">
+
+              <span class="target-name">
+                Energi Terbarukan
+              </span>
+
+              <span class="target-status">
+                Tercapai
+              </span>
+
+            </div>
+
+            <div class="target-numbers">
+
+              <span class="target-current">
+                54%
+              </span>
+
+              <span class="target-goal">
+                ≥ 50%
+              </span>
+
+            </div>
+
+            <div class="progress">
+              <div class="progress-bar" style="--progress:100%"></div>
+            </div>
+
+            <p class="target-description">
+              Target minimum 50% energi terbarukan.
+            </p>
+
+          </article>
+
+
+          <article class="target-card glass reveal">
+
+            <div class="target-top">
+
+              <span class="target-name">
+                Serat Daur Ulang
+              </span>
+
+              <span class="target-status">
+                Progres Kuat
+              </span>
+
+            </div>
+
+            <div class="target-numbers">
+
+              <span class="target-current">
+                52%
+              </span>
+
+              <span class="target-goal">
+                ≥ 30%
+              </span>
+
+            </div>
+
+            <div class="progress">
+              <div class="progress-bar" style="--progress:100%"></div>
+            </div>
+
+            <p class="target-description">
+              Penggunaan serat daur ulang menunjukkan progres kuat.
+            </p>
+
+          </article>
+
+
+          <article class="target-card glass reveal">
+
+            <div class="target-top">
+
+              <span class="target-name">
+                Carbon Intensity
+              </span>
+
+              <span class="target-status">
+                Perlu Perbaikan
+              </span>
+
+            </div>
+
+            <div class="target-numbers">
+
+              <span class="target-current">
+                8%
+              </span>
+
+              <span class="target-goal">
+                −30%
+              </span>
+
+            </div>
+
+            <div class="progress">
+              <div class="progress-bar" style="--progress:27%"></div>
+            </div>
+
+            <p class="target-description">
+              Kemajuan terhadap target pengurangan intensitas karbon.
+            </p>
+
+          </article>
+
+
+          <article class="target-card glass reveal">
+
+            <div class="target-top">
+
+              <span class="target-name">
+                Intensitas Energi
+              </span>
+
+              <span class="target-status">
+                Perlu Perbaikan
+              </span>
+
+            </div>
+
+            <div class="target-numbers">
+
+              <span class="target-current">
+                10%
+              </span>
+
+              <span class="target-goal">
+                −25%
+              </span>
+
+            </div>
+
+            <div class="progress">
+              <div class="progress-bar" style="--progress:40%"></div>
+            </div>
+
+            <p class="target-description">
+              Kemajuan masih membutuhkan percepatan.
+            </p>
+
+          </article>
+
+
+          <article class="target-card glass reveal">
+
+            <div class="target-top">
+
+              <span class="target-name">
+                Water Intensity
+              </span>
+
+              <span class="target-status">
+                Perlu Perbaikan
+              </span>
+
+            </div>
+
+            <div class="target-numbers">
+
+              <span class="target-current">
+                7%
+              </span>
+
+              <span class="target-goal">
+                −30%
+              </span>
+
+            </div>
+
+            <div class="progress">
+              <div class="progress-bar" style="--progress:23%"></div>
+            </div>
+
+            <p class="target-description">
+              Pengurangan penggunaan air belum mendekati target akhir.
+            </p>
+
+          </article>
+
+
+          <article class="target-card glass reveal">
+
+            <div class="target-top">
+
+              <span class="target-name">
+                Arah Lingkungan
+              </span>
+
+              <span class="target-status">
+                Campuran
+              </span>
+
+            </div>
+
+            <div class="target-numbers">
+
+              <span class="target-current">
+                MIXED
+              </span>
+
+              <span class="target-goal">
+                2030
+              </span>
+
+            </div>
+
+            <div class="progress">
+              <div class="progress-bar" style="--progress:58%"></div>
+            </div>
+
+            <p class="target-description">
+              Sebagian indikator positif, sebagian masih berlawanan arah.
+            </p>
+
+          </article>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ======================================================
+         GREENWASHING CHECKER
+    ====================================================== -->
+
+    <section id="checker">
+
+      <div class="container">
+
+        <span class="eyebrow reveal">
+          08 · Pemeriksa Pencitraan Hijau
+        </span>
+
+        <h2 class="section-title reveal">
+          Uji <span>klaim.</span>
+        </h2>
+
+        <p class="section-description reveal">
+          Kami tidak langsung memberikan label pencitraan hijau.
+          Kami menguji konsistensi antara klaim keberlanjutan
+          dengan bukti yang tersedia.
+        </p>
+
+
+        <div class="checker glass reveal">
+
+          <div class="checker-grid">
+
+
+            <div>
+
+              <h3>
+                Lima uji bukti.
+              </h3>
+
+              <p>
+                Semakin banyak klaim yang memiliki data,
+                target, pengungkapan negatif, dan verifikasi,
+                semakin kuat kredibilitasnya.
+              </p>
+
+
+              <div class="checks">
+
+
+                <div class="check-item">
+
+                  <span class="check-dot check-good"></span>
+
+                  Bukti tersedia
+
+                </div>
+
+
+                <div class="check-item">
+
+                  <span class="check-dot check-good"></span>
+
+                  Target terukur
+
+                </div>
+
+
+                <div class="check-item">
+
+                  <span class="check-dot check-good"></span>
+
+                  Validasi eksternal
+
+                </div>
+
+
+                <div class="check-item">
+
+                  <span class="check-dot check-warn"></span>
+
+                  Kinerja negatif diungkapkan
+
+                </div>
+
+
+                <div class="check-item">
+
+                  <span class="check-dot check-warn"></span>
+
+                  Konsistensi klaim vs dampak
+
+                </div>
+
+
+              </div>
+
+            </div>
+
+
+            <div>
+
+              <div class="verdict-circle">
+
+                <small>
+                  Penilaian
+                </small>
+
+                <strong>
+                  PERHATIAN
+                </strong>
+
+                <span>
+                  Not proven greenwashing.
+                  Consistency requires further review.
+                </span>
+
+              </div>
+
+            </div>
+
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ======================================================
+         STAKEHOLDERS
+    ====================================================== -->
+
+    <section id="stakeholders">
+
+      <div class="container">
+
+        <span class="eyebrow reveal">
+          09 · Stakeholder
+        </span>
+
+        <h2 class="section-title reveal">
+          Siapa yang <span>merasakan</span> dampaknya?
+        </h2>
+
+
+        <div class="stakeholder-grid">
+
+
+          <article class="stakeholder-card glass reveal">
+
+            <h3>
+              Masyarakat Lokal
+            </h3>
+
+            <p>
+              Masyarakat sekitar fasilitas operasional
+              merupakan pihak yang dapat merasakan dampak
+              lingkungan secara langsung.
+            </p>
+
+            <div class="stakeholder-interest">
+              Kepentingan · Kualitas udara, bau, kebisingan, air
+            </div>
+
+          </article>
+
+
+          <article class="stakeholder-card glass reveal">
+
+            <h3>
+              Pemerintah
+            </h3>
+
+            <p>
+              Pemerintah dan regulator berperan dalam
+              pengawasan kepatuhan serta standar lingkungan.
+            </p>
+
+            <div class="stakeholder-interest">
+              Kepentingan · Kepatuhan & standar lingkungan
+            </div>
+
+          </article>
+
+
+          <article class="stakeholder-card glass reveal">
+
+            <h3>
+              Karyawan
+            </h3>
+
+            <p>
+              Karyawan berhubungan langsung dengan sistem
+              operasional, keselamatan, dan budaya keberlanjutan.
+            </p>
+
+            <div class="stakeholder-interest">
+              Kepentingan · Tempat kerja & budaya keberlanjutan
+            </div>
+
+          </article>
+
+
+          <article class="stakeholder-card glass reveal">
+
+            <h3>
+              Konsumen
+            </h3>
+
+            <p>
+              Konsumen semakin membutuhkan produk yang
+              memiliki klaim lingkungan yang kredibel.
+            </p>
+
+            <div class="stakeholder-interest">
+              Kepentingan · Produk bertanggung jawab & transparansi
+            </div>
+
+          </article>
+
+
+          <article class="stakeholder-card glass reveal">
+
+            <h3>
+              Investor
+            </h3>
+
+            <p>
+              Investor membutuhkan informasi yang konsisten
+              untuk menilai risiko ESG dan keberlanjutan.
+            </p>
+
+            <div class="stakeholder-interest">
+              Kepentingan · Risiko ESG & nilai jangka panjang
+            </div>
+
+          </article>
+
+
+          <article class="stakeholder-card glass reveal">
+
+            <h3>
+              Organisasi Lingkungan
+            </h3>
+
+            <p>
+              Organisasi lingkungan dapat menjadi mitra,
+              pengawas, sekaligus sumber perspektif independen.
+            </p>
+
+            <div class="stakeholder-interest">
+              Kepentingan · Ekosistem & keanekaragaman hayati
+            </div>
+
+          </article>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ======================================================
+         EVIDENCE ROOM
+    ====================================================== -->
+
+    <section id="evidence">
+
+      <div class="container">
+
+        <span class="eyebrow reveal">
+          10 · Ruang Bukti
+        </span>
+
+        <h2 class="section-title reveal">
+          Klaim itu mudah.<br>
+          <span>Bukti yang penting.</span>
+        </h2>
+
+        <p class="section-description reveal">
+          Setiap kesimpulan seharusnya dapat ditelusuri kembali
+          ke data, pengungkapan, target, atau validasi eksternal.
+        </p>
+
+
+        <div class="evidence-list">
+
+
+          <div class="evidence-row reveal">
+
+            <div class="evidence-number">
+              01
+            </div>
+
+            <div class="evidence-content">
+
+              <h3>
+                Scope 1 emissions
+              </h3>
+
+              <p>
+                6.34 juta tCO₂e · carbon intensity 1.08 → 1.17
+              </p>
+
+            </div>
+
+            <div class="evidence-status">
+              Terukur
+            </div>
+
+          </div>
+
+
+          <div class="evidence-row reveal">
+
+            <div class="evidence-number">
+              02
+            </div>
+
+            <div class="evidence-content">
+
+              <h3>
+                SO₂ concentration
+              </h3>
+
+              <p>
+                141.8 → 230.02 mg/Nm³
+              </p>
+
+            </div>
+
+            <div class="evidence-status">
+              Tren Negatif
+            </div>
+
+          </div>
+
+
+          <div class="evidence-row reveal">
+
+            <div class="evidence-number">
+              03
+            </div>
+
+            <div class="evidence-content">
+
+              <h3>
+                Wastewater COD
+              </h3>
+
+              <p>
+                137.8 → 150.97 mg/l
+              </p>
+
+            </div>
+
+            <div class="evidence-status">
+              Tren Negatif
+            </div>
+
+          </div>
+
+
+          <div class="evidence-row reveal">
+
+            <div class="evidence-number">
+              04
+            </div>
+
+            <div class="evidence-content">
+
+              <h3>
+                B3 waste
+              </h3>
+
+              <p>
+                364.294 ton · tolok ukur 768.431 ton
+              </p>
+
+            </div>
+
+            <div class="evidence-status">
+              Progres Positif
+            </div>
+
+          </div>
+
+
+          <div class="evidence-row reveal">
+
+            <div class="evidence-number">
+              05
+            </div>
+
+            <div class="evidence-content">
+
+              <h3>
+                Energi terbarukan
+              </h3>
+
+              <p>
+                54% energi terbarukan
+              </p>
+
+            </div>
+
+            <div class="evidence-status">
+              Target Tercapai
+            </div>
+
+          </div>
+
+
+          <div class="evidence-row reveal">
+
+            <div class="evidence-number">
+              06
+            </div>
+
+            <div class="evidence-content">
+
+              <h3>
+                Serat daur ulang
+              </h3>
+
+              <p>
+                52% serat daur ulang
+              </p>
+
+            </div>
+
+            <div class="evidence-status">
+              Progres kuat
+            </div>
+
+          </div>
+
+
+          <div class="evidence-row reveal">
+
+            <div class="evidence-number">
+              07
+            </div>
+
+            <div class="evidence-content">
+
+              <h3>
+                Administrative sanction
+              </h3>
+
+              <p>
+                Indah Kiat Serang · 2025
+              </p>
+
+            </div>
+
+            <div class="evidence-status">
+              Diungkapkan
+            </div>
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ======================================================
+         GOOD VS NEEDS WORK
+    ====================================================== -->
+
+    <section id="review">
+
+      <div class="container">
+
+        <span class="eyebrow reveal">
+          11 · Tinjauan Kritis
+        </span>
+
+        <h2 class="section-title reveal">
+          Apa yang terlihat baik.<br>
+          Apa yang masih perlu <span>diperbaiki.</span>
+        </h2>
+
+
+        <div class="split-grid">
+
+
+          <article class="split-card glass good-card reveal">
+
+            <div class="split-label">
+              ✓ Sinyal Positif
+            </div>
+
+            <h3>
+              Ada aksi nyata.
+            </h3>
+
+            <ul class="split-list">
+
+              <li>
+                Energi terbarukan mencapai 54%.
+              </li>
+
+              <li>
+                Serat daur ulang mencapai 52%.
+              </li>
+
+              <li>
+                Limbah B3 turun secara signifikan dari tolok ukur 2018.
+              </li>
+
+              <li>
+                Kapasitas solar PV meningkat dari 21,5 MWp menjadi 32 MWp.
+              </li>
+
+              <li>
+                Kemitraan biodiversitas berlangsung multi-tahun.
+              </li>
+
+              <li>
+                Validasi eksternal seperti PROPER memperkuat kredibilitas.
+              </li>
+
+            </ul>
+
+          </article>
+
+
+          <article class="split-card glass work-card reveal">
+
+            <div class="split-label">
+              ! Masih Perlu Perbaikan
+            </div>
+
+            <h3>
+              Dampaknya belum optimal.
+            </h3>
+
+            <ul class="split-list">
+
+              <li>
+                Intensitas karbon meningkat dari 1.08 menjadi 1.17.
+              </li>
+
+              <li>
+                SO₂ meningkat dari 141.8 menjadi 230.02 mg/Nm³.
+              </li>
+
+              <li>
+                COD meningkat dari 137.8 menjadi 150.97 mg/l.
+              </li>
+
+              <li>
+                Target pengurangan karbon, energi, dan air masih menantang.
+              </li>
+
+              <li>
+                Satu sanksi administratif untuk Indah Kiat Serang diungkapkan.
+              </li>
+
+              <li>
+                Data keluhan publik belum memiliki konteks tren jangka panjang.
+              </li>
+
+            </ul>
+
+          </article>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ======================================================
+         VERDICT
+    ====================================================== -->
+
+    <section class="verdict-section" id="verdict">
+
+      <div class="container">
+
+        <div class="verdict-card glass reveal">
+
+          <span class="eyebrow">
+            12 · Kesimpulan Kami
+          </span>
+
+
+          <h2>
+            ADA AKSI NYATA.<br>
+            TETAPI <span>DAMPAK</span><br>
+            BELUM OPTIMAL.
+          </h2>
+
+
+          <p>
+            Berdasarkan penilaian kami, CSR lingkungan perusahaan
+            menunjukkan tindakan nyata dan beberapa progres terukur.
+            Namun, peningkatan pada sejumlah indikator lingkungan
+            menunjukkan bahwa program tersebut belum dapat dianggap
+            menyelesaikan seluruh akar masalah operasional.
+          </p>
+
+
+          <div class="verdict-pills">
+
+            <span class="pill">
+              CSR: Cukup Efektif
+            </span>
+
+            <span class="pill">
+              Keberlanjutan: Perlu Perbaikan
+            </span>
+
+            <span class="pill">
+              Pencitraan Hijau: Belum Terbukti
+            </span>
+
+            <span class="pill">
+              Konsistensi: Perlu Peninjauan Lanjutan
+            </span>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ======================================================
+         RECOMMENDATIONS
+    ====================================================== -->
+
+    <section id="recommendations">
+
+      <div class="container">
+
+        <span class="eyebrow reveal">
+          13 · Rekomendasi
+        </span>
+
+        <h2 class="section-title reveal">
+          Dari kritik<br>
+          menjadi <span>action.</span>
+        </h2>
+
+        <p class="section-description reveal">
+          Rekomendasi dirancang agar dapat diukur,
+          memiliki penanggung jawab, timeline, serta indikator
+          keberhasilan yang jelas.
+        </p>
+
+
+        <div class="recommendation-grid">
+
+
+          <article class="recommendation glass reveal">
+
+            <div class="recommendation-number">
+              01
+            </div>
+
+            <h3>
+              Dashboard Transparansi Lingkungan
+            </h3>
+
+            <p>
+              Bangun dashboard publik yang memperlihatkan
+              indikator lingkungan material secara berkala,
+              termasuk tren positif maupun negatif.
+            </p>
+
+            <div class="recommendation-meta">
+
+              <span>
+                <strong>Penanggung Jawab:</strong> Keberlanjutan & Manajemen
+              </span>
+
+              <span>
+                <strong>Waktu:</strong> Mulai 2027
+              </span>
+
+              <span>
+                <strong>Ukuran:</strong> ≥95% indikator utama diungkapkan
+              </span>
+
+            </div>
+
+          </article>
+
+
+          <article class="recommendation glass reveal">
+
+            <div class="recommendation-number">
+              02
+            </div>
+
+            <h3>
+              Pemeriksa Bukti Pencitraan Hijau
+            </h3>
+
+            <p>
+              Setiap klaim lingkungan yang digunakan dalam
+              komunikasi perusahaan harus memiliki bukti,
+              tolok ukur awal, target, dan indikator hasil yang jelas.
+            </p>
+
+            <div class="recommendation-meta">
+
+              <span>
+                <strong>Penanggung Jawab:</strong> Komunikasi Korporat + ESG
+              </span>
+
+              <span>
+                <strong>Waktu:</strong> Setiap publikasi
+              </span>
+
+              <span>
+                <strong>Ukuran:</strong> 100% klaim material didukung bukti
+              </span>
+
+            </div>
+
+          </article>
+
+
+          <article class="recommendation glass reveal">
+
+            <div class="recommendation-number">
+              03
+            </div>
+
+            <h3>
+              Percepatan Karbon · Air · Limbah
+            </h3>
+
+            <p>
+              Fokus 2027–2030 harus diarahkan pada indikator
+              yang masih tertinggal agar target SRV2030 tidak
+              hanya menjadi target administratif.
+            </p>
+
+            <div class="recommendation-meta">
+
+              <span>
+                <strong>Penanggung Jawab:</strong> Operasional + Keberlanjutan
+              </span>
+
+              <span>
+                <strong>Waktu:</strong> 2027–2030
+              </span>
+
+              <span>
+                <strong>Ukuran:</strong> Lintasan pengurangan tahunan
+              </span>
+
+            </div>
+
+          </article>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ======================================================
+         FINAL CTA
+    ====================================================== -->
+
+    <section>
+
+      <div class="container">
+
+        <div class="question-box reveal">
+
+          <div class="question-label">
+            Pikiran Akhir
+          </div>
+
+          <h2 class="question">
+            JANGAN HANYA<br>
+            BACA <span>KLAIM.</span><br>
+            BACA <span>BUKTI.</span>
+          </h2>
+
+          <p class="question-description">
+            Keberlanjutan tidak ditentukan oleh seberapa hijau sebuah cerita terdengar,
+            tetapi oleh apakah bukti yang tersedia benar-benar mendukungnya.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+  </main>
+
+
+
+  <!-- ========================================================
+       FOOTER
+  ======================================================== -->
+
+
+  <!-- ========================================================
+       REPORT CENTER
+  ========================================================= -->
+
+  <section id="report" class="report-section">
+
+    <div class="container">
+
+      <span class="eyebrow reveal">
+        10 · Pusat Pelaporan
+      </span>
+
+      <h2 class="section-title reveal">
+        Menemukan sesuatu yang<br>
+        perlu <span>didengar?</span>
+      </h2>
+
+      <p class="section-description reveal">
+        Gunakan ruang ini untuk menyampaikan temuan, dugaan masalah, atau informasi
+        yang relevan dengan CSR, ESG, lingkungan, dan dampak sosial perusahaan.
+        Laporan dapat dibuat atas nama sendiri atau secara anonim.
+      </p>
+
+      <div class="report-shell reveal">
+
+        <div class="report-grid">
+
+          <div class="report-intro">
+
+            <h3>
+              Laporkan.<br>
+              Kami <span>telusuri lebih dalam.</span>
+            </h3>
+
+            <p>
+              Sampaikan informasi sejelas mungkin. Tim riset dapat menggunakan laporan
+              ini sebagai masukan untuk verifikasi, pengembangan riset, atau penelusuran
+              isu pada penelitian berikutnya.
+            </p>
+
+            <div class="report-points">
+
+              <div class="report-point">
+                <div class="report-point-icon">01</div>
+                <div>
+                  <strong>CSR & Isu Sosial</strong>
+                  <small>Program, dampak masyarakat, stakeholder, atau keluhan sosial.</small>
+                </div>
+              </div>
+
+              <div class="report-point">
+                <div class="report-point-icon">02</div>
+                <div>
+                  <strong>Isu Lingkungan</strong>
+                  <small>Pencemaran, limbah, emisi, deforestasi, atau dampak lingkungan.</small>
+                </div>
+              </div>
+
+              <div class="report-point">
+                <div class="report-point-icon">03</div>
+                <div>
+                  <strong>Pencitraan Hijau / Klaim Menyesatkan</strong>
+                  <small>Klaim keberlanjutan yang menurut Anda tidak sesuai dengan bukti.</small>
+                </div>
+              </div>
+
+              <div class="report-point">
+                <div class="report-point-icon">04</div>
+                <div>
+                  <strong>Bukti & Petunjuk Riset</strong>
+                  <small>Dokumen, tautan, data, atau informasi yang layak ditelusuri.</small>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <form class="report-form" id="reportForm">
+
+            <div class="report-form-grid">
+
+              <div class="field">
+                <label for="reporterName">
+                  Nama <span>(opsional)</span>
+                </label>
+                <input id="reporterName" name="reporterName" type="text"
+                  placeholder="Nama Anda / Anonymous">
+              </div>
+
+              <div class="field">
+                <label for="reporterContact">
+                  Kontak <span>(opsional)</span>
+                </label>
+                <input id="reporterContact" name="reporterContact" type="text"
+                  placeholder="Email / WhatsApp">
+              </div>
+
+              <div class="field">
+                <label for="reportCompany">
+                  Perusahaan / Entitas
+                </label>
+                <input id="reportCompany" name="reportCompany" type="text"
+                  placeholder="Contoh: PT Indah Kiat Pulp & Paper Tbk." required>
+              </div>
+
+              <div class="field">
+                <label for="reportCategory">
+                  Kategori Laporan
+                </label>
+                <select id="reportCategory" name="reportCategory" required>
+                  <option value="">Pilih kategori</option>
+                  <option>CSR & Dampak Sosial</option>
+                  <option>Isu Lingkungan</option>
+                  <option>ESG / Governance</option>
+                  <option>Pencitraan Hijau / Klaim Menyesatkan</option>
+                  <option>Bukti / Petunjuk Riset</option>
+                  <option>Other</option>
+                </select>
+              </div>
+
+              <div class="field full">
+                <label for="reportTitle">
+                  Judul / Ringkasan
+                </label>
+                <input id="reportTitle" name="reportTitle" type="text"
+                  placeholder="Singkat: apa yang ingin Anda laporkan?" required>
+              </div>
+
+              <div class="field full">
+                <label for="reportDetails">
+                  Detail Laporan
+                </label>
+                <textarea id="reportDetails" name="reportDetails"
+                  placeholder="Jelaskan apa yang terjadi, kapan, di mana, siapa yang terdampak, dan mengapa informasi ini penting untuk ditelusuri."
+                  required></textarea>
+              </div>
+
+              <div class="field full">
+                <label for="reportEvidence">
+                  Bukti / Sumber <span>(opsional)</span>
+                </label>
+                <input id="reportEvidence" name="reportEvidence" type="url"
+                  placeholder="https://... / tautan dokumen / sumber publik">
+              </div>
+
+            </div>
+
+            <label class="report-consent">
+              <input type="checkbox" id="reportConfirm" required>
+              <span>
+                Saya memahami bahwa laporan ini merupakan masukan untuk tujuan riset,
+                verifikasi, dan dokumentasi. Informasi harus disampaikan dengan itikad baik
+                dan tidak dimaksudkan sebagai putusan hukum.
+              </span>
+            </label>
+
+            <div class="report-actions">
+
+              <button type="submit" class="btn btn-primary">
+                Siapkan Laporan ↗
+              </button>
+
+              <button type="button" class="btn btn-secondary" id="downloadReport">
+                Unduh Salinan ↓
+              </button>
+
+            </div>
+
+            <div class="report-note">
+              <strong>Privasi:</strong> jangan kirim kata sandi, data rekening, NIK,
+              alamat rumah, atau informasi pribadi sensitif. Form ini menyiapkan laporan
+              di perangkat Anda dan dapat disimpan sebagai salinan sebelum dikirim ke tim.
+            </div>
+
+            <div class="report-status" id="reportStatus"></div>
+
+          </form>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <footer>
+
+    <div class="container">
+
+      <div class="footer-top">
+
+
+        <div class="footer-brand">
+
+          <h3>
+            KLAIM HIJAU.<br>
+            BUKTI NYATA.
+          </h3>
+
+          <p>
+            Laboratorium Riset CSR & Keberlanjutan ·
+            Riset dampak perusahaan berbasis bukti.
+          </p>
+
+        </div>
+
+
+        <div class="footer-links">
+
+          <a href="#team">Tim</a>
+
+          <a href="#project">Proyek</a>
+
+          <a href="#issues">Isu</a>
+
+          <a href="#programs">Program CSR</a>
+
+          <a href="#impact">Dampak</a>
+
+          <a href="#targets">Target</a>
+
+          <a href="#checker">Pencitraan Hijau</a>
+
+          <a href="#evidence">Bukti</a>
+
+          <a href="#verdict">Kesimpulan</a>
+
+          <a href="#recommendations">Rekomendasi</a>
+
+        </div>
+
+
+      </div>
+
+
+      <div class="footer-bottom">
+
+        <span>
+          © 2026 · BEYONDGREEN.ID Inisiatif Riset
+        </span>
+
+        <span>
+          CSR × ESG × Keberlanjutan
+        </span>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+
+
+  <!-- ========================================================
+       JAVASCRIPT
+  ======================================================== -->
+
+  <script>
+
+    /* ========================================================
+       BEYONDGREEN.ID — BILINGUAL LANGUAGE SYSTEM
+       Default: Bahasa Indonesia
+    ======================================================== */
+
+    const languagePairs = {
+
+      /* Navigation */
+      "Report": ["Laporkan", "Report"],
+      "Report an Issue": ["Laporkan Isu", "Report an Issue"],
+      "10 · Report Center": ["10 · Pusat Pelaporan", "10 · Report Center"],
+      "See something that": ["Menemukan sesuatu yang", "See something that"],
+      "needs": ["perlu", "needs"],
+      "to be heard?": ["didengar?", "to be heard?"],
+      "Report it.": ["Laporkan.", "Report it."],
+      "We": ["Kami", "We"],
+      "look deeper.": ["telusuri lebih dalam.", "look deeper."],
+      "Prepare Report ↗": ["Siapkan Laporan ↗", "Prepare Report ↗"],
+      "Download Copy ↓": ["Unduh Salinan ↓", "Download Copy ↓"],
+      "CSR & Social Issues": ["CSR & Isu Sosial", "CSR & Social Issues"],
+      "Environmental Concerns": ["Isu Lingkungan", "Environmental Concerns"],
+      "Pencitraan Hijau / Klaim Menyesatkans": ["Pencitraan Hijau / Klaim Menyesatkan", "Pencitraan Hijau / Klaim Menyesatkans"],
+      "Evidence & Research Leads": ["Bukti & Petunjuk Riset", "Evidence & Research Leads"],
+
+      /* Existing Navigation */
+      "About": ["Tentang", "About"],
+      "Research": ["Riset", "Research"],
+      "Evidence": ["Bukti", "Evidence"],
+      "CSR & Keberlanjutan Research Lab": ["Laboratorium Riset CSR & Keberlanjutan", "CSR & Keberlanjutan Research Lab"],
+      "Explore Our Research": ["Jelajahi Riset Kami", "Explore Our Research"],
+      "LOOK": ["LIHAT", "LOOK"],
+      "BEYOND": ["LEBIH DARI", "BEYOND"],
+      "THE GREEN.": ["SEKADAR HIJAU.", "THE GREEN."],
+      "Current study · Scope 1 emissions · tCO₂e": ["Studi saat ini · Emisi Scope 1 · tCO₂e", "Current study · Scope 1 emissions · tCO₂e"],
+      "Current study · Renewable energy": ["Studi saat ini · Energi terbarukan", "Current study · Renewable energy"],
+      "Current study · Recycled fiber": ["Studi saat ini · Serat daur ulang", "Current study · Recycled fiber"],
+
+      /* Existing navigation */
+      "Team": ["Tim", "Team"],
+      "Project": ["Proyek", "Project"],
+      "Issues": ["Isu", "Issues"],
+      "CSR": ["CSR", "CSR"],
+      "Pencitraan Hijau": ["Pencitraan Hijau", "Pencitraan Hijau"],
+      "Verdict": ["Kesimpulan", "Verdict"],
+      "Evidence Room": ["Ruang Bukti", "Evidence Room"],
+
+      /* Hero */
+      "Environmental CSR Assessment": ["Penilaian CSR Lingkungan", "Environmental CSR Assessment"],
+      "An environmental CSR assessment of": ["Penilaian CSR lingkungan terhadap", "An environmental CSR assessment of"],
+      "We don't simply ask what the company claims.": ["Kami tidak hanya melihat apa yang diklaim perusahaan.", "We don't simply ask what the company claims."],
+      "We ask what the evidence shows.": ["Kami melihat apa yang ditunjukkan oleh bukti.", "We ask what the evidence shows."],
+      "Explore the Assessment": ["Jelajahi Penilaian", "Explore the Assessment"],
+      "View Evidence": ["Lihat Bukti", "View Evidence"],
+      "Current study · Scope 1 emissions · tCO₂e": ["Emisi Scope 1 · tCO₂e", "Current study · Scope 1 emissions · tCO₂e"],
+      "Current study · Renewable energy": ["Energi terbarukan", "Current study · Renewable energy"],
+      "Current study · Recycled fiber": ["Serat daur ulang", "Current study · Recycled fiber"],
+
+      /* Team */
+      "01 · Research Team": ["01 · Tim Riset", "01 · Research Team"],
+      "Research is stronger": ["Riset menjadi lebih kuat", "Research is stronger"],
+      "with the right": ["dengan perspektif yang", "with the right"],
+      "perspective.": ["tepat.", "perspective."],
+      "BEYONDGREEN.ID brings together academic guidance and collaborative research": ["BEYONDGREEN.ID menggabungkan arahan akademik dan riset kolaboratif", "BEYONDGREEN.ID brings together academic guidance and collaborative research"],
+      "Project Advisor": ["Penasihat Proyek", "Project Advisor"],
+      "Arahan konseptual, akademik, dan supervisi dalam pengembangan penelitian.": ["Arahan konseptual, akademik, dan supervisi dalam pengembangan penelitian.", "Conceptual, academic, and supervisory guidance throughout the research."],
+      "The Research Team": ["Tim Riset", "The Research Team"],
+      "Built through": ["Dibangun melalui", "Built through"],
+      "collaboration.": ["kolaborasi.", "collaboration."],
+
+      /* Research Archive */
+      "02 · Research Archive": ["02 · Arsip Riset", "02 · Research Archive"],
+      "Studies beyond": ["Studi melampaui", "Studies beyond"],
+      "the": ["label", "the"],
+      "green label.": ["hijau.", "green label."],
+      "Research 01 · Published Study": ["Riset 01 · Studi Terpublikasi", "Research 01 · Published Study"],
+      "Environmental CSR": ["CSR Lingkungan", "Environmental CSR"],
+      "Evidence-based assessment": ["Penilaian berbasis bukti", "Evidence-based assessment"],
+      "Open Research Report ↗": ["Buka Laporan Riset ↗", "Open Research Report ↗"],
+
+      "01 · The Team": ["01 · Tim Kami", "01 · The Team"],
+      "Meet the": ["Kenali", "Meet the"],
+      "team.": ["tim kami.", "team."],
+      "A collaborative assessment built through research,": ["Penilaian kolaboratif yang dibangun melalui riset,", "A collaborative assessment built through research,"],
+      "analysis, environmental evaluation, and critical review.": ["analisis, evaluasi lingkungan, dan tinjauan kritis.", "analysis, environmental evaluation, and critical review."],
+      "Project Lead": ["Ketua Proyek", "Project Lead"],
+      "Impact Analyst": ["Analis Dampak", "Impact Analyst"],
+      "ESG Analyst": ["Analis ESG", "ESG Analyst"],
+      "Research & Design": ["Riset & Desain", "Research & Design"],
+      "Koordinasi proyek & integrasi analisis.": ["Koordinasi proyek & integrasi analisis.", "Project coordination & analysis integration."],
+      "Analisis dampak lingkungan & sosial.": ["Analisis dampak lingkungan & sosial.", "Environmental & social impact analysis."],
+      "Analisis ESG, sustainability & target.": ["Analisis ESG, keberlanjutan & target.", "ESG, sustainability & target analysis."],
+      "Riset sumber, visualisasi & dokumentasi.": ["Riset sumber, visualisasi & dokumentasi.", "Source research, visualization & documentation."],
+      "* Ganti [NAMA ANGGOTA] dengan nama anggota kelompok.": ["* Ganti [NAMA ANGGOTA] dengan nama anggota kelompok.", "* Replace [TEAM MEMBER NAME] with your group member's name."],
+      "Bagian foto juga dapat diganti dengan foto masing-masing anggota.": ["Bagian foto juga dapat diganti dengan foto masing-masing anggota.", "Member photos can also be replaced with each person's photo."],
+
+      /* About */
+      "03 · About the Project": ["02 · Tentang Proyek", "03 · About the Project"],
+      "Not a company profile.": ["Bukan profil perusahaan.", "Not a company profile."],
+      "An": ["Sebuah", "An"],
+      "assessment.": ["penilaian.", "assessment."],
+      "Website ini merupakan proyek akademik untuk menilai": ["Website ini merupakan proyek akademik untuk menilai", "This website is an academic project assessing"],
+      "praktik Corporate Social Responsibility (CSR)": ["praktik Corporate Social Responsibility (CSR)", "the environmental Corporate Social Responsibility (CSR) practices of"],
+      "lingkungan PT Indah Kiat Pulp & Paper Tbk.": ["lingkungan PT Indah Kiat Pulp & Paper Tbk.", "PT Indah Kiat Pulp & Paper Tbk."],
+      "Fokus kami bukan hanya melihat program yang dilakukan,": ["Fokus kami bukan hanya melihat program yang dilakukan,", "Our focus is not only on the programs implemented,"],
+      "tetapi membandingkan antara klaim, target, data,": ["tetapi membandingkan antara klaim, target, data,", "but on comparing claims, targets, data,"],
+      "hasil, dampak, serta masalah yang masih tersisa.": ["hasil, dampak, serta masalah yang masih tersisa.", "results, impacts, and the problems that remain."],
+      "Karena sebuah program lingkungan tidak otomatis berarti": ["Karena sebuah program lingkungan tidak otomatis berarti", "Because an environmental program does bukan sekadarutomatically mean"],
+      "dampak lingkungannya sudah selesai.": ["dampak lingkungannya sudah selesai.", "its environmental impacts have been resolved."],
+      "Menilai relevansi dan efektivitas program CSR": ["Menilai relevansi dan efektivitas program CSR", "Assessing the relevance and effectiveness of CSR programs"],
+      "terhadap masalah lingkungan.": ["terhadap masalah lingkungan.", "in addressing environmental issues."],
+      "Membaca kinerja lingkungan melalui indikator": ["Membaca kinerja lingkungan melalui indikator", "Reading environmental performance through measurable"],
+      "yang terukur.": ["yang terukur.", "indicators."],
+      "Menguji konsistensi antara klaim keberlanjutan": ["Menguji konsistensi antara klaim keberlanjutan", "Testing consistency between sustainability claims"],
+      "dan bukti yang tersedia.": ["dan bukti yang tersedia.", "and the available bukti."],
+
+      /* Big question */
+      "The Big Question": ["Pertanyaan Utama", "The Big Question"],
+      "We don't simply ask what the company says.": ["Kami tidak hanya bertanya apa yang dikatakan perusahaan.", "We don't simply ask what the company says."],
+      "We compare the narrative against the numbers,": ["Kami membandingkan narasi dengan angka,", "We compare the narrative against the numbers,"],
+      "targets, disclosures, and remaining environmental risks.": ["target, pengungkapan, dan risiko lingkungan yang masih tersisa.", "targets, disclosures, and remaining environmental risks."],
+
+      /* Company */
+      "04 · Company & Context": ["03 · Perusahaan & Konteks", "04 · Company & Context"],
+      "Understanding the": ["Memahami", "Understanding the"],
+      "context.": ["konteks.", "context."],
+      "Operasional industri pulp & paper memiliki potensi dampak": ["Operasional industri pulp & paper memiliki potensi dampak", "Pulp & paper operations have potential impacts"],
+      "lingkungan yang bersifat struktural: emisi, penggunaan air,": ["lingkungan yang bersifat struktural: emisi, penggunaan air,", "that are structural in nature: emissions, water use,"],
+      "air limbah, limbah, serta bahan baku kayu.": ["air limbah, limbah, serta bahan baku kayu.", "wastewater, waste, and wood raw materials."],
+      "Resource-intensive by nature.": ["Secara alami membutuhkan banyak sumber daya.", "Resource-intensive by nature."],
+      "Potensi dampak lingkungan bukan hanya berasal dari": ["Potensi dampak lingkungan bukan hanya berasal dari", "Potential environmental impacts do not come only from"],
+      "aktivitas CSR atau satu program tertentu, tetapi juga": ["aktivitas CSR atau satu program tertentu, tetapi juga", "CSR activities or a single program, but also from"],
+      "dari karakteristik proses produksi pulp & paper.": ["dari karakteristik proses produksi pulp & paper.", "the characteristics of the pulp & paper production process."],
+      "Raw Material": ["Bahan Baku", "Raw Material"],
+      "Production": ["Produksi", "Production"],
+      "Resource Use": ["Penggunaan Sumber Daya", "Resource Use"],
+      "Environmental Output": ["Output Lingkungan", "Environmental Output"],
+      "The assessment lens.": ["Sudut Pandang Penilaian.", "The assessment lens."],
+      "Kami melihat CSR sebagai bagian dari sistem pengelolaan": ["Kami melihat CSR sebagai bagian dari sistem pengelolaan", "We view CSR as part of an impact management system,"],
+      "dampak, bukan sebagai pengganti pengendalian dampak": ["dampak, bukan sebagai pengganti pengendalian dampak", "bukan sekadars a substitute for controlling"],
+      "operasional utama.": ["operasional utama.", "core operational impacts."],
+      "Karena itu, indikator negatif juga tetap diperhatikan": ["Karena itu, indikator negatif juga tetap diperhatikan", "Therefore, negative indicators are also considered"],
+      "ketika mengevaluasi keberhasilan program.": ["ketika mengevaluasi keberhasilan program.", "when evaluating program performance."],
+
+      /* Issues */
+      "04 · Environmental Issues": ["04 · Isu Lingkungan", "04 · Environmental Issues"],
+      "The numbers tell": ["Angka menunjukkan", "The numbers tell"],
+      "a": ["sebuah", "a"],
+      "complex story.": ["cerita yang kompleks.", "complex story."],
+      "Ada progres nyata, tetapi beberapa indikator lingkungan": ["Ada progres nyata, tetapi beberapa indikator lingkungan", "There is real progress, but several environmental indicators"],
+      "justru bergerak ke arah yang berlawanan dengan target.": ["justru bergerak ke arah yang berlawanan dengan target.", "are moving in the opposite direction from the targets."],
+      "Scope 1 Emissions": ["Emisi Scope 1", "Scope 1 Emissions"],
+      "Emisi langsung dari aktivitas operasional.": ["Emisi langsung dari aktivitas operasional.", "Direct emissions from operations."],
+      "Carbon intensity: 1.08 → 1.17 tCO₂e/ton": ["Intensitas karbon: 1.08 → 1.17 tCO₂e/ton", "Carbon intensity: 1.08 → 1.17 tCO₂e/ton"],
+      "Air Pollution": ["Polusi Udara", "Air Pollution"],
+      "Parameter SO₂ mengalami peningkatan.": ["Parameter SO₂ mengalami peningkatan.", "SO₂ concentration increased."],
+      "mg/Nm³ · 141.8 → 230.02": ["mg/Nm³ · 141.8 → 230.02", "mg/Nm³ · 141.8 → 230.02"],
+      "Wastewater": ["Air Limbah", "Wastewater"],
+      "Chemical Oxygen Demand pada air limbah.": ["Chemical Oxygen Demand pada air limbah.", "Chemical Oxygen Demand in wastewater."],
+      "COD mg/l · 137.8 → 150.97": ["COD mg/l · 137.8 → 150.97", "COD mg/l · 137.8 → 150.97"],
+      "B3 Waste": ["Limbah B3", "B3 Waste"],
+      "Limbah B3 tetap besar tetapi turun dari tolok ukur.": ["Limbah B3 tetap besar tetapi turun dari tolok ukur.", "B3 waste remains substantial but has fallen from tolok ukur."],
+      "tons · turun dari baseline 768,431": ["ton · turun dari tolok ukur 768.431", "tons · down from the 768,431 baseline"],
+
+      /* Programs */
+      "05 · CSR Programs": ["05 · Program CSR", "05 · CSR Programs"],
+      "From programs": ["Dari program", "From programs"],
+      "to": ["menjadi", "to"],
+      "real actions.": ["aksi nyata.", "real actions."],
+      "Program-program berikut dinilai bukan hanya berdasarkan": ["Program-program berikut dinilai bukan hanya berdasarkan", "The following programs are assessed not only by"],
+      "keberadaannya, tetapi juga output, outcome, dan dampaknya.": ["keberadaannya, tetapi juga output, outcome, dan dampaknya.", "their existence, but also by their outputs, outcomes, and impacts."],
+      "Community": ["Masyarakat", "Community"],
+      "Biodiversity": ["Keanekaragaman Hayati", "Biodiversity"],
+      "Energy": ["Energi", "Energy"],
+      "Circularity": ["Ekonomi Sirkular", "Circularity"],
+      "Waste": ["Limbah", "Waste"],
+      "Conservation": ["Konservasi", "Conservation"],
+      "Bank Sampah Digital": ["Bank Sampah Digital", "Digital Waste Bank"],
+      "Program pengelolaan sampah berbasis masyarakat": ["Program pengelolaan sampah berbasis masyarakat", "A community-based waste management program"],
+      "di Serang untuk mendorong partisipasi dan": ["di Serang untuk mendorong partisipasi dan", "in Serang to encourage participation and"],
+      "pengelolaan sampah yang lebih terstruktur.": ["pengelolaan sampah yang lebih terstruktur.", "more structured waste management."],
+      "Mangrove Restoration": ["Restorasi Mangrove", "Mangrove Restoration"],
+      "Rehabilitasi ekosistem pesisir melalui penanaman": ["Rehabilitasi ekosistem pesisir melalui penanaman", "Coastal ecosystem rehabilitation through planting"],
+      "dan pemulihan kawasan mangrove.": ["dan pemulihan kawasan mangrove.", "and restoring mangrove areas."],
+      "Renewable Energy": ["Energi Terbarukan", "Renewable Energy"],
+      "Peningkatan energi terbarukan melalui solar PV,": ["Peningkatan energi terbarukan melalui solar PV,", "Increasing energi terbarukan through solar PV,"],
+      "biogas, serta pemanfaatan RDF sebagai bagian": ["biogas, serta pemanfaatan RDF sebagai bagian", "biogas, and RDF as part"],
+      "dari transisi energi.": ["dari transisi energi.", "of the energy transition."],
+      "Recycled Fiber": ["Serat Daur Ulang", "Recycled Fiber"],
+      "Peningkatan penggunaan serat daur ulang sebagai": ["Peningkatan penggunaan serat daur ulang sebagai", "Increasing the use of recycled fiber as part"],
+      "bagian dari pendekatan ekonomi sirkular.": ["bagian dari pendekatan ekonomi sirkular.", "of a circular economy approach."],
+      "Waste Management": ["Pengelolaan Limbah", "Waste Management"],
+      "Upaya mengurangi dan mengelola limbah B3": ["Upaya mengurangi dan mengelola limbah B3", "Efforts to reduce and manage B3 waste"],
+      "serta berbagai jenis limbah operasional.": ["serta berbagai jenis limbah operasional.", "and other types of operational waste."],
+      "Biodiversity Conservation": ["Konservasi Keanekaragaman Hayati", "Biodiversity Conservation"],
+      "Kemitraan konservasi biodiversitas dengan": ["Kemitraan konservasi biodiversitas dengan", "Biodiversity conservation partnerships with"],
+      "lembaga dan organisasi terkait untuk mitigasi": ["lembaga dan organisasi terkait untuk mitigasi", "relevant institutions and organizations to mitigate"],
+      "risiko ekosistem dan satwa.": ["risiko ekosistem dan satwa.", "ecosystem and wildlife risks."],
+      "~120 ton/tahun": ["~120 ton/tahun", "~120 tons/year"],
+      "~173,000": ["~173.000", "~173,000"],
+      "seedlings": ["bibit", "seedlings"],
+      "54% energi terbarukan": ["54% energi terbarukan", "54% energi terbarukan"],
+      "52% recycled fiber": ["52% serat daur ulang", "52% recycled fiber"],
+      ">50% pengurangan dibandingkan tolok ukur 2018": [">50% penurunan vs tolok ukur 2018", ">50% pengurangan dibandingkan tolok ukur 2018"],
+      "Multi-year": ["Multi-tahun", "Multi-year"],
+      "partnerships": ["kemitraan", "partnerships"],
+
+      /* Impact */
+      "06 · Impact Assessment": ["06 · Penilaian Dampak", "06 · Impact Assessment"],
+      "Don't confuse": ["Jangan samakan", "Don't confuse"],
+      "output": ["output", "output"],
+      "with impact.": ["dengan impact.", "with impact."],
+      "Sebuah program dapat menghasilkan output yang besar,": ["Sebuah program dapat menghasilkan output yang besar,", "A program can produce large outputs,"],
+      "tetapi dampak jangka panjang harus dibuktikan dengan": ["tetapi dampak jangka panjang harus dibuktikan dengan", "but long-term impact must be demonstrated through"],
+      "indikator outcome dan impact.": ["indikator outcome dan impact.", "outcome and impact indicators."],
+      "Resources": ["Sumber Daya", "Resources"],
+      "Dana, manusia, teknologi, fasilitas,": ["Dana, manusia, teknologi, fasilitas,", "Funding, people, technology, facilities,"],
+      "energi, kemitraan, dan sumber daya lain.": ["energi, kemitraan, dan sumber daya lain.", "energy, partnerships, and other resources."],
+      "Activities": ["Aktivitas", "Activities"],
+      "Contoh: jumlah bibit ditanam,": ["Contoh: jumlah bibit ditanam,", "Examples: seedlings planted,"],
+      "volume sampah dikelola,": ["volume sampah dikelola,", "waste volume managed,"],
+      "kapasitas solar PV.": ["kapasitas solar PV.", "solar PV capacity."],
+      "Change": ["Perubahan", "Change"],
+      "Perubahan perilaku, kualitas lingkungan,": ["Perubahan perilaku, kualitas lingkungan,", "Changes in behavior, environmental quality,"],
+      "pengurangan risiko, atau efisiensi.": ["pengurangan risiko, atau efisiensi.", "risk reduction, or efficiency."],
+      "Long-term": ["Jangka Panjang", "Long-term"],
+      "Perubahan lingkungan dan sosial": ["Perubahan lingkungan dan sosial", "Environmental and social changes"],
+      "yang bertahan dalam jangka panjang.": ["yang bertahan dalam jangka panjang.", "that persist over the long term."],
+      "Critical lens:": ["Sudut pandang kritis:", "Critical lens:"],
+      "173.000 bibit mangrove adalah output.": ["173.000 bibit mangrove adalah output.", "173,000 mangrove seedlings are an output."],
+      "Untuk menyebutnya sebagai impact, diperlukan bukti": ["Untuk menyebutnya sebagai impact, diperlukan bukti", "To call it an impact, evidence is needed"],
+      "seperti survival rate, perubahan kondisi ekosistem,": ["seperti survival rate, perubahan kondisi ekosistem,", "such as survival rate, changes in ecosystem condition,"],
+      "kualitas pesisir, dan manfaat jangka panjang.": ["kualitas pesisir, dan manfaat jangka panjang.", "coastal quality, and long-term benefits."],
+
+      /* Targets */
+      "07 · Target vs Realization": ["07 · Target vs Realisasi", "07 · Target vs Realization"],
+      "What was": ["Apa yang", "What was"],
+      "promised": ["dijanjikan", "promised"],
+      "vs what was achieved.": ["vs apa yang dicapai.", "vs what was achieved."],
+      "SRV2030 menjadi benchmark utama untuk membaca": ["SRV2030 menjadi benchmark utama untuk membaca", "SRV2030 is the main benchmark for assessing"],
+      "konsistensi target lingkungan perusahaan.": ["konsistensi target lingkungan perusahaan.", "the consistency of the company's environmental targets."],
+      "Achieved": ["Tercapai", "Achieved"],
+      "Strong Progress": ["Progres Kuat", "Strong Progress"],
+      "Needs Improvement": ["Perlu Perbaikan", "Needs Improvement"],
+      "Mixed": ["Campuran", "Mixed"],
+      "Target minimum 50% energi terbarukan.": ["Target minimum 50% energi terbarukan.", "Minimum target of 50% energi terbarukan."],
+      "Penggunaan serat daur ulang menunjukkan progres kuat.": ["Penggunaan serat daur ulang menunjukkan progres kuat.", "Current study · Recycled fiber use shows strong progress."],
+      "Progress terhadap target pengurangan intensitas karbon.": ["Progress terhadap target pengurangan intensitas karbon.", "Progress toward the carbon intensity reduction target."],
+      "Progress masih membutuhkan akselerasi.": ["Progress masih membutuhkan akselerasi.", "Progress still needs acceleration."],
+      "Pengurangan penggunaan air belum mendekati target akhir.": ["Pengurangan penggunaan air belum mendekati target akhir.", "Water-use reduction is not yet close to the final target."],
+      "Sebagian indikator positif, sebagian masih berlawanan arah.": ["Sebagian indikator positif, sebagian masih berlawanan arah.", "Some indicators are positive, while others are moving in the opposite direction."],
+      "Environmental Direction": ["Arah Lingkungan", "Environmental Direction"],
+
+      /* Checker */
+      "08 · Pencitraan Hijau Checker": ["08 · Pemeriksa Pencitraan Hijau", "08 · Pencitraan Hijau Checker"],
+      "Test the": ["Uji", "Test the"],
+      "claim.": ["klaim.", "claim."],
+      "Kami tidak langsung memberikan label greenwashing.": ["Kami tidak langsung memberikan label greenwashing.", "We do bukan sekadarutomatically label something as greenwashing."],
+      "Kami menguji konsistensi antara klaim keberlanjutan": ["Kami menguji konsistensi antara klaim keberlanjutan", "We test consistency between sustainability claims"],
+      "dengan bukti yang tersedia.": ["dengan bukti yang tersedia.", "and the available bukti."],
+      "Five evidence tests.": ["Lima uji bukti.", "Five evidence tests."],
+      "Semakin banyak klaim yang memiliki data,": ["Semakin banyak klaim yang memiliki data,", "The more claims supported by data,"],
+      "target, pengungkapan negatif, dan verifikasi,": ["target, pengungkapan negatif, dan verifikasi,", "targets, negative disclosures, and verification,"],
+      "semakin kuat kredibilitasnya.": ["semakin kuat kredibilitasnya.", "the stronger the credibility."],
+      "Evidence available": ["Bukti tersedia", "Evidence available"],
+      "Quantifiable targets": ["Target terukur", "Quantifiable targets"],
+      "External validation": ["Validasi eksternal", "External validation"],
+      "Negative performance disclosed": ["Kinerja negatif diungkapkan", "Negative performance disclosed"],
+      "Claim vs impact consistency": ["Konsistensi klaim vs dampak", "Claim vs impact consistency"],
+      "Assessment": ["Penilaian", "Assessment"],
+      "CAUTION": ["PERHATIAN", "CAUTION"],
+      "Not proven greenwashing.": ["Pencitraan Hijau belum terbukti.", "Not proven greenwashing."],
+      "Consistency requires further review.": ["Konsistensi masih memerlukan peninjauan lebih lanjut.", "Consistency requires further review."],
+
+      /* Pemangku Kepentingan */
+      "09 · Pemangku Kepentingan": ["09 · Stakeholder", "09 · Pemangku Kepentingan"],
+      "Who": ["Siapa yang", "Who"],
+      "feels": ["merasakan", "feels"],
+      "the impact?": ["dampaknya?", "the impact?"],
+      "Local Community": ["Masyarakat Lokal", "Local Community"],
+      "Masyarakat sekitar fasilitas operasional": ["Masyarakat sekitar fasilitas operasional", "Communities around operational facilities"],
+      "merupakan pihak yang dapat merasakan dampak": ["merupakan pihak yang dapat merasakan dampak", "are among those who may directly experience"],
+      "lingkungan secara langsung.": ["lingkungan secara langsung.", "environmental impacts."],
+      "Government": ["Pemerintah", "Government"],
+      "Pemerintah dan regulator berperan dalam": ["Pemerintah dan regulator berperan dalam", "Government and regulators play a role in"],
+      "pengawasan kepatuhan serta standar lingkungan.": ["pengawasan kepatuhan serta standar lingkungan.", "compliance oversight and environmental standards."],
+      "Employees": ["Karyawan", "Employees"],
+      "Karyawan berhubungan langsung dengan sistem": ["Karyawan berhubungan langsung dengan sistem", "Employees interact directly with operational systems,"],
+      "operasional, keselamatan, dan budaya sustainability.": ["operasional, keselamatan, dan budaya sustainability.", "safety, and sustainability culture."],
+      "Consumers": ["Konsumen", "Consumers"],
+      "Konsumen semakin membutuhkan produk yang": ["Konsumen semakin membutuhkan produk yang", "Consumers increasingly seek products with"],
+      "memiliki klaim lingkungan yang kredibel.": ["memiliki klaim lingkungan yang kredibel.", "credible environmental claims."],
+      "Investors": ["Investor", "Investors"],
+      "Investor membutuhkan informasi yang konsisten": ["Investor membutuhkan informasi yang konsisten", "Investors need consistent information"],
+      "untuk menilai risiko ESG dan keberlanjutan.": ["untuk menilai risiko ESG dan keberlanjutan.", "to assess ESG risk and sustainability."],
+      "Environmental Groups": ["Organisasi Lingkungan", "Environmental Groups"],
+      "Organisasi lingkungan dapat menjadi mitra,": ["Organisasi lingkungan dapat menjadi mitra,", "Environmental organizations can be partners,"],
+      "pengawas, sekaligus sumber perspektif independen.": ["pengawas, sekaligus sumber perspektif independen.", "watchdogs, and sources of independent perspectives."],
+      "Interest · Air quality, odor, noise, water": ["Kepentingan · Kualitas udara, bau, kebisingan, air", "Interest · Air quality, odor, noise, water"],
+      "Interest · Compliance & environmental standards": ["Kepentingan · Kepatuhan & standar lingkungan", "Interest · Compliance & environmental standards"],
+      "Interest · Workplace & sustainability culture": ["Kepentingan · Tempat kerja & budaya keberlanjutan", "Interest · Workplace & sustainability culture"],
+      "Interest · Responsible products & transparency": ["Kepentingan · Produk bertanggung jawab & transparansi", "Interest · Responsible products & transparency"],
+      "Interest · ESG risk & long-term value": ["Kepentingan · Risiko ESG & nilai jangka panjang", "Interest · ESG risk & long-term value"],
+      "Interest · Ecosystem & biodiversity": ["Kepentingan · Ekosistem & keanekaragaman hayati", "Interest · Ecosystem & biodiversity"],
+
+      /* Evidence */
+      "10 · Evidence Room": ["10 · Ruang Bukti", "10 · Evidence Room"],
+      "Claims are easy.": ["Klaim itu mudah.", "Claims are easy."],
+      "Evidence matters.": ["Bukti yang penting.", "Evidence matters."],
+      "Setiap kesimpulan seharusnya dapat ditelusuri kembali": ["Setiap kesimpulan seharusnya dapat ditelusuri kembali", "Every conclusion should be traceable back"],
+      "ke data, disclosure, target, atau validasi eksternal.": ["ke data, disclosure, target, atau validasi eksternal.", "to data, disclosures, targets, or external validation."],
+      "Quantified": ["Terukur", "Quantified"],
+      "Negative trend": ["Tren Negatif", "Negative trend"],
+      "Positive progress": ["Progres Positif", "Positive progress"],
+      "Target achieved": ["Target Tercapai", "Target achieved"],
+      "Disclosed": ["Diungkapkan", "Disclosed"],
+
+      /* Review */
+      "11 · Critical Review": ["11 · Tinjauan Kritis", "11 · Critical Review"],
+      "What looks good.": ["Apa yang terlihat baik.", "What looks good."],
+      "What still needs": ["Apa yang masih perlu", "What still needs"],
+      "work.": ["diperbaiki.", "work."],
+      "✓ Positive Signals": ["✓ Sinyal Positif", "✓ Positive Signals"],
+      "Real actions exist.": ["Ada aksi nyata.", "Real actions exist."],
+      "Current study · Renewable energy reached 54%.": ["Energi terbarukan mencapai 54%.", "Current study · Renewable energy reached 54%."],
+      "Current study · Recycled fiber reached 52%.": ["Serat daur ulang mencapai 52%.", "Current study · Recycled fiber reached 52%."],
+      "B3 waste decreased substantially from the 2018 tolok ukur.": ["Limbah B3 turun secara signifikan dari tolok ukur 2018.", "B3 waste decreased substantially from the 2018 tolok ukur."],
+      "Solar PV capacity increased from 21.5 MWp to 32 MWp.": ["Kapasitas solar PV meningkat dari 21,5 MWp menjadi 32 MWp.", "Solar PV capacity increased from 21.5 MWp to 32 MWp."],
+      "Biodiversity partnerships are multi-year.": ["Kemitraan biodiversitas berlangsung multi-tahun.", "Biodiversity partnerships are multi-year."],
+      "External validation such as PROPER strengthens credibility.": ["Validasi eksternal seperti PROPER memperkuat kredibilitas.", "External validation such as PROPER strengthens credibility."],
+      "! Still Needs Work": ["! Masih Perlu Perbaikan", "! Still Needs Work"],
+      "Impact is not yet optimal.": ["Dampaknya belum optimal.", "Impact is not yet optimal."],
+      "Carbon intensity increased from 1.08 to 1.17.": ["Intensitas karbon meningkat dari 1.08 menjadi 1.17.", "Carbon intensity increased from 1.08 to 1.17."],
+      "SO₂ increased from 141.8 to 230.02 mg/Nm³.": ["SO₂ meningkat dari 141.8 menjadi 230.02 mg/Nm³.", "SO₂ increased from 141.8 to 230.02 mg/Nm³."],
+      "COD increased from 137.8 to 150.97 mg/l.": ["COD meningkat dari 137.8 menjadi 150.97 mg/l.", "COD increased from 137.8 to 150.97 mg/l."],
+      "Carbon, energy, and water reduction targets remain challenging.": ["Target pengurangan karbon, energi, dan air masih menantang.", "Carbon, energy, and water reduction targets remain challenging."],
+      "One administrative sanction was disclosed for Indah Kiat Serang.": ["Satu sanksi administratif untuk Indah Kiat Serang diungkapkan.", "One administrative sanction was disclosed for Indah Kiat Serang."],
+      "Public complaint data lacks longer-term trend context.": ["Data keluhan publik belum memiliki konteks tren jangka panjang.", "Public complaint data lacks longer-term trend context."],
+
+      /* Verdict */
+      "12 · Our Verdict": ["12 · Kesimpulan Kami", "12 · Our Verdict"],
+      "REAL ACTIONS EXIST.": ["ADA AKSI NYATA.", "REAL ACTIONS EXIST."],
+      "BUT THE": ["TETAPI", "BUT THE"],
+      "IMPACT": ["DAMPAK", "IMPACT"],
+      "IS NOT YET OPTIMAL.": ["BELUM OPTIMAL.", "IS NOT YET OPTIMAL."],
+      "Berdasarkan assessment kami, CSR lingkungan perusahaan": ["Berdasarkan assessment kami, CSR lingkungan perusahaan", "Based on our assessment, the company's environmental CSR"],
+      "menunjukkan tindakan nyata dan beberapa progres terukur.": ["menunjukkan tindakan nyata dan beberapa progres terukur.", "shows real actions and several measurable improvements."],
+      "Namun, peningkatan pada sejumlah indikator lingkungan": ["Namun, peningkatan pada sejumlah indikator lingkungan", "However, increases in several environmental indicators"],
+      "menunjukkan bahwa program tersebut belum dapat dianggap": ["menunjukkan bahwa program tersebut belum dapat dianggap", "indicate that the programs cannot yet be considered to"],
+      "menyelesaikan seluruh akar masalah operasional.": ["menyelesaikan seluruh akar masalah operasional.", "resolve all root operational issues."],
+      "CSR: Cukup Efektif": ["CSR: Cukup Efektif", "CSR: Cukup Efektif"],
+      "Keberlanjutan: Needs Improvement": ["Keberlanjutan: Perlu Perbaikan", "Keberlanjutan: Needs Improvement"],
+      "Pencitraan Hijau: Not Proven": ["Pencitraan Hijau: Belum Terbukti", "Pencitraan Hijau: Not Proven"],
+      "Consistency: Further Review": ["Konsistensi: Perlu Peninjauan Lanjutan", "Consistency: Further Review"],
+
+      /* Recommendations */
+      "13 · Recommendations": ["13 · Rekomendasi", "13 · Recommendations"],
+      "From criticism": ["Dari kritik", "From criticism"],
+      "to action.": ["menjadi aksi.", "to action."],
+      "Rekomendasi dirancang agar dapat diukur,": ["Rekomendasi dirancang agar dapat diukur,", "Recommendations are designed to be measurable,"],
+      "memiliki penanggung jawab, timeline, serta indikator": ["memiliki penanggung jawab, timeline, serta indikator", "with clear owners, timelines, and"],
+      "keberhasilan yang jelas.": ["keberhasilan yang jelas.", "success indicators."],
+      "Environmental Transparency Dashboard": ["Dashboard Transparansi Lingkungan", "Environmental Transparency Dashboard"],
+      "Bangun dashboard publik yang memperlihatkan": ["Bangun dashboard publik yang memperlihatkan", "Build a public dashboard showing"],
+      "indikator lingkungan material secara berkala,": ["indikator lingkungan material secara berkala,", "material environmental indicators regularly,"],
+      "termasuk tren positif maupun negatif.": ["termasuk tren positif maupun negatif.", "including both positive and negative trends."],
+      "Pencitraan Hijau Evidence Checker": ["Pemeriksa Bukti Pencitraan Hijau", "Pencitraan Hijau Evidence Checker"],
+      "Setiap environmental claim yang digunakan dalam": ["Setiap environmental claim yang digunakan dalam", "Every environmental claim used in"],
+      "komunikasi perusahaan harus memiliki bukti,": ["komunikasi perusahaan harus memiliki bukti,", "company communications should have bukti,"],
+      "tolok ukur awal, target, dan indikator hasil yang jelas.": ["tolok ukur awal, target, dan indikator hasil yang jelas.", "a tolok ukur awal, target, and clear outcome indicators."],
+      "Carbon · Water · Waste Acceleration": ["Percepatan Karbon · Air · Limbah", "Carbon · Water · Waste Acceleration"],
+      "Fokus 2027–2030 harus diarahkan pada indikator": ["Fokus 2027–2030 harus diarahkan pada indikator", "The 2027–2030 focus should target indicators"],
+      "yang masih tertinggal agar target SRV2030 tidak": ["yang masih tertinggal agar target SRV2030 tidak", "that are lagging so the SRV2030 targets do not"],
+      "hanya menjadi target administratif.": ["hanya menjadi target administratif.", "become merely administrative targets."],
+      "Keberlanjutan & Management": ["Keberlanjutan & Manajemen", "Keberlanjutan & Management"],
+      "Mulai 2027": ["Mulai 2027", "Mulai 2027"],
+      "≥95% key indicators disclosed": ["≥95% indikator utama diungkapkan", "≥95% key indicators disclosed"],
+      "Corporate Communication + ESG": ["Komunikasi Korporat + ESG", "Corporate Communication + ESG"],
+      "Setiap publikasi": ["Setiap publikasi", "Setiap publikasi"],
+      "100% material claims supported": ["100% klaim material didukung bukti", "100% material claims supported"],
+      "Operations + Keberlanjutan": ["Operasional + Keberlanjutan", "Operations + Keberlanjutan"],
+      "Annual reduction trajectory": ["Lintasan pengurangan tahunan", "Annual reduction trajectory"],
+
+      /* Final */
+      "Final Thought": ["Pikiran Akhir", "Final Thought"],
+      "DON'T JUST": ["JANGAN HANYA", "DON'T JUST"],
+      "READ THE": ["BACA", "READ THE"],
+      "CLAIM.": ["KLAIM.", "CLAIM."],
+      "EVIDENCE.": ["BUKTI.", "EVIDENCE."],
+      "Keberlanjutan is not defined by how green a story sounds,": ["Keberlanjutan tidak ditentukan oleh seberapa hijau sebuah cerita terdengar,", "Keberlanjutan is not defined by how green a story sounds,"],
+      "but by whether the evidence supports it.": ["melainkan oleh apakah bukti benar-benar mendukungnya.", "but by whether the evidence supports it."],
+
+      /* Footer */
+      "Environmental CSR Assessment ·": ["Penilaian CSR Lingkungan ·", "Environmental CSR Assessment ·"],
+      "© 2026 · Academic Project": ["© 2026 · Proyek Akademik", "© 2026 · Academic Project"],
+      "CSR × ESG × Keberlanjutan": ["CSR × ESG × Keberlanjutan", "CSR × ESG × Keberlanjutan"],
+      "CSR Programs": ["Program CSR", "CSR Programs"],
+      "Impact": ["Dampak", "Impact"],
+      "Targets": ["Target", "Targets"],
+      "Evidence": ["Bukti", "Evidence"],
+      "Recommendations": ["Rekomendasi", "Recommendations"],
+      "The Big Question": ["Pertanyaan Utama", "The Big Question"],
+    };
+
+    const langButtons = {
+      id: document.getElementById("langID"),
+      en: document.getElementById("langEN")
+    };
+
+    const textNodes = [];
+    const walker = document.createTreeWalker(
+      document.body,
+      NodeFilter.SHOW_TEXT,
+      {
+        acceptNode(node) {
+          const parent = node.parentElement;
+          if (!parent) return NodeFilter.FILTER_REJECT;
+          if (["SCRIPT", "STYLE", "NOSCRIPT"].includes(parent.tagName)) {
+            return NodeFilter.FILTER_REJECT;
+          }
+          const key = node.nodeValue.trim();
+          if (!key) return NodeFilter.FILTER_REJECT;
+          return languagePairs[key]
+            ? NodeFilter.FILTER_ACCEPT
+            : NodeFilter.FILTER_REJECT;
+        }
+      }
+    );
+
+    while (walker.nextNode()) {
+      const node = walker.currentNode;
+      textNodes.push({
+        node,
+        original: node.nodeValue
+      });
+    }
+
+    function setLanguage(lang) {
+      const index = lang === "en" ? 1 : 0;
+
+      textNodes.forEach(({ node, original }) => {
+        const key = original.trim();
+        const pair = languagePairs[key];
+        if (!pair) return;
+
+        const value = pair[index];
+        const leading = original.match(/^\s*/)?.[0] || "";
+        const trailing = original.match(/\s*$/)?.[0] || "";
+        node.nodeValue = leading + value + trailing;
+      });
+
+      document.documentElement.lang = lang === "en" ? "en" : "id";
+      document.title = lang === "en"
+        ? "BEYONDGREEN.ID — CSR & Keberlanjutan Research Lab"
+        : "BEYONDGREEN.ID — Laboratorium Riset CSR & Keberlanjutan";
+
+      langButtons.id.classList.toggle("active", lang === "id");
+      langButtons.en.classList.toggle("active", lang === "en");
+
+      localStorage.setItem("beyondgreen-language", lang);
+    }
+
+    langButtons.id.addEventListener("click", () => setLanguage("id"));
+    langButtons.en.addEventListener("click", () => setLanguage("en"));
+
+    const savedLanguage = "id";
+    setLanguage(savedLanguage);
+
+
+
+    /* ========================================================
+       NAVBAR SCROLL
+    ======================================================== */
+
+    const navbar = document.getElementById("navbar");
+
+    window.addEventListener("scroll", () => {
+
+      if (window.scrollY > 30) {
+
+        navbar.classList.add("scrolled");
+
+      } else {
+
+        navbar.classList.remove("scrolled");
+
+      }
+
+    });
+
+
+
+    /* ========================================================
+       MOBILE MENU
+    ======================================================== */
+
+    const mobileMenu = document.getElementById("mobileMenu");
+
+    const navLinks = document.querySelector(".nav-links");
+
+    mobileMenu.addEventListener("click", () => {
+
+      navLinks.classList.toggle("mobile-open");
+
+    });
+
+
+
+    /* ========================================================
+       REVEAL ANIMATION
+    ======================================================== */
+
+    const revealElements =
+      document.querySelectorAll(".reveal");
+
+
+    const revealObserver =
+      new IntersectionObserver(
+
+        (entries) => {
+
+          entries.forEach((entry) => {
+
+            if (entry.isIntersecting) {
+
+              entry.target.classList.add("visible");
+
+              revealObserver.unobserve(entry.target);
+
+            }
+
+          });
+
+        },
+
+        {
+          threshold: 0.12
+        }
+
+      );
+
+
+    revealElements.forEach((element) => {
+
+      revealObserver.observe(element);
+
+    });
+
+
+
+    /* ========================================================
+       PROGRESS BAR OBSERVER
+    ======================================================== */
+
+    const progressBars =
+      document.querySelectorAll(".progress-bar");
+
+
+    const progressObserver =
+      new IntersectionObserver(
+
+        (entries) => {
+
+          entries.forEach((entry) => {
+
+            if (entry.isIntersecting) {
+
+              const progress =
+                entry.target.style.getPropertyValue("--progress");
+
+              entry.target.style.width = progress;
+
+              progressObserver.unobserve(entry.target);
+
+            }
+
+          });
+
+        },
+
+        {
+          threshold: .4
+        }
+
+      );
+
+
+    progressBars.forEach((bar) => {
+
+      const progress =
+        bar.style.getPropertyValue("--progress");
+
+      bar.style.width = "0%";
+
+      progressObserver.observe(bar);
+
+    });
+
+
+
+    /* ========================================================
+       ACTIVE SECTION
+    ======================================================== */
+
+    const sections =
+      document.querySelectorAll("section[id]");
+
+    const links =
+      document.querySelectorAll(".nav-links a");
+
+
+    const sectionObserver =
+      new IntersectionObserver(
+
+        (entries) => {
+
+          entries.forEach((entry) => {
+
+            if (entry.isIntersecting) {
+
+              links.forEach((link) => {
+
+                link.style.color = "";
+
+                if (
+                  link.getAttribute("href") ===
+                  "#" + entry.target.id
+                ) {
+
+                  link.style.color =
+                    "var(--green)";
+
+                }
+
+              });
+
+            }
+
+          });
+
+        },
+
+        {
+          rootMargin: "-30% 0px -60% 0px"
+        }
+
+      );
+
+
+    sections.forEach((section) => {
+
+      sectionObserver.observe(section);
+
+    });
+
+
+
+    /* ========================================================
+       SMOOTH MOBILE NAV
+    ======================================================== */
+
+    links.forEach((link) => {
+
+      link.addEventListener("click", () => {
+
+        navLinks.classList.remove("mobile-open");
+
+      });
+
+    });
+
+
+
+    /* ========================================================
+       REPORT CENTER
+       Static-site friendly:
+       - validates the form
+       - copies a structured report
+       - downloads a TXT copy
+       - optional mailto destination can be configured later
+    ======================================================== */
+
+    const REPORT_EMAIL = "";
+
+    const reportForm = document.getElementById("reportForm");
+    const reportStatus = document.getElementById("reportStatus");
+    const downloadReportBtn = document.getElementById("downloadReport");
+
+    function getReportData() {
+      return {
+        name: document.getElementById("reporterName").value.trim() || "Anonymous",
+        contact: document.getElementById("reporterContact").value.trim() || "Not provided",
+        company: document.getElementById("reportCompany").value.trim(),
+        category: document.getElementById("reportCategory").value,
+        title: document.getElementById("reportTitle").value.trim(),
+        details: document.getElementById("reportDetails").value.trim(),
+        evidence: document.getElementById("reportEvidence").value.trim() || "Not provided",
+        date: new Date().toLocaleString("id-ID", {
+          dateStyle: "long",
+          timeStyle: "short"
+        })
+      };
+    }
+
+    function buildReportText(data) {
+      return [
+        "BEYONDGREEN.ID — REPORT CENTER",
+        "==========================================",
+        "",
+        "REPORT DATE",
+        data.date,
+        "",
+        "REPORTER",
+        data.name,
+        "",
+        "CONTACT",
+        data.contact,
+        "",
+        "COMPANY / ENTITY",
+        data.company,
+        "",
+        "CATEGORY",
+        data.category,
+        "",
+        "TITLE / SUMMARY",
+        data.title,
+        "",
+        "DETAILS",
+        data.details,
+        "",
+        "EVIDENCE / SOURCE",
+        data.bukti,
+        "",
+        "------------------------------------------",
+        "Submitted through BEYONDGREEN.ID Report Center",
+        "For research, verification, and documentation purposes."
+      ].join("\n");
+    }
+
+    function showReportStatus(message) {
+      reportStatus.textContent = message;
+      reportStatus.classList.add("show");
+    }
+
+    reportForm.addEventListener("submit", async (event) => {
+      event.preventDefault();
+
+      if (!reportForm.checkValidity()) {
+        reportForm.reportValidity();
+        return;
+      }
+
+      const data = getReportData();
+      const reportText = buildReportText(data);
+
+      try {
+        await navigator.clipboard.writeText(reportText);
+
+        if (REPORT_EMAIL) {
+          const subject = encodeURIComponent(
+            "[BEYONDGREEN.ID REPORT] " + data.title
+          );
+          const body = encodeURIComponent(reportText);
+
+          window.location.href =
+            `mailto:${REPORT_EMAIL}?subject=${subject}&body=${body}`;
+
+          showReportStatus(
+            "Laporan sudah disiapkan dan disalin. Aplikasi email akan dibuka untuk proses pengiriman."
+          );
+        } else {
+          showReportStatus(
+            "Laporan sudah disiapkan dan disalin ke clipboard. Gunakan “Download Copy” untuk menyimpan arsip TXT."
+          );
+        }
+      } catch (error) {
+        showReportStatus(
+          "Laporan sudah siap. Jika clipboard tidak tersedia, gunakan “Download Copy” untuk menyimpan laporan."
+        );
+      }
+    });
+
+    downloadReportBtn.addEventListener("click", () => {
+      if (!reportForm.checkValidity()) {
+        reportForm.reportValidity();
+        return;
+      }
+
+      const data = getReportData();
+      const blob = new Blob([buildReportText(data)], {
+        type: "text/plain;charset=utf-8"
+      });
+
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement("a");
+
+      const safeTitle = data.title
+        .toLowerCase()
+        .replace(/[^a-z0-9]+/g, "-")
+        .replace(/^-|-$/g, "")
+        .slice(0, 50) || "report";
+
+      link.href = url;
+      link.download = `beyondgreen-report-${safeTitle}.txt`;
+
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
+
+      URL.revokeObjectURL(url);
+
+      showReportStatus(
+        "Salinan laporan berhasil dibuat dan diunduh sebagai file TXT."
+      );
+    });
+
+  </script>
+
+
+
+  <!-- ========================================================
+       MOBILE MENU STYLE
+  ======================================================== -->
+
+  <style>
+
+    @media (max-width: 1000px) {
+
+      .nav-links.mobile-open {
+
+        position: absolute;
+
+        top: 76px;
+
+        left: 14px;
+        right: 14px;
+
+        display: flex;
+
+        flex-direction: column;
+
+        gap: 0;
+
+        padding: 10px;
+
+        border: 1px solid var(--line);
+
+        border-radius: 18px;
+
+        background: rgba(7,19,15,.96);
+
+        backdrop-filter: blur(20px);
+
+        box-shadow: 0 20px 60px rgba(0,0,0,.3);
+
+      }
+
+      .nav-links.mobile-open a {
+
+        padding: 14px;
+
+        border-radius: 10px;
+
+      }
+
+      .nav-links.mobile-open a:hover {
+
+        background: rgba(184,242,107,.06);
+
+      }
+
+    }
+
+  </style>
+
+
+</body>
+</html>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
